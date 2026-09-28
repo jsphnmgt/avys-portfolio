@@ -1,17 +1,37 @@
-:root {
-  /* Professional Mode (default) */
-  --color-bg: #F7EFE3;
-  --color-surface: #F2DEC4;
-  --color-primary: #8B87B0;
-  --color-accent: #E8B65C;
-  --color-text: #2E2A4D;
-  --color-muted: #6B6685;
-  --color-line: #DCD3BE;
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
-  --font-display: 'Fraunces', serif;
-  --font-body: 'Public Sans', system-ui, sans-serif;
+:root {
+  /* Professional Mode*/
+  --color-cream: #FAF4E9;       /* FAF4E9 - light, for dark backgrounds / outlines */
+  --color-navy: #252932;        /* 252932 - dark blue-black */
+  --color-slate: #42495B;       /* 42495B - muted blue */
+  --color-periwinkle: #8C9BC1;  /* 8C9BC1 - lighter blue */
+  --color-cobalt: #5672B2;      /* 5672B2 - blue */
+  --color-lavender: #C5C0DE; /* C5C0DE - middle stacked-card layer */
+  --color-steel: #667187;       /* 667187 - blue for outlines */
+  --color-mint: #D6E0D4;        /* D6E0D4 - mint green */
+  --color-sage: #9BADB1;        /* 9BADB1 - muted green */
+
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Crimson Text', Georgia, 'Times New Roman', serif;
+
+  /* Generic role variables — professional mode is the default (no [data-mode]
+     attribute needed), so these live in :root itself rather than under a
+     [data-mode='professional'] selector. */
+  --color-bg: var(--color-slate);
+  --color-surface: var(--color-cream);
+  --color-primary: var(--color-cobalt);
+  --color-accent: var(--color-periwinkle);
+  --color-text: var(--color-cream);
+  --color-muted: var(--color-steel);
+  --color-line: var(--color-steel);
+  --color-text-on-surface: var(--color-navy);
+  --color-lavender: (var(--color-lavender))
+
+  --font-ui: var(--font-body);
 }
 
+/* Temporary */
 [data-mode='personal'] {
   --color-bg: #232242;
   --color-surface: #F2DEC4;
@@ -31,6 +51,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-snap-type: y mandatory;
+}
+
 body {
   margin: 0;
   background: var(--color-bg);
@@ -43,4 +67,49 @@ body {
 :focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;
+}
+
+/* --- Navbar: STICKY --- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  background: transparent;
+}
+
+.navbar a {
+  color: var(--color-text);
+  font-family: var(--font-ui);
+  text-decoration: none;
+  margin-right: 2rem;
+}
+
+section {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem;
+}
+
+#projects {
+  min-height: 100vh;
+  height: auto;
+  align-items: stretch;
+  scroll-snap-align: start;
+  background: var(--color-periwinkle);
+}
+
+/*------------------------ HERO SECTION ------------------------*/
+#home {
+  background: linear-gradient(
+    to bottom,
+    var(--color-slate) 0%,
+    var(--color-periwinkle) 100%
+  );
 }
