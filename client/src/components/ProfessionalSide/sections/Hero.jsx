@@ -1,5 +1,5 @@
 import { assets } from "../../../assets";
-const skills = ["HTML/CSS", "JAVASCRIPT", "REACT", "UI DESIGN", "GIT", "FIGMA"];
+const skillRows = [["HTML/CSS", "JAVASCRIPT", "REACT"], ["UI DESIGN", "FLUTTER", "FIGMA"]];
 export default function Hero() {
   return <section id="home" aria-labelledby="hero-title">
     <div className="hero-card-stack">
@@ -10,7 +10,11 @@ export default function Hero() {
       </div>
       <div className="hero-media">
         <img src={assets["profile-photo.jpg"]} alt="An illustrated character enjoying a drink among plants" />
-        <div className="skills-list">{skills.map(skill => <span key={skill} className="skill-tag">{skill}</span>)}</div>
+        <div className="skills-list">{skillRows.map((row, index) => (
+          <div className="skills-row" key={index}>
+            {row.map(skill => <span key={skill} className="skill-tag">{skill}</span>)}
+          </div>
+        ))}</div>
       </div>
     </div>
   </section>;
