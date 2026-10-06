@@ -1,13 +1,12 @@
-function Overlay({ isOpen, onClose, children }) {
-  if (!isOpen) return null;
-
-  return (
-    <div className="overlay-backdrop" onClick={onClose}>
-      <div className="overlay-content" onClick={(e) => e.stopPropagation()}>
-        {children}
-      </div>
-    </div>
-  );
+import { useEffect, useRef } from "react";
+export default function Overlay({ isOpen, onClose, children }) {
+  const dialogRef = useRef(null);
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (isOpen && !dialog.open) dialog.showModal();
+    else if (!isOpen && dialog.open) dialog.close();
+  }, [isOpen]);
+  return <dialog ref={dialogRef} className="overlay-content" aria-labelledby="detail-title" onCancel={onClose} onClick={event => { if (event.target === event.currentTarget) onClose(); }}>
+    <button className="overlay-close" onClick={onClose} aria-label="Close details">×</button>{children}
+  </dialog>;
 }
-
-export default Overlay;
