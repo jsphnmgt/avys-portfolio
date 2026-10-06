@@ -35,13 +35,13 @@ At least six entries. One per real use. Every entry needs a commit link.
 - **What I kept, what I changed, and why: I kept the CSS. It suggested a separate Navbar.jsx, but I put the nav inline in ProfessionalSide.jsx because it's small and unlikely to grow.**
 - **Commit: https://github.com/jsphnmgt/avys-portfolio/commit/f71b255fa842efe9209cfae1b4a563ba6024c7d4**
 
-### YYYY-MM-DD - short title
+### 2026-10-07 - Implementing my Figma portfolio design
 
-- **Tool:**
-- **What I asked for:**
-- **What it gave back:**
-- **What I kept, what I changed, and why:**
-- **Commit:** https://github.com/YOUR-USERNAME/YOUR-REPO/commit/SHA
+- **Tool: OpenAI Codex with the Figma plugin**
+- **What I asked for: Implement my Figma portfolio design using the assets already in the project and the CSS variables in styles.css, without changing anything inside :root.**
+- **What it gave back: React sections for projects, experience, education, certificates, and contact, with responsive styling, local assets, and interactive detail dialogs.**
+- **What I kept, what I changed, and why: I kept the portfolio layout, assets, and styling that reused my existing CSS variables. I requested sticky navigation, a navy hover effect for “Explore my room,” restored slide-like scroll snapping, and a transparent navigation background to better match my intended appearance and behavior.**
+- **Commit: https://github.com/jsphnmgt/avys-portfolio/actions/runs/37506473736**
 
 ### YYYY-MM-DD - short title
 
