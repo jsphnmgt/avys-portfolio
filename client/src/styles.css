@@ -18,6 +18,35 @@
   --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
   --font-body: 'Crimson Text', Georgia, 'Times New Roman', serif;
 
+  /* Font sizes */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 3rem;
+  --font-size-5xl: 4rem;
+
+  /* Spacing for padding, margins, and gaps */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: clamp(1rem, 0.75rem + 1vw, 1.5rem);
+  --space-8: clamp(1.25rem, 1rem + 1vw, 2rem);
+  --space-12: clamp(1.5rem, 1rem + 2vw, 3rem);
+  --space-16: clamp(2rem, 1.5rem + 2vw, 4rem);
+  --space-24: clamp(3rem, 2rem + 4vw, 6rem);
+
+  /* Border radii */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
   /* Generic role variables */
   --color-pure-white: var(--color-white);
   --color-LightText-Overlay-Cards: var(--color-cream);
@@ -45,7 +74,7 @@ body {
   margin: 0;
   background: var(--color-bg);
   color: var(--color-text);
-  font: 16px/1.6 var(--font-body);
+  font: var(--font-size-base)/1.6 var(--font-body);
 }
 
 /* Never remove a focus outline without replacing it. Keyboard users need to
@@ -63,7 +92,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 3rem;
+  padding: var(--space-6) var(--space-12);
   background: transparent;
 }
 
@@ -71,7 +100,7 @@ body {
   color: var(--color-text);
   font-family: var(--font-ui);
   text-decoration: none;
-  margin-right: 2rem;
+  margin-right: var(--space-8);
 }
 
 section {
@@ -80,7 +109,7 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 3rem;
+  padding: var(--space-12);
 }
 
 #projects {
