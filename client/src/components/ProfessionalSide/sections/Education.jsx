@@ -7,7 +7,7 @@ export default function Education() {
   return <section id="education" aria-labelledby="education-title">
     <div className="section-heading"><h2 id="education-title">Education</h2><span className="ornament" aria-hidden="true" /></div>
     <div className="education-layout">
-      <img className="education-photo" src={assets["green-blob.jpg"]} alt="A small forest spirit peeking through green leaves" />
+      <img className="education-photo" src={assets["education-cafe.png"]} alt="A leafy green café with a warmly lit entrance" />
       <div className="education-list">{education.map(item => <article className="education-card" key={item.school}>
         <h3>{item.degree}</h3><p>{item.school}</p><p className="education-date">{item.date}</p>
       </article>)}</div>

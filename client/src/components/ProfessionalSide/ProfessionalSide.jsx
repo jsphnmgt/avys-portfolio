@@ -32,11 +32,22 @@ export default function ProfessionalSide() {
     </div>
     <div className="green-world"><Experience /><Education /></div>
     <div className="blue-sky closing"><Certificates onCardClick={setActiveItem} /><Contact /></div>
-    <Overlay isOpen={!!activeItem} onClose={() => setActiveItem(null)}>{activeItem && <>
+    <Overlay className={activeItem?.techStack ? "project-overlay" : ""} isOpen={!!activeItem} onClose={() => setActiveItem(null)}>{activeItem && (activeItem.techStack ? <div className="project-detail-scroll" tabIndex={0} aria-label="Project details">
+      <div className="project-detail-layout">
+        <div className="project-detail-preview"><img src={activeItem.image} alt={activeItem.title + " preview"} /></div>
+        <div className="project-detail-copy">
+          <span className="project-detail-label">{activeItem.projectType || "Selected project"}</span>
+          <h2 id="detail-title">{activeItem.title}</h2>
+          <p>{activeItem.description}</p>
+          <div className="project-detail-technologies"><h3>Built with</h3><div className="tags">{activeItem.techStack.map(tag => <span key={tag}>{tag}</span>)}</div></div>
+          {activeItem.githubUrl ? <a className="project-code-button" href={activeItem.githubUrl} target="_blank" rel="noreferrer"><img src={assets["github-logo.png"]} alt="" />GitHub code</a> : <button className="project-code-button" disabled title={activeItem.codeStatus || "Repository link hasn't been added yet"}><img src={assets["github-logo.png"]} alt="" />GitHub code</button>}
+          {!activeItem.githubUrl && <span className="project-code-note">{activeItem.codeStatus}</span>}
+        </div>
+      </div>
+    </div> : <>
       <h2 id="detail-title">{activeItem.title}</h2>
       {activeItem.image && <img className="detail-image" src={activeItem.image} alt={activeItem.title + " preview"} />}
       <p>{activeItem.description}</p>
-      {activeItem.techStack && <div className="tags">{activeItem.techStack.map(tag => <span key={tag}>{tag}</span>)}</div>}
-    </>}</Overlay>
+    </>)}</Overlay>
   </>;
 }
