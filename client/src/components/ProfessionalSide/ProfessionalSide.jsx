@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Overlay from "./Overlay";
+import usePortfolioMotion from "./usePortfolioMotion";
 import Hero from "./sections/Hero";
 import Projects from "./sections/Projects";
 import Experience from "./sections/Experience";
@@ -10,7 +11,9 @@ import { assets } from "../../assets";
 
 export default function ProfessionalSide() {
   const [activeItem, setActiveItem] = useState(null);
+  const [activeSection, setActiveSection] = useState("home");
   const navbarRef = useRef(null);
+  usePortfolioMotion(navbarRef);
 
   useEffect(() => {
     const navbar = navbarRef.current;
@@ -22,9 +25,35 @@ export default function ProfessionalSide() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const sections = [...navbarRef.current.closest(".app").querySelectorAll("section[id]")];
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const readingLine = navbarRef.current.getBoundingClientRect().bottom + window.innerHeight * .2;
+      let current = sections[0]?.id;
+      for (const section of sections) {
+        if (section.getBoundingClientRect().top <= readingLine) current = section.id;
+      }
+      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) current = sections.at(-1)?.id;
+      setActiveSection(current);
+    };
+    const schedule = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    update();
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+    };
+  }, []);
+
   return <>
       <nav ref={navbarRef} className="navbar" aria-label="Main navigation">
-        <div className="nav-links">{["Home", "Projects", "Experience", "Education", "Contact"].map(label => <a key={label} href={`#${label.toLowerCase()}`}>{label}</a>)}</div>
+        <div className="nav-links">{["Home", "Projects", "Experience", "Education", "Contact"].map(label => <a key={label} href={`#${label.toLowerCase()}`} aria-current={activeSection === label.toLowerCase() ? "location" : undefined}>{label}</a>)}</div>
         <button className="explore-room-btn" onClick={() => setActiveItem({title: "Explore my room", description: "My personal room is coming soon. For now, explore my projects and get to know my professional side."})}>Explore my room <img src={assets["room-arrow.svg"]} alt="" /></button>
       </nav>
     <div className="blue-sky opening">
