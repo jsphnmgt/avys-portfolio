@@ -1,10 +1,13 @@
 import { assets } from "../../../assets";
 const certificates = [
-  { title: "CompTIA ITF+ Certified", year: "2023" },
-  { title: "AI Fundamentals with IBM SkillsBuild", year: "2026" },
-  { title: "AWS Academy Graduate - Cloud Foundations - Training Badge", year: "2026" },
-  { title: "Data Analytics Essentials", year: "2026" },
-  { title: "Javascript Essentials 1", year: "2024" },
+  { title: "CompTIA ITF+ Certified", year: "2023", issuer: "CompTIA", dateEarned: "November 23, 2023", image: assets["comptia-certificate.png"], credentialUrl: "https://www.credly.com/badges/c0fc5d0f-96df-4c9a-ac49-d79461699fdc/public_url", description: "Certification in foundational information technology concepts and skills." },
+  { title: "AI Fundamentals with IBM SkillsBuild", year: "2026", issuer: "Cisco Networking Academy / IBM SkillsBuild", dateEarned: "March 3, 2026", image: assets["AIfundamentals-certificate.png"], credentialUrl: "https://www.credly.com/badges/2c658acd-7392-4881-9862-80703aec204d/public_url", description: "Completed introductory training in artificial intelligence through Cisco Networking Academy and IBM SkillsBuild." },
+  { title: "AWS Academy Graduate - Cloud Foundations - Training Badge", year: "2026", issuer: "AWS Academy", dateEarned: "March 16, 2026", image: assets["AWS-certificate.png"], credentialUrl: "https://www.credly.com/badges/5c9b7ac6-ceac-4c8a-aab5-6696cf2b1930/public_url", description: "Completed 20 hours of AWS Academy Cloud Foundations training." },
+  { title: "Data Analytics Essentials", year: "2026", issuer: "Cisco Networking Academy", dateEarned: "March 18, 2026", image: assets["dataAnalytics-certificate.png"], credentialUrl: "https://www.credly.com/badges/05ad9f3a-74c5-4ba4-bb8e-2c9793ac891f/public_url", description: "Completed training in data preparation, statistical analysis, and hands-on work with Excel, SQL, and Tableau." },
+  { title: "JavaScript Essentials 1", year: "2024", issuer: "Cisco Networking Academy / OpenEDG JS Institute", dateEarned: "October 25, 2024", image: assets["javascriptEssentials-certificate.png"], credentialUrl: "https://www.credly.com/badges/07f104b5-284c-4615-94f1-a488be2186e4/public_url", description: "Completed training in JavaScript fundamentals, including variables, data types, flow control, functions, and debugging." },
+  { title: "Artificial Intelligence Fundamentals", year: "2026", issuer: "IBM SkillsBuild", dateEarned: "March 3, 2026", image: assets["artificialIntelligenceFundamentals-certificate.png"], credentialUrl: "https://www.credly.com/badges/d35517bf-ac24-4008-8d1d-a75f53bac9ff/public_url", description: "Completed the requirements for the Artificial Intelligence Fundamentals credential from IBM SkillsBuild." },
+  { title: "Cyber Threat Management", year: "2026", issuer: "Cisco Networking Academy", dateEarned: "September 16, 2026", image: assets["cyberThreatManagement-certificate.png"], credentialUrl: "https://www.credly.com/badges/9bec74d6-e4e4-432e-88d9-c67c274980e8/public_url", description: "Completed training in vulnerability assessment, risk management, incident response, disaster recovery, and security investigations." },
+  { title: "Endpoint Security", year: "2025", issuer: "Cisco Networking Academy", dateEarned: "August 13, 2025", image: assets["endpointSecurity-certificate.png"], credentialUrl: "https://www.credly.com/badges/8950695f-169c-48e8-b65c-e021d687538f/public_url", description: "Completed training in endpoint security, network threat mitigation, malware analysis, and secure network configuration." }
 ];
 export default function Certificates({ onCardClick }) {
   return <section id="certificates" aria-labelledby="certificates-title">
@@ -13,7 +16,7 @@ export default function Certificates({ onCardClick }) {
     <div className="certificates-grid">{certificates.map(certificate => <article className="certificate-card" key={certificate.title}>
       <h3>{certificate.title}</h3>
       <div className="certificate-footer">
-        <button onClick={() => onCardClick({ title: certificate.title, description: `Earned in ${certificate.year}. The certificate document has not been added to this portfolio yet.` })}><img src={assets["view-certificate.png"]} alt="" />View Certificate</button>
+        <button onClick={() => onCardClick({ ...certificate, type: "certificate" })}><img src={assets["view-certificate.png"]} alt="" />View Certificate</button>
         <span>{certificate.year}</span>
       </div>
     </article>)}</div>

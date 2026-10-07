@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Overlay from "./Overlay";
+import ProjectPreview from "./ProjectPreview";
 import usePortfolioMotion from "./usePortfolioMotion";
 import Hero from "./sections/Hero";
 import Projects from "./sections/Projects";
@@ -61,16 +62,44 @@ export default function ProfessionalSide() {
     </div>
     <div className="green-world"><Experience /><Education /></div>
     <div className="blue-sky closing"><Certificates onCardClick={setActiveItem} /><Contact /></div>
-    <Overlay className={activeItem?.techStack ? "project-overlay" : ""} isOpen={!!activeItem} onClose={() => setActiveItem(null)}>{activeItem && (activeItem.techStack ? <div className="project-detail-scroll" tabIndex={0} aria-label="Project details">
+    <Overlay className={activeItem?.techStack ? "project-overlay" : activeItem?.type === "certificate" ? "project-overlay certificate-overlay" : ""} isOpen={!!activeItem} onClose={() => setActiveItem(null)}>{activeItem && (activeItem.techStack ? <div className="project-detail-scroll" tabIndex={0} aria-label="Project details">
       <div className="project-detail-layout">
-        <div className="project-detail-preview"><img src={activeItem.image} alt={activeItem.title + " preview"} /></div>
+        <ProjectPreview key={activeItem.image} image={activeItem.image} title={activeItem.title} />
         <div className="project-detail-copy">
+          <div className="project-detail-body">
+          <div className="project-detail-summary">
           <span className="project-detail-label">{activeItem.projectType || "Selected project"}</span>
           <h2 id="detail-title">{activeItem.title}</h2>
           <p>{activeItem.description}</p>
+          </div>
+          <div className="project-detail-actions">
+          {activeItem.githubUrl ? <a className="project-code-button" href={activeItem.githubUrl} target="_blank" rel="noreferrer"><img src={assets["github-logo.png"]} alt="" />GitHub Code</a> : <button className="project-code-button" disabled title="Code link unavailable"><img src={assets["github-logo.png"]} alt="" />GitHub Code</button>}
+          </div>
           <div className="project-detail-technologies"><h3>Built with</h3><div className="tags">{activeItem.techStack.map(tag => <span key={tag}>{tag}</span>)}</div></div>
-          {activeItem.githubUrl ? <a className="project-code-button" href={activeItem.githubUrl} target="_blank" rel="noreferrer"><img src={assets["github-logo.png"]} alt="" />GitHub code</a> : <button className="project-code-button" disabled title={activeItem.codeStatus || "Repository link hasn't been added yet"}><img src={assets["github-logo.png"]} alt="" />GitHub code</button>}
-          {!activeItem.githubUrl && <span className="project-code-note">{activeItem.codeStatus}</span>}
+          </div>
+
+        </div>
+      </div>
+    </div> : activeItem.type === "certificate" ? <div className="project-detail-scroll" tabIndex={0} aria-label="Certificate details">
+      <div className="project-detail-layout certificate-detail-layout">
+        <div className="certificate-detail-preview">
+          <img className="certificate-detail-image" src={activeItem.image} alt={`${activeItem.title} certificate`} />
+        </div>
+        <div className="project-detail-copy">
+          <div className="project-detail-body">
+            <div className="project-detail-summary">
+              <span className="project-detail-label">Certificate</span>
+              <h2 id="detail-title">{activeItem.title}</h2>
+              <p>{activeItem.description}</p>
+            </div>
+            <dl className="certificate-detail-meta">
+              <div><dt>Issued by</dt><dd>{activeItem.issuer}</dd></div>
+              <div><dt>Date earned</dt><dd>{activeItem.dateEarned}</dd></div>
+            </dl>
+            <div className="project-detail-actions">
+              {activeItem.credentialUrl ? <a className="project-code-button" href={activeItem.credentialUrl} target="_blank" rel="noreferrer">View Credential</a> : <button className="project-code-button" disabled title="Credential link coming soon">View Credential</button>}
+            </div>
+          </div>
         </div>
       </div>
     </div> : <>
