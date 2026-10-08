@@ -44,6 +44,7 @@
   --space-24: clamp(3rem, 2rem + 4vw, 6rem);
 
   /* Border radii */
+  --radius-none: 0;
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 1rem;
@@ -189,10 +190,21 @@
   --size-reading-card-max-width: 10.875rem;
   --ratio-reading-cover: 174 / 250;
   --space-reading-cover-inset: .3125rem;
-  --border-reading-cover: 2px solid var(--color-navy);
+  --size-reading-cover-border: 2px;
+  --border-reading-cover: var(--size-reading-cover-border) solid var(--color-navy);
   --color-reading-rating-placeholder: color-mix(in srgb, var(--color-cobalt) 35%, transparent);
   --color-reading-rating: var(--color-cobalt);
   --color-reading-author: color-mix(in srgb, var(--color-navy) 75%, transparent);
+  --size-reading-peek-width: clamp(18rem, 32vw, 24rem);
+  --size-reading-peek-cover: 6rem;
+  --color-reading-peek: color-mix(in srgb, var(--color-navy) 80%, var(--color-cobalt));
+  --color-reading-peek-text: var(--color-cream);
+  --color-reading-peek-muted: color-mix(in srgb, var(--color-cream) 75%, transparent);
+  --border-reading-peek-divider: 1px solid color-mix(in srgb, var(--color-cream) 25%, transparent);
+  --color-reading-genre: color-mix(in srgb, var(--color-lavender) 45%, var(--color-cream));
+  --motion-reading-peek-duration: .5s;
+  --motion-reading-peek-exit-duration: .3s;
+  --motion-reading-peek-ease: var(--motion-room-menu-ease);
 
   /* DS-style Game Shelf */
   --font-game: 'Pixelify Sans', monospace;
@@ -2609,8 +2621,7 @@ section {
 @media (prefers-reduced-motion: no-preference) {
   .personal-room .overlay-content[open] {
     transform-origin:
-      calc(var(--room-overlay-origin-x, 50vw) - 50vw + 50%)
-      calc(var(--room-overlay-origin-y, 50svh) - 50svh + 50%);
+      calc(var(--room-overlay-origin-x, 50vw) - 50vw + 50%) calc(var(--room-overlay-origin-y, 50svh) - 50svh + 50%);
     animation: personal-overlay-enter var(--motion-personal-overlay-duration) var(--motion-personal-overlay-ease) both;
   }
 
@@ -2623,12 +2634,20 @@ section {
   0% {
     transform: scale(var(--scale-personal-overlay-start)) rotate(var(--rotation-personal-overlay-start));
   }
-  100% { transform: scale(1) rotate(0deg); }
+
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
 }
 
 @keyframes personal-backdrop-enter {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .overlay-content.pc-overlay {
@@ -3480,6 +3499,297 @@ section {
 }
 
 /* Reading List uses the Watchlist shell with the Figma cover-frame cards. */
+.reading-list-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "collections";
+  flex: 1;
+  min-height: 0;
+}
+
+.reading-list-layout.has-peek {
+  grid-template-columns: minmax(0, 1fr) var(--size-reading-peek-width);
+  grid-template-areas: "collections peek";
+}
+
+.reading-list-collections {
+  min-width: 0;
+  grid-area: collections;
+}
+
+.has-peek .reading-list-collections {
+  scrollbar-width: none;
+  scrollbar-gutter: auto;
+}
+
+.has-peek .reading-list-collections::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.has-peek .reading-list-collections .watchlist-cards {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.reading-list-card-button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: var(--border-none);
+  background: transparent;
+  color: var(--color-navy);
+  font-family: var(--font-body);
+  text-align: left;
+  cursor: pointer;
+}
+
+.reading-list-card-button:focus-visible {
+  outline: var(--border-action);
+  outline-offset: var(--space-1);
+}
+
+.reading-list-card-button[aria-expanded="true"] .reading-list-cover-frame,
+.reading-list-card-button:hover .reading-list-cover-frame {
+  background: var(--color-periwinkle);
+}
+
+.reading-list-peek {
+  position: relative;
+  grid-area: peek;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+  margin: 0 var(--space-watchlist-inset) var(--space-6) 0;
+  padding: calc(var(--space-reading-cover-inset) + var(--size-reading-cover-border));
+  border: var(--border-reading-cover);
+  background: var(--color-reading-peek);
+  color: var(--color-reading-peek-text);
+  box-shadow: inset 0 0 0 var(--space-reading-cover-inset) var(--color-steel), var(--shadow-button);
+  border-radius: var(--radius-lg);
+}
+
+.reading-list-peek::before {
+  content: "";
+  position: absolute;
+  inset: var(--space-reading-cover-inset);
+  border: var(--border-reading-cover);
+  border-radius: calc(var(--radius-lg) - var(--space-reading-cover-inset));
+  pointer-events: none;
+}
+
+.reading-list-peek-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: var(--border-divider);
+  color: var(--color-steel);
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+}
+
+.reading-list-peek-close {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: var(--space-8);
+  height: var(--space-8);
+  padding: 0;
+  border: var(--border-none);
+  border-radius: var(--radius-none);
+  background: transparent;
+  color: var(--color-reading-peek-text);
+  cursor: pointer;
+}
+
+.reading-list-peek-close svg {
+  width: var(--font-size-lg);
+  height: var(--font-size-lg);
+}
+
+.reading-list-peek-close:hover {
+  color: var(--color-periwinkle);
+}
+
+.reading-list-peek .reading-list-peek-scroll {
+  margin: var(--space-3);
+  padding: var(--space-2) var(--space-3) var(--space-4);
+  scrollbar-width: none;
+  scrollbar-gutter: auto;
+}
+
+.reading-list-peek-scroll::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.reading-list-peek-summary {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.reading-list-peek-cover {
+  width: var(--size-reading-peek-cover);
+  height: auto;
+  flex-shrink: 0;
+  border: var(--border-reading-cover);
+  border-radius: var(--radius-md);
+}
+
+.reading-list-peek h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-tight);
+  overflow-wrap: anywhere;
+}
+
+.reading-list-peek h3:focus-visible {
+  outline: var(--border-action);
+  outline-offset: var(--space-1);
+}
+
+.overlay-content .reading-list-peek p {
+  margin: var(--space-2) 0 0;
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-body);
+}
+
+.overlay-content .reading-list-peek .reading-list-peek-author {
+  font-size: var(--font-size-sm);
+  color: var(--color-reading-author);
+}
+
+.reading-list-peek-genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.reading-list-peek-genres>span {
+  padding: var(--space-1) var(--space-3);
+  border: var(--border-action);
+  border-radius: var(--radius-md);
+  background: var(--color-reading-genre);
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+}
+
+.reading-list-peek-meta {
+  display: grid;
+  gap: var(--space-3);
+  margin: var(--space-6) 0 0;
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+}
+
+.reading-list-peek-meta dt {
+  color: var(--color-steel);
+  font-size: var(--font-size-sm);
+}
+
+.reading-list-peek-meta dd {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin: var(--space-1) 0 0;
+}
+
+.reading-list-peek-meta dd>span:not(.reading-list-rating) {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.reading-list-peek-meta .watchlist-icon {
+  width: var(--font-size-base);
+  height: var(--font-size-base);
+}
+
+.reading-list-peek-section {
+  min-height: 0;
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: var(--border-divider);
+}
+
+.reading-list-peek-section h4 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+}
+
+.reading-list-peek-placeholder {
+  color: var(--color-reading-author);
+  font-style: italic;
+}
+
+.reading-list-peek .reading-list-peek-toolbar,
+.reading-list-peek .reading-list-peek-meta dt,
+.overlay-content .reading-list-peek .reading-list-peek-author,
+.reading-list-peek .reading-list-peek-placeholder {
+  color: var(--color-reading-peek-muted);
+}
+
+.reading-list-peek .reading-list-peek-toolbar {
+  border-bottom: var(--border-reading-peek-divider);
+}
+
+.reading-list-peek .reading-list-peek-section {
+  border-top: var(--border-reading-peek-divider);
+}
+
+.reading-list-peek-genres>span {
+  color: var(--color-navy);
+}
+
+.reading-list-peek .reading-list-rating .is-rated {
+  color: var(--color-periwinkle);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reading-list-peek {
+    transform: translateX(calc(100% + var(--space-watchlist-inset) + var(--space-4)));
+    transition: transform var(--motion-reading-peek-exit-duration) var(--motion-reading-peek-ease);
+  }
+
+  .reading-list-peek.is-visible { transform: translateX(0); transition-duration: var(--motion-reading-peek-duration); }
+
+  .reading-list-cover-frame {
+    transition: background var(--motion-card-duration) var(--motion-card-ease);
+  }
+}
+
+
+@media (max-width: 1000px) {
+  .has-peek .reading-list-collections .watchlist-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .reading-list-layout.has-peek {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "peek";
+  }
+
+  .has-peek .reading-list-collections {
+    display: none;
+  }
+
+  .reading-list-peek {
+    margin-left: var(--space-watchlist-inset);
+  }
+}
+
 .reading-list-card {
   width: 100%;
   max-width: var(--size-reading-card-max-width);

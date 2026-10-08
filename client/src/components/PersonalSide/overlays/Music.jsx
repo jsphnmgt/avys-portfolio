@@ -50,10 +50,10 @@ export default function Music({ isOpen = false, onClose }) {
     <header className="watchlist-header music-header">
       <h2 id="detail-title"><CollectionIcon name="music" />Music Corner</h2>
       <div className="music-navigation">
-      <div className="music-tabs" role="tablist" aria-label="Music collections">
-        {tabs.map((tab, index) => <button key={tab.id} role="tab" id={`music-tab-${tab.id}`} aria-selected={activeTab === tab.id} aria-controls="music-panel" tabIndex={activeTab === tab.id ? 0 : -1} ref={element => { tabRefs.current[index] = element; }} onClick={() => setActiveTab(tab.id)} onKeyDown={event => navigateTabs(event, index)}><span className="music-tab-label">{tab.label}</span></button>)}
-      </div>
-      <button className="music-close" onClick={onClose} aria-label="Close Music Corner"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5 19 19M19 5 5 19" /></svg></button>
+        <div className="music-tabs" role="tablist" aria-label="Music collections">
+          {tabs.map((tab, index) => <button key={tab.id} role="tab" id={`music-tab-${tab.id}`} aria-selected={activeTab === tab.id} aria-controls="music-panel" tabIndex={activeTab === tab.id ? 0 : -1} ref={element => { tabRefs.current[index] = element; }} onClick={() => setActiveTab(tab.id)} onKeyDown={event => navigateTabs(event, index)}><span className="music-tab-label">{tab.label}</span></button>)}
+        </div>
+        <button className="music-close" onClick={onClose} aria-label="Close Music Corner"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5 19 19M19 5 5 19" /></svg></button>
       </div>
     </header>
     <div className="watchlist-scroll music-scroll" role="region" aria-label="Music Corner content" tabIndex={0}>
