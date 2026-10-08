@@ -1,0 +1,440 @@
+{
+  "catalog": {
+    "akame": {
+      "title": "Akame ga Kill!",
+      "type": "Anime series",
+      "image": "watchlist-akame.jpg",
+      "source": "https://myanimelist.net/anime/22199",
+      "sourceTitle": "Akame ga Kill!"
+    },
+    "assassination-2": {
+      "title": "Assassination Classroom 2nd Season",
+      "type": "Anime series",
+      "image": "watchlist-assassination-2.jpg",
+      "source": "https://myanimelist.net/anime/30654",
+      "sourceTitle": "Ansatsu Kyoushitsu 2nd Season"
+    },
+    "danganronpa": {
+      "title": "Danganronpa: The Animation",
+      "type": "Anime series",
+      "image": "watchlist-danganronpa.jpg",
+      "source": "https://myanimelist.net/anime/16592",
+      "sourceTitle": "Danganronpa: Kibou no Gakuen to Zetsubou no Koukousei The Animation"
+    },
+    "demon-slayer": {
+      "title": "Demon Slayer: Kimetsu no Yaiba",
+      "type": "Anime series",
+      "image": "watchlist-demon-slayer.jpg",
+      "source": "https://myanimelist.net/anime/38000",
+      "sourceTitle": "Kimetsu no Yaiba"
+    },
+    "haikyuu-3": {
+      "title": "Haikyuu!! 3rd Season",
+      "type": "Anime series",
+      "image": "watchlist-haikyuu-3.jpg",
+      "source": "https://myanimelist.net/anime/32935",
+      "sourceTitle": "Haikyuu!! Karasuno Koukou vs. Shiratorizawa Gakuen Koukou"
+    },
+    "hunter": {
+      "title": "Hunter x Hunter",
+      "type": "Anime series",
+      "image": "watchlist-hunter.jpg",
+      "source": "https://myanimelist.net/anime/11061",
+      "sourceTitle": "Hunter x Hunter (2011)"
+    },
+    "promised-neverland": {
+      "title": "The Promised Neverland",
+      "type": "Anime series",
+      "image": "watchlist-promised-neverland.jpg",
+      "source": "https://myanimelist.net/anime/37779",
+      "sourceTitle": "Yakusoku no Neverland"
+    },
+    "tokyo-ghoul": {
+      "title": "Tokyo Ghoul",
+      "type": "Anime series",
+      "image": "watchlist-tokyo-ghoul.jpg",
+      "source": "https://myanimelist.net/anime/22319",
+      "sourceTitle": "Tokyo Ghoul"
+    },
+    "arrietty": {
+      "title": "The Secret World of Arrietty",
+      "type": "Anime movie",
+      "image": "watchlist-arrietty.jpg",
+      "source": "https://myanimelist.net/anime/7711",
+      "sourceTitle": "Karigurashi no Arrietty"
+    },
+    "weathering": {
+      "title": "Weathering With You",
+      "type": "Anime movie",
+      "image": "watchlist-weathering.jpg",
+      "source": "https://myanimelist.net/anime/38826",
+      "sourceTitle": "Tenki no Ko"
+    },
+    "spirited-away": {
+      "title": "Spirited Away",
+      "type": "Anime movie",
+      "image": "watchlist-spirited-away.jpg",
+      "source": "https://myanimelist.net/anime/199",
+      "sourceTitle": "Sen to Chihiro no Kamikakushi"
+    },
+    "one-piece": {
+      "title": "One Piece",
+      "type": "Anime series",
+      "image": "watchlist-one-piece.jpg",
+      "source": "https://myanimelist.net/anime/21",
+      "sourceTitle": "One Piece"
+    },
+    "charlotte": {
+      "title": "Charlotte",
+      "type": "Anime series",
+      "image": "watchlist-charlotte.jpg",
+      "source": "https://myanimelist.net/anime/28999",
+      "sourceTitle": "Charlotte"
+    },
+    "hello-world": {
+      "title": "Hello World",
+      "type": "Anime movie",
+      "image": "watchlist-hello-world.jpg",
+      "source": "https://myanimelist.net/anime/38816",
+      "sourceTitle": "Hello World"
+    },
+    "your-name": {
+      "title": "Your Name",
+      "type": "Anime movie",
+      "image": "watchlist-your-name.jpg",
+      "source": "https://myanimelist.net/anime/32281",
+      "sourceTitle": "Kimi no Na wa."
+    },
+    "angels-of-death": {
+      "title": "Angels of Death",
+      "type": "Anime series",
+      "image": "watchlist-angels-of-death.jpg",
+      "source": "https://myanimelist.net/anime/35994",
+      "sourceTitle": "Satsuriku no Tenshi"
+    },
+    "classroom-elite": {
+      "title": "Classroom of the Elite",
+      "type": "Anime series",
+      "image": "watchlist-classroom-elite.jpg",
+      "source": "https://myanimelist.net/anime/35507",
+      "sourceTitle": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e"
+    },
+    "kiki": {
+      "title": "Kiki's Delivery Service",
+      "type": "Anime movie",
+      "image": "watchlist-kiki.jpg",
+      "source": "https://myanimelist.net/anime/512",
+      "sourceTitle": "Majo no Takkyuubin"
+    },
+    "totoro": {
+      "title": "My Neighbor Totoro",
+      "type": "Anime movie",
+      "image": "watchlist-totoro.jpg",
+      "source": "https://myanimelist.net/anime/523",
+      "sourceTitle": "Tonari no Totoro"
+    },
+    "noragami": {
+      "title": "Noragami",
+      "type": "Anime series",
+      "image": "watchlist-noragami.jpg",
+      "source": "https://myanimelist.net/anime/20507",
+      "sourceTitle": "Noragami"
+    },
+    "another": {
+      "title": "Another",
+      "type": "Anime series",
+      "image": "watchlist-another.jpg",
+      "source": "https://myanimelist.net/anime/11111",
+      "sourceTitle": "Another"
+    },
+    "death-parade": {
+      "title": "Death Parade",
+      "type": "Anime series",
+      "image": "watchlist-death-parade.jpg",
+      "source": "https://myanimelist.net/anime/28223",
+      "sourceTitle": "Death Parade"
+    },
+    "mugen-train": {
+      "title": "Demon Slayer: The Movie — Mugen Train",
+      "type": "Anime movie",
+      "image": "watchlist-mugen-train.jpg",
+      "source": "https://myanimelist.net/anime/40456",
+      "sourceTitle": "Kimetsu no Yaiba Movie: Mugen Ressha-hen"
+    },
+    "erased": {
+      "title": "Erased",
+      "type": "Anime series",
+      "image": "watchlist-erased.jpg",
+      "source": "https://myanimelist.net/anime/31043",
+      "sourceTitle": "Boku dake ga Inai Machi"
+    },
+    "haikyuu": {
+      "title": "Haikyuu!!",
+      "type": "Anime series",
+      "image": "watchlist-haikyuu.jpg",
+      "source": "https://myanimelist.net/anime/20583",
+      "sourceTitle": "Haikyuu!!"
+    },
+    "haikyuu-2": {
+      "title": "Haikyuu!! 2nd Season",
+      "type": "Anime series",
+      "image": "watchlist-haikyuu-2.jpg",
+      "source": "https://myanimelist.net/anime/28891",
+      "sourceTitle": "Haikyuu!! Second Season"
+    },
+    "haikyuu-top": {
+      "title": "Haikyuu!! To the Top",
+      "type": "Anime series",
+      "image": "watchlist-haikyuu-top.jpg",
+      "source": "https://myanimelist.net/anime/38883",
+      "sourceTitle": "Haikyuu!! To the Top"
+    },
+    "haikyuu-top-2": {
+      "title": "Haikyuu!! To the Top 2nd Season",
+      "type": "Anime series",
+      "image": "watchlist-haikyuu-top-2.jpg",
+      "source": "https://myanimelist.net/anime/40776",
+      "sourceTitle": "Haikyuu!! To the Top Part 2"
+    },
+    "jujutsu-kaisen": {
+      "title": "Jujutsu Kaisen",
+      "type": "Anime series",
+      "image": "watchlist-jujutsu-kaisen.jpg",
+      "source": "https://myanimelist.net/anime/40748",
+      "sourceTitle": "Jujutsu Kaisen"
+    },
+    "iruma": {
+      "title": "Welcome to Demon School! Iruma-kun",
+      "type": "Anime series",
+      "image": "watchlist-iruma.jpg",
+      "source": "https://myanimelist.net/anime/39196",
+      "sourceTitle": "Mairimashita! Iruma-kun"
+    },
+    "iruma-2": {
+      "title": "Welcome to Demon School! Iruma-kun 2nd Season",
+      "type": "Anime series",
+      "image": "watchlist-iruma-2.jpg",
+      "source": "https://myanimelist.net/anime/41402",
+      "sourceTitle": "Mairimashita! Iruma-kun 2nd Season"
+    },
+    "assassination": {
+      "title": "Assassination Classroom",
+      "type": "Anime series",
+      "image": "watchlist-assassination.jpg",
+      "source": "https://myanimelist.net/anime/24833",
+      "sourceTitle": "Ansatsu Kyoushitsu"
+    },
+    "entertainment-district": {
+      "title": "Demon Slayer: Entertainment District Arc",
+      "type": "Anime series",
+      "image": "watchlist-entertainment-district.jpg",
+      "source": "https://myanimelist.net/anime/47778",
+      "sourceTitle": "Kimetsu no Yaiba: Yuukaku-hen"
+    },
+    "iruma-3": {
+      "title": "Welcome to Demon School! Iruma-kun 3rd Season",
+      "type": "Anime series",
+      "image": "watchlist-iruma-3.jpg",
+      "source": "https://myanimelist.net/anime/49784",
+      "sourceTitle": "Mairimashita! Iruma-kun 3rd Season"
+    },
+    "tangerines": {
+      "title": "When Life Gives You Tangerines",
+      "type": "K-drama series",
+      "image": "watchlist-tangerines.jpg",
+      "source": "https://www.tvmaze.com/shows/74399/when-life-gives-you-tangerines",
+      "sourceTitle": "When Life Gives You Tangerines"
+    },
+    "while-sleeping": {
+      "title": "While You Were Sleeping",
+      "type": "K-drama series",
+      "image": "watchlist-while-sleeping.jpg",
+      "source": "https://www.tvmaze.com/shows/23936/while-you-were-sleeping",
+      "sourceTitle": "While You Were Sleeping"
+    },
+    "graceful-family": {
+      "title": "Graceful Family",
+      "type": "K-drama series",
+      "image": "watchlist-graceful-family.jpg",
+      "source": "https://www.tvmaze.com/shows/42895/graceful-family",
+      "sourceTitle": "Graceful Family"
+    },
+    "attorney-woo": {
+      "title": "Extraordinary Attorney Woo",
+      "type": "K-drama series",
+      "image": "watchlist-attorney-woo.jpg",
+      "source": "https://www.tvmaze.com/shows/62357/extraordinary-attorney-woo",
+      "sourceTitle": "Extraordinary Attorney Woo"
+    },
+    "mr-queen": {
+      "title": "Mr. Queen",
+      "type": "K-drama series",
+      "image": "watchlist-mr-queen.jpg",
+      "source": "https://www.tvmaze.com/shows/51568/mr-queen",
+      "sourceTitle": "Mr. Queen"
+    },
+    "dear-x": {
+      "title": "Dear X",
+      "type": "K-drama series",
+      "image": "watchlist-dear-x.jpg",
+      "source": "https://www.tvmaze.com/shows/86342/dear-x",
+      "sourceTitle": "Dear X"
+    },
+    "alice-borderland": {
+      "title": "Alice in Borderland",
+      "type": "Japanese series",
+      "image": "watchlist-alice-borderland.jpg",
+      "source": "https://www.tvmaze.com/shows/50036/alice-in-borderland",
+      "sourceTitle": "Alice in Borderland"
+    },
+    "unwritten-seoul": {
+      "title": "Our Unwritten Seoul",
+      "type": "K-drama series",
+      "image": "watchlist-unwritten-seoul.jpg",
+      "source": "https://www.tvmaze.com/shows/84106/our-unwritten-seoul",
+      "sourceTitle": "Our Unwritten Seoul"
+    },
+    "perfect-crown": {
+      "title": "Perfect Crown",
+      "type": "K-drama series",
+      "image": "watchlist-perfect-crown.jpg",
+      "source": "https://www.tvmaze.com/shows/81369/perfect-crown",
+      "sourceTitle": "Perfect Crown"
+    },
+    "hells-kitchen-vegas": {
+      "title": "Hell's Kitchen: Las Vegas",
+      "type": "American series",
+      "image": "watchlist-hells-kitchen-vegas.jpg",
+      "source": "https://www.tvmaze.com/shows/253/hells-kitchen",
+      "sourceTitle": "Hell's Kitchen"
+    },
+    "hells-kitchen-ages": {
+      "title": "Hell's Kitchen: Battle of the Ages",
+      "type": "American series",
+      "image": "watchlist-hells-kitchen-ages.jpg",
+      "source": "https://www.tvmaze.com/shows/253/hells-kitchen",
+      "sourceTitle": "Hell's Kitchen"
+    },
+    "enola-holmes": {
+      "title": "Enola Holmes",
+      "type": "American movie",
+      "image": "watchlist-enola-holmes.jpg",
+      "source": "https://en.wikipedia.org/wiki/Enola_Holmes_(film)",
+      "sourceTitle": "Enola Holmes (film)"
+    },
+    "enola-holmes-2": {
+      "title": "Enola Holmes 2",
+      "type": "American movie",
+      "image": "watchlist-enola-holmes-2.jpg",
+      "source": "https://en.wikipedia.org/wiki/Enola_Holmes_2",
+      "sourceTitle": "Enola Holmes 2"
+    },
+    "witch": {
+      "title": "The Witch: Part 1. The Subversion",
+      "type": "Korean movie",
+      "image": "watchlist-witch.jpg",
+      "source": "https://en.wikipedia.org/wiki/The_Witch%3A_Part_1._The_Subversion",
+      "sourceTitle": "The Witch: Part 1. The Subversion"
+    },
+    "ready-or-not": {
+      "title": "Ready or Not",
+      "type": "American movie",
+      "image": "watchlist-ready-or-not.jpg",
+      "source": "https://en.wikipedia.org/wiki/Ready_or_Not_(2019_film)",
+      "sourceTitle": "Ready or Not (2019 film)"
+    },
+    "infinity-castle": {
+      "title": "Demon Slayer: Infinity Castle",
+      "type": "Anime movie",
+      "image": "watchlist-infinity-castle.jpg",
+      "source": "https://en.wikipedia.org/wiki/Demon_Slayer%3A_Kimetsu_no_Yaiba_%E2%80%93_The_Movie%3A_Infinity_Castle",
+      "sourceTitle": "Demon Slayer: Kimetsu no Yaiba – The Movie: Infinity Castle"
+    },
+    "weightlifting": {
+      "title": "Weightlifting Fairy Kim Bok-joo",
+      "type": "K-drama series",
+      "image": "watchlist-weightlifting.jpg",
+      "source": "https://www.tvmaze.com/shows/18860/weightlifting-fairy-kim-bok-joo",
+      "sourceTitle": "Weightlifting Fairy Kim Bok Joo"
+    },
+    "ready-or-not-2": {
+      "title": "Ready or Not 2: Here I Come",
+      "type": "American movie",
+      "image": "watchlist-ready-or-not-2.jpg",
+      "source": "https://en.wikipedia.org/wiki/Ready_or_Not_2%3A_Here_I_Come",
+      "sourceTitle": "Ready or Not 2: Here I Come"
+    }
+  },
+  "favorites": [
+    "akame",
+    "assassination-2",
+    "danganronpa",
+    "demon-slayer",
+    "haikyuu-3",
+    "hunter",
+    "promised-neverland",
+    "tangerines",
+    "tokyo-ghoul",
+    "weightlifting",
+    "while-sleeping",
+    "arrietty",
+    "weathering",
+    "spirited-away"
+  ],
+  "watching": [
+    "one-piece"
+  ],
+  "watched": [
+    "akame",
+    "charlotte",
+    "hello-world",
+    "your-name",
+    "spirited-away",
+    "weathering",
+    "angels-of-death",
+    "classroom-elite",
+    "danganronpa",
+    "demon-slayer",
+    "hunter",
+    "kiki",
+    "totoro",
+    "noragami",
+    "arrietty",
+    "tokyo-ghoul",
+    "weightlifting",
+    "another",
+    "death-parade",
+    "mugen-train",
+    "enola-holmes",
+    "erased",
+    "graceful-family",
+    "haikyuu",
+    "haikyuu-3",
+    "haikyuu-2",
+    "haikyuu-top",
+    "haikyuu-top-2",
+    "jujutsu-kaisen",
+    "iruma",
+    "iruma-2",
+    "witch",
+    "while-sleeping",
+    "assassination",
+    "assassination-2",
+    "entertainment-district",
+    "enola-holmes-2",
+    "attorney-woo",
+    "mr-queen",
+    "promised-neverland",
+    "dear-x",
+    "alice-borderland",
+    "unwritten-seoul",
+    "tangerines",
+    "infinity-castle",
+    "hells-kitchen-vegas",
+    "hells-kitchen-ages",
+    "iruma-3",
+    "perfect-crown",
+    "ready-or-not",
+    "ready-or-not-2"
+  ]
+}

@@ -5,15 +5,29 @@ import { assets } from "../../../assets";
 
 const tabs = [
   { id: "songs", label: "Songs", heading: "Favorite Songs" },
-  { id: "playlists", label: "Playlists", heading: "Favorite Playlists", placeholder: "Playlist name" },
-  { id: "genres", label: "Genres", heading: "Favorite Genres", placeholder: "Genre name" },
-  { id: "artists", label: "Artists", heading: "Favorite Artists", placeholder: "Artist name" },
+  { id: "playlists", label: "Playlists", heading: "Favorite Playlists" },
+  { id: "genres", label: "Genres", heading: "Favorite Genres" },
+  { id: "artists", label: "Artists", heading: "Favorite Artists" },
 ];
 const songs = [
   { title: "Soho", artist: "Eirra", image: "music-soho.png", url: "https://open.spotify.com/track/6jp1yanUreiJO6hHP4c6Ph" },
   { title: "Setsuna Hanabi", artist: "TOMORROW X TOGETHER", image: "music-setsuna-hanabi.png" },
   { title: "Your Guardian Angel", artist: "The Red Jumpsuit Apparatus", image: "music-guardian-angel.png" },
   { title: "Tears in Your Eyes", artist: "MICO", image: "music-tears-in-your-eyes.png" },
+];
+const playlists = [
+  { title: "story of a warrior", image: "music-playlist-story-of-a-warrior.jpg", url: "https://open.spotify.com/playlist/6hCoLfgfq3AIt7sXHZzB9S?si=8d66589a0787405f" },
+  { title: "inner kogane", image: "music-playlist-inner-kogane.jpg", url: "https://open.spotify.com/playlist/0Mr3fPx1bl7SeckBzKDP4s?si=1ed62bd2a64f447e" },
+  { title: "ethereal𓂃 ࣪˖𐀔", image: "music-playlist-ethereal.jpg", url: "https://open.spotify.com/playlist/1lJfOPgJWb47u78InWdEQ1?si=65586f3ca7534ae6" },
+  { title: "serenity", image: "music-playlist-serenity.jpg", url: "https://open.spotify.com/playlist/1JtuMaI0wcEDNUt8mGs2vW?si=d2227eaa01df48be" },
+];
+
+const genres = ["Anime soundtracks", "OPM", "Pop Funk", "Pop", "J-Rock"];
+const artists = [
+  { title: "Jorge Rivera-Herrans", image: "favorite-artist-jorge.jpg" },
+  { title: "Olivia Rodrigo", image: "favorite-artist-olivia.jpg" },
+  { title: "TOMORROW X TOGETHER", image: "favorite-artist-txt.jpg" },
+  { title: "BigRicePiano", image: "favorite-artist-bigricepiano.jpg" },
 ];
 
 export default function Music({ isOpen = false, onClose }) {
@@ -43,7 +57,7 @@ export default function Music({ isOpen = false, onClose }) {
       </div>
     </header>
     <div className="watchlist-scroll music-scroll" role="region" aria-label="Music Corner content" tabIndex={0}>
-      <div className="music-layout">
+      <div className="music-layout" style={{ "--music-card-count": activeTab === "genres" ? genres.length : 4 }}>
         <div className="music-record" aria-hidden="true"><img key={activeTab} src={assets["music-vinyl.png"]} alt="" /></div>
         <section key={activeTab} className="music-panel" id="music-panel" role="tabpanel" aria-labelledby={`music-tab-${activeTab}`} tabIndex={0}>
           <h3>{current.heading}</h3>
@@ -52,8 +66,18 @@ export default function Music({ isOpen = false, onClose }) {
               <img src={assets[song.image]} alt="" />
               <span className="music-song-copy"><span className="music-song-title">{song.title}</span><span className="music-song-artist">{song.artist}</span></span>
             </a></li>)}
-          </ul> : <ul className="music-song-list" aria-label={`${current.label} placeholders`}>
-            {Array.from({ length: 4 }, (_, index) => <li key={index}><div className="music-song-card music-placeholder-card"><span className="music-placeholder-art" aria-hidden="true"><CollectionIcon name="music" /></span><span className="music-song-title">{current.placeholder}</span></div></li>)}
+          </ul> : activeTab === "playlists" ? <ul className="music-song-list" aria-label="Favorite playlists">
+            {playlists.map(playlist => <li key={playlist.title}><a className="music-song-card" href={playlist.url} target="_blank" rel="noopener noreferrer" aria-label={`Open ${playlist.title} on Spotify (opens in a new tab)`}>
+              <img src={assets[playlist.image]} alt="" />
+              <span className="music-song-title">{playlist.title}</span>
+            </a></li>)}
+          </ul> : activeTab === "genres" ? <ul className="music-song-list music-genre-list" aria-label="Favorite genres">
+            {genres.map((genre, index) => <li key={genre}><div className="music-song-card">
+              <span className="music-song-title">{genre}</span>
+              <span className="music-genre-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+            </div></li>)}
+          </ul> : <ul className="music-song-list" aria-label="Favorite artists">
+            {artists.map(artist => <li key={artist.title}><div className="music-song-card"><img src={assets[artist.image]} alt="" /><span className="music-song-title">{artist.title}</span></div></li>)}
           </ul>}
         </section>
       </div>

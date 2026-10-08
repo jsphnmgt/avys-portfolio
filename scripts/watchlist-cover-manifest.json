@@ -1,0 +1,343 @@
+{
+  "anime": [
+    [
+      "akame",
+      "Akame ga Kill!",
+      22199
+    ],
+    [
+      "assassination-2",
+      "Assassination Classroom 2nd Season",
+      30654
+    ],
+    [
+      "danganronpa",
+      "Danganronpa: The Animation",
+      16592
+    ],
+    [
+      "demon-slayer",
+      "Demon Slayer: Kimetsu no Yaiba",
+      38000
+    ],
+    [
+      "haikyuu-3",
+      "Haikyuu!! 3rd Season",
+      32935
+    ],
+    [
+      "hunter",
+      "Hunter x Hunter",
+      11061
+    ],
+    [
+      "promised-neverland",
+      "The Promised Neverland",
+      37779
+    ],
+    [
+      "tokyo-ghoul",
+      "Tokyo Ghoul",
+      22319
+    ],
+    [
+      "arrietty",
+      "The Secret World of Arrietty",
+      7711
+    ],
+    [
+      "weathering",
+      "Weathering With You",
+      38826
+    ],
+    [
+      "spirited-away",
+      "Spirited Away",
+      199
+    ],
+    [
+      "one-piece",
+      "One Piece",
+      21
+    ],
+    [
+      "charlotte",
+      "Charlotte",
+      28999
+    ],
+    [
+      "hello-world",
+      "Hello World",
+      38816
+    ],
+    [
+      "your-name",
+      "Your Name",
+      32281
+    ],
+    [
+      "angels-of-death",
+      "Angels of Death",
+      35994
+    ],
+    [
+      "classroom-elite",
+      "Classroom of the Elite",
+      35507
+    ],
+    [
+      "kiki",
+      "Kiki's Delivery Service",
+      512
+    ],
+    [
+      "totoro",
+      "My Neighbor Totoro",
+      523
+    ],
+    [
+      "noragami",
+      "Noragami",
+      20507
+    ],
+    [
+      "another",
+      "Another",
+      11111
+    ],
+    [
+      "death-parade",
+      "Death Parade",
+      28223
+    ],
+    [
+      "mugen-train",
+      "Demon Slayer: The Movie — Mugen Train",
+      40456
+    ],
+    [
+      "erased",
+      "Erased",
+      31043
+    ],
+    [
+      "haikyuu",
+      "Haikyuu!!",
+      20583
+    ],
+    [
+      "haikyuu-2",
+      "Haikyuu!! 2nd Season",
+      28891
+    ],
+    [
+      "haikyuu-top",
+      "Haikyuu!! To the Top",
+      38883
+    ],
+    [
+      "haikyuu-top-2",
+      "Haikyuu!! To the Top 2nd Season",
+      40776
+    ],
+    [
+      "jujutsu-kaisen",
+      "Jujutsu Kaisen",
+      40748
+    ],
+    [
+      "iruma",
+      "Welcome to Demon School! Iruma-kun",
+      39196
+    ],
+    [
+      "iruma-2",
+      "Welcome to Demon School! Iruma-kun 2nd Season",
+      41402
+    ],
+    [
+      "assassination",
+      "Assassination Classroom",
+      24833
+    ],
+    [
+      "entertainment-district",
+      "Demon Slayer: Entertainment District Arc",
+      47778
+    ],
+    [
+      "iruma-3",
+      "Welcome to Demon School! Iruma-kun 3rd Season",
+      49784
+    ]
+  ],
+  "shows": [
+    [
+      "tangerines",
+      "When Life Gives You Tangerines",
+      "Korean"
+    ],
+    [
+      "weightlifting",
+      "Weightlifting Fairy Kim Bok-joo",
+      "Korean"
+    ],
+    [
+      "while-sleeping",
+      "While You Were Sleeping",
+      "Korean"
+    ],
+    [
+      "graceful-family",
+      "Graceful Family",
+      "Korean"
+    ],
+    [
+      "attorney-woo",
+      "Extraordinary Attorney Woo",
+      "Korean"
+    ],
+    [
+      "mr-queen",
+      "Mr. Queen",
+      "Korean"
+    ],
+    [
+      "dear-x",
+      "Dear X",
+      "Korean"
+    ],
+    [
+      "alice-borderland",
+      "Alice in Borderland",
+      "Japanese"
+    ],
+    [
+      "unwritten-seoul",
+      "Our Unwritten Seoul",
+      "Korean"
+    ],
+    [
+      "perfect-crown",
+      "Perfect Crown",
+      "Korean"
+    ],
+    [
+      "hells-kitchen-vegas",
+      "Hell's Kitchen: Las Vegas",
+      "English"
+    ],
+    [
+      "hells-kitchen-ages",
+      "Hell's Kitchen: Battle of the Ages",
+      "English"
+    ]
+  ],
+  "movies": [
+    [
+      "enola-holmes",
+      "Enola Holmes",
+      "Enola_Holmes_(film)",
+      "Movie"
+    ],
+    [
+      "enola-holmes-2",
+      "Enola Holmes 2",
+      "Enola_Holmes_2",
+      "Movie"
+    ],
+    [
+      "witch",
+      "The Witch: Part 1. The Subversion",
+      "The_Witch:_Part_1._The_Subversion",
+      "Korean movie"
+    ],
+    [
+      "ready-or-not",
+      "Ready or Not",
+      "Ready_or_Not_(2019_film)",
+      "Movie"
+    ],
+    [
+      "ready-or-not-2",
+      "Ready or Not 2: Here I Come",
+      "Ready_or_Not_2:_Here_I_Come",
+      "Movie"
+    ],
+    [
+      "infinity-castle",
+      "Demon Slayer: Infinity Castle",
+      "Demon_Slayer:_Kimetsu_no_Yaiba_–_The_Movie:_Infinity_Castle",
+      "Anime movie"
+    ]
+  ],
+  "favorites": [
+    "akame",
+    "assassination-2",
+    "danganronpa",
+    "demon-slayer",
+    "haikyuu-3",
+    "hunter",
+    "promised-neverland",
+    "tangerines",
+    "tokyo-ghoul",
+    "weightlifting",
+    "while-sleeping",
+    "arrietty",
+    "weathering",
+    "spirited-away"
+  ],
+  "watched": [
+    "akame",
+    "charlotte",
+    "hello-world",
+    "your-name",
+    "spirited-away",
+    "weathering",
+    "angels-of-death",
+    "classroom-elite",
+    "danganronpa",
+    "demon-slayer",
+    "hunter",
+    "kiki",
+    "totoro",
+    "noragami",
+    "arrietty",
+    "tokyo-ghoul",
+    "weightlifting",
+    "another",
+    "death-parade",
+    "mugen-train",
+    "enola-holmes",
+    "erased",
+    "graceful-family",
+    "haikyuu",
+    "haikyuu-3",
+    "haikyuu-2",
+    "haikyuu-top",
+    "haikyuu-top-2",
+    "jujutsu-kaisen",
+    "iruma",
+    "iruma-2",
+    "witch",
+    "while-sleeping",
+    "assassination",
+    "assassination-2",
+    "entertainment-district",
+    "enola-holmes-2",
+    "attorney-woo",
+    "mr-queen",
+    "promised-neverland",
+    "dear-x",
+    "alice-borderland",
+    "unwritten-seoul",
+    "tangerines",
+    "infinity-castle",
+    "hells-kitchen-vegas",
+    "hells-kitchen-ages",
+    "iruma-3",
+    "perfect-crown",
+    "ready-or-not",
+    "ready-or-not-2"
+  ]
+}
