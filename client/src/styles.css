@@ -14,6 +14,7 @@
   --color-navy: #252932;
   --color-charcoal: #242424;
   --color-black: #000000;
+  --color-room-glow: #FFED29;
 
   --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
   --font-body: 'Crimson Text', Georgia, 'Times New Roman', serif;
@@ -69,6 +70,80 @@
   --shadow-overlay: 0 var(--space-6) var(--space-24) color-mix(in srgb, var(--color-navy) 35%, transparent);
   --overlay-backdrop: color-mix(in srgb, var(--color-navy) 65%, transparent);
   --overlay-scroll-track: color-mix(in srgb, var(--color-navy) 60%, transparent);
+
+  --shadow-room-hint: 0 var(--space-1) var(--space-2) var(--color-black);
+
+  /* Room object interaction */
+  --motion-room-hover-duration: .05s;
+  --motion-room-discovery-duration: 1.2s;
+  --border-room-menu: 1px solid var(--color-room-outline);
+  --motion-room-menu-duration: .85s;
+  --motion-room-menu-item-duration: .45s;
+  --motion-room-menu-stagger: .065s;
+  --motion-room-menu-ease: cubic-bezier(.22, .61, .36, 1);
+  --space-room-navigation-width: 16rem;
+  --space-room-navigation-trigger-width: 12rem;
+  --color-room-navigation: color-mix(in srgb, var(--color-room-door-indigo) 92%, transparent);
+  --shadow-room-object-rest: drop-shadow(0 0 0 transparent) drop-shadow(0 0 0 transparent);
+  --shadow-room-object-glow: drop-shadow(0 0 var(--space-1) var(--color-room-glow)) drop-shadow(0 0 var(--space-4) color-mix(in srgb, var(--color-room-glow) 70%, transparent));
+
+  /* Personal room entrance motion */
+  --motion-room-duration: 2s;
+  --motion-room-fade-duration: 3s;
+  --motion-room-button-delay: 2.6s;
+  --motion-room-controls-duration: .6s;
+  --motion-room-ease: cubic-bezier(.45, 0, .2, 1);
+  --motion-room-fade-ease: cubic-bezier(.22, .61, .36, 1);
+  --motion-room-enter-scale: .985;
+  --room-door-perspective: 140vw;
+  --color-room-door-indigo: #202855;
+  --color-room-door-purple: #39295B;
+  --color-room-door-edge: #515A87;
+  --color-room-door: linear-gradient(115deg, var(--color-room-door-indigo) 35%, var(--color-room-door-purple));
+  --border-room-door: 2px solid color-mix(in srgb, var(--color-room-door-edge) 65%, transparent);
+  --room-door-thickness: var(--space-8);
+  --color-room-door-side: linear-gradient(to right, var(--color-room-door-edge), var(--color-room-door-indigo));
+  --shadow-room-door: 0 var(--space-3) var(--space-8) color-mix(in srgb, var(--color-black) 45%, transparent);
+  --shadow-room-panel: inset var(--space-1) var(--space-1) var(--space-3) color-mix(in srgb, var(--color-black) 45%, transparent), inset calc(-1 * var(--space-1)) calc(-1 * var(--space-1)) var(--space-2) color-mix(in srgb, var(--color-room-door-edge) 35%, transparent);
+  --room-entrance-vignette: radial-gradient(ellipse at center, transparent 30%, var(--color-black) 85%);
+
+  /* Personal room navigation */
+  --color-room-button: #42495B;
+  --color-room-outline: #EADDCC;
+  --border-room-button: 2px solid var(--color-room-outline);
+  --font-size-room-button: 1.375rem;
+  --space-room-button-height: 2.125rem;
+  --space-room-button-width: 16.8125rem;
+  --space-room-top: clamp(var(--space-4), 1.770833vw, var(--space-room-button-height));
+  --space-room-inset: clamp(var(--space-4), 1.875vw, 2.25rem);
+
+  /* Personal computer desktop */
+  --personal-overlay-backdrop: color-mix(in srgb, var(--color-black) 82%, transparent);
+  --color-pc-window: color-mix(in srgb, var(--color-black) 80%, transparent);
+  --color-pc-taskbar: color-mix(in srgb, var(--color-charcoal) 88%, transparent);
+  --color-pc-selection: color-mix(in srgb, var(--color-white) 15%, transparent);
+  --color-pc-muted: #999999;
+  --color-pc-accent: #60CDFF;
+  --color-pc-close: #E84434;
+  --font-size-pc-ui: .625rem;
+  --font-size-pc-clock: var(--font-size-xs);
+  --radius-pc-monitor: 1.875rem;
+  --radius-pc-screen: calc(var(--radius-pc-monitor) - var(--pc-frame-inset));
+  --radius-pc-window: .4375rem;
+  --space-pc-frame: 1.25rem;
+  --space-pc-titlebar: 1.875rem;
+  --space-pc-navigation: 1.875rem;
+  --space-pc-tools: 2.8125rem;
+  --space-pc-sidebar: 9.375rem;
+  --space-pc-copy: 64ch;
+  --space-pc-window-max-width: 72rem;
+  --space-pc-window-max-height: 40rem;
+  --space-pc-sidebar-wide: clamp(var(--space-pc-sidebar), 11vw, 13rem);
+  --font-size-pc-copy-wide: clamp(var(--font-size-base), 1vw, var(--font-size-lg));
+  --border-pc-search: 1px solid var(--color-pc-accent);
+  --border-pc-icon: 1px solid var(--color-white);
+  --shadow-pc-monitor: 0 0 var(--space-16) var(--color-cobalt), 0 0 var(--space-8) var(--color-cobalt), 0 0 var(--space-3) var(--color-cobalt);
+  --shadow-pc-window: 0 var(--space-1) var(--space-6) color-mix(in srgb, var(--color-black) 25%, transparent), 0 var(--space-3) var(--space-16) color-mix(in srgb, var(--color-black) 25%, transparent);
 
   /* Generic role variables */
   --color-pure-white: var(--color-white);
@@ -1608,5 +1683,1088 @@ section {
   .nav-links a,
   .nav-links a::after {
     transition: none;
+  }
+}
+
+/* Personal side: full-screen room artwork. */
+.personal-room {
+  width: 100%;
+  height: 100svh;
+  min-height: 100svh;
+  overflow: hidden;
+  background: var(--color-black);
+  scroll-margin-top: 0;
+}
+
+.personal-room-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+}
+
+.room-back-button {
+  position: absolute;
+  top: var(--space-room-top);
+  right: var(--space-room-inset);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  width: var(--space-room-button-width);
+  min-height: var(--space-room-button-height);
+  padding: var(--space-1) var(--space-3);
+  border: var(--border-room-button);
+  border-radius: var(--radius-full);
+  background: var(--color-room-button);
+  color: var(--color-cream);
+  font-family: var(--font-body);
+  font-size: var(--font-size-room-button);
+  font-weight: var(--font-weight-regular);
+  line-height: 1;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.room-back-button img {
+  flex-shrink: 0;
+  transform: rotate(180deg);
+}
+
+.room-back-button:hover {
+  background: var(--color-navy);
+}
+
+.room-back-button:focus-visible {
+  outline-color: var(--color-cream);
+}
+
+@media (max-width: 600px) {
+  .room-back-button {
+    width: auto;
+    min-height: var(--space-12);
+    font-size: var(--font-size-lg);
+  }
+}
+
+/* Darkness fades in front of the doors as they open into the room. */
+.room-entrance {
+  display: none;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  perspective: var(--room-door-perspective);
+  pointer-events: none;
+}
+
+.room-entrance::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: var(--color-black);
+}
+
+.room-entrance-door {
+  position: absolute;
+  z-index: 1;
+  inset: 0 auto 0 0;
+  width: 50%;
+  transform-origin: left center;
+  transform-style: preserve-3d;
+}
+
+.room-door-face {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: var(--space-12);
+  padding: var(--space-12) var(--space-16);
+  background: var(--color-room-door);
+  border: var(--border-room-door);
+  box-shadow: var(--shadow-room-door);
+  backface-visibility: hidden;
+}
+
+.room-entrance-door::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: var(--room-door-thickness);
+  height: 100%;
+  background: var(--color-room-door-side);
+  transform-origin: left center;
+  transform: rotateY(90deg);
+  backface-visibility: hidden;
+}
+
+.room-entrance-door::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: var(--border-room-door);
+  background: var(--color-room-door);
+  box-shadow: var(--shadow-room-door);
+  transform: translateZ(calc(-1 * var(--room-door-thickness))) rotateY(180deg);
+  backface-visibility: hidden;
+}
+
+.room-entrance-door-right {
+  left: auto;
+  right: 0;
+  transform-origin: right center;
+}
+
+.room-entrance-door-right::before {
+  left: calc(-1 * var(--room-door-thickness));
+  transform-origin: right center;
+  transform: rotateY(-90deg);
+}
+
+.room-entrance-panel {
+  border: var(--border-room-door);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-room-panel);
+}
+
+.room-entrance-handle {
+  position: absolute;
+  right: var(--space-4);
+  top: 52%;
+  width: var(--space-12);
+  height: var(--space-3);
+  border: var(--border-thin);
+  border-radius: var(--radius-full);
+  background: var(--color-periwinkle);
+}
+
+.room-entrance-door-right .room-entrance-handle {
+  left: var(--space-4);
+  right: auto;
+}
+
+.room-back-button {
+  z-index: 2;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .room-entrance {
+    display: block;
+  }
+
+  .personal-room::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: var(--room-entrance-vignette);
+    pointer-events: none;
+  }
+
+  .personal-room.room-ready .room-scene {
+    animation: room-step-in var(--motion-room-duration) var(--motion-room-ease) both;
+  }
+
+  .room-ready .room-entrance {
+    animation: room-entrance-finish var(--motion-room-fade-duration) var(--motion-room-ease) both;
+  }
+
+  .room-ready .room-entrance::before {
+    animation: room-dark-reveal var(--motion-room-fade-duration) var(--motion-room-fade-ease) both;
+  }
+
+  .room-ready .room-entrance-door {
+    animation: room-left-door-open var(--motion-room-duration) var(--motion-room-ease) both;
+    will-change: transform;
+  }
+
+  .room-ready .room-entrance-door-right {
+    animation-name: room-right-door-open;
+  }
+
+  .personal-room.room-ready::after {
+    animation: room-vignette-reveal var(--motion-room-fade-duration) var(--motion-room-ease) both;
+  }
+
+  .personal-room.room-entered::after {
+    content: none;
+  }
+
+  .personal-room.room-ready:not(.room-entered) .room-scene,
+  .room-ready .room-entrance {
+    will-change: transform, opacity;
+  }
+
+  .personal-room.room-ready .room-back-button {
+    animation: room-controls-enter var(--motion-room-controls-duration) ease-out var(--motion-room-button-delay) both;
+  }
+
+  .personal-room .room-back-button:focus-visible {
+    animation: none;
+  }
+}
+
+@keyframes room-step-in {
+  0%, 60% { transform: scale(var(--motion-room-enter-scale)); }
+  100% { transform: scale(1); }
+}
+
+@keyframes room-dark-reveal {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes room-vignette-reveal {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes room-controls-enter {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes room-left-door-open {
+  0%, 6% { transform: rotateY(0deg); }
+  55% { transform: rotateY(-85deg); }
+  70%, 100% { transform: rotateY(-110deg); }
+}
+
+@keyframes room-right-door-open {
+  0%, 6% { transform: rotateY(0deg); }
+  55% { transform: rotateY(85deg); }
+  70%, 100% { transform: rotateY(110deg); }
+}
+
+@keyframes room-entrance-finish {
+  0%, 30% { transform: scale(1); }
+  70%, 100% { transform: scale(1.6); }
+}
+
+/* Keep artwork and object cutouts on one 1920 × 1080 coordinate plane. */
+.room-scene {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: max(100%, 177.777778svh);
+  height: max(100%, 56.25vw);
+}
+
+.room-objects {
+  position: absolute;
+  inset: 0;
+}
+
+.room-object {
+  position: absolute;
+  display: block;
+  padding: 0;
+  border: var(--border-none);
+  background: transparent;
+
+}
+
+.room-object img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: fill;
+  pointer-events: none;
+  user-select: none;
+  filter: var(--shadow-room-object-rest);
+  transition: filter var(--motion-room-hover-duration) var(--motion-card-ease);
+}
+
+.room-object-music {
+  inset: 70% 55.68% 14.63% 35.47%;
+}
+
+.room-object-music img {
+  height: 99.7%;
+}
+
+.room-object-computer {
+  inset: 47.31% 15.52% 43.43% 76.88%;
+}
+
+.room-object-computer img {
+  top: .5%;
+  height: 99%;
+}
+
+.room-object-watchlist {
+  inset: 27.96% 7.19% 55.46% 84.79%;
+}
+
+.room-object-watchlist img {
+  top: .28%;
+  width: 99.68%;
+  height: 99.72%;
+}
+
+.room-object-reading-list {
+  inset: 57.31% 26.72% 40.37% 68.18%;
+}
+
+.room-object-reading-list img {
+  left: 1.02%;
+  width: 98.98%;
+  height: 98%;
+}
+
+.room-object-game-shelf {
+  inset: 60.28% 80.42% 24.35% 14.43%;
+}
+
+.room-object-game-shelf img {
+  top: .3%;
+  height: 99.7%;
+}
+
+.room-object:focus-visible {
+  outline: none;
+}
+
+.room-object:focus-visible img {
+  filter: var(--shadow-room-object-glow);
+}
+
+@media (hover: hover) {
+  .room-object:hover img {
+    filter: var(--shadow-room-object-glow);
+  }
+}
+
+.room-object:active img {
+  filter: var(--shadow-room-object-glow);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .room-object img {
+    transition: none;
+  }
+}
+
+.room-explore-hint {
+  position: absolute;
+  bottom: var(--space-6);
+  left: 50%;
+  translate: -50% 0;
+  z-index: 2;
+  width: max-content;
+  max-width: calc(100% - var(--space-8));
+  color: var(--color-cream);
+  font-family: var(--font-body);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
+  text-align: center;
+  text-shadow: var(--shadow-room-hint);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .room-explore-hint {
+    animation: room-controls-enter var(--motion-room-controls-duration) ease-out both;
+  }
+}
+
+/* Object labels and an alternate menu make every room page discoverable. */
+.room-object-label {
+  position: absolute;
+  bottom: calc(100% + var(--space-2));
+  left: 50%;
+  translate: -50% 0;
+  padding: var(--space-1) var(--space-3);
+  border: var(--border-room-menu);
+  border-radius: var(--radius-md);
+  background: var(--color-navy);
+  color: var(--color-cream);
+  font-family: var(--font-body);
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-body);
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--motion-room-hover-duration) ease-out;
+}
+
+.room-object:focus-visible .room-object-label {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (hover: hover) {
+  .room-object:hover .room-object-label {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .room-entered.room-ready .room-object {
+    animation: room-discovery-glow var(--motion-room-discovery-duration) ease-in-out both;
+  }
+}
+
+@keyframes room-discovery-glow {
+  0%, 100% { filter: var(--shadow-room-object-rest); }
+  35%, 65% { filter: var(--shadow-room-object-glow); }
+}
+
+@media (max-width: 600px) {
+}
+
+@media (max-width: 600px) {
+}
+
+@media (prefers-reduced-motion: reduce) {
+}
+
+/* Room navigation: a quiet text button and a separate list of destinations. */
+.room-navigation {
+  position: absolute;
+  top: var(--space-room-top);
+  left: var(--space-room-inset);
+  z-index: 3;
+  color: var(--color-cream);
+  font-family: var(--font-body);
+}
+
+.room-navigation-toggle {
+  position: relative;
+  z-index: 1;
+  width: var(--space-room-navigation-trigger-width);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  min-height: var(--space-room-button-height);
+  padding: var(--space-1) var(--space-4);
+  border: var(--border-room-button);
+  border-radius: var(--radius-full);
+  background: var(--color-room-button);
+  color: var(--color-cream);
+  font-family: var(--font-body);
+  font-size: var(--font-size-xl);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+
+
+.room-navigation-panel {
+  position: absolute;
+  top: calc(100% + var(--space-3));
+  left: 0;
+  display: grid;
+  grid-template-rows: 0fr;
+  width: min(var(--space-room-navigation-width), calc(100vw - var(--space-room-inset) * 2));
+  border: var(--border-room-menu);
+  border-radius: var(--radius-xl);
+  background: var(--color-room-navigation);
+  backdrop-filter: blur(var(--space-2));
+  box-shadow: var(--shadow-button);
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: grid-template-rows var(--motion-room-menu-duration) var(--motion-room-menu-ease), opacity var(--motion-room-menu-item-duration) ease, visibility 0s var(--motion-room-menu-duration);
+}
+
+.room-navigation.is-open .room-navigation-panel {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0s;
+}
+
+.room-navigation-reveal {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.room-navigation-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  max-height: calc(100svh - var(--space-24));
+  overflow-y: auto;
+  padding: var(--space-4);
+}
+
+.room-navigation-heading {
+  padding: var(--space-1) var(--space-2) var(--space-3);
+  margin-bottom: var(--space-2);
+  border-bottom: var(--border-divider);
+  color: var(--color-lavender);
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+}
+
+.room-navigation-panel button {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-2);
+  border: var(--border-none);
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--color-cream);
+  font-family: var(--font-body);
+  font-size: var(--font-size-xl);
+  text-align: left;
+  transition: background var(--motion-room-hover-duration), color var(--motion-room-hover-duration);
+}
+
+.room-navigation-number {
+  color: var(--color-periwinkle);
+  font-size: var(--font-size-sm);
+}
+
+.room-navigation-panel button:hover,
+.room-navigation-panel button:focus-visible {
+  background: var(--color-room-button);
+  color: var(--color-room-glow);
+}
+
+.room-navigation-toggle:focus-visible,
+.room-navigation-panel button:focus-visible {
+  outline-color: var(--color-room-glow);
+}
+
+@media (max-width: 600px) {
+  .room-navigation {
+    top: calc(var(--space-room-top) + var(--space-12) + var(--space-3));
+  }
+
+  .room-navigation-toggle {
+    min-height: var(--space-12);
+    font-size: var(--font-size-lg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .room-navigation-panel,
+  .room-navigation-panel button {
+    transition: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .room-navigation-panel {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .room-navigation-panel button {
+    opacity: 0;
+    transform: translateY(calc(-1 * var(--space-2)));
+    transition: opacity var(--motion-room-menu-item-duration) ease-out, transform var(--motion-room-menu-item-duration) var(--motion-room-menu-ease), background var(--motion-room-hover-duration), color var(--motion-room-hover-duration);
+  }
+
+  .room-navigation.is-open .room-navigation-panel button {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: calc(var(--motion-room-menu-stagger) * var(--room-menu-item-index)), calc(var(--motion-room-menu-stagger) * var(--room-menu-item-index)), 0s, 0s;
+  }
+}
+
+.room-navigation-panel button:nth-of-type(1) { --room-menu-item-index: 1; }
+.room-navigation-panel button:nth-of-type(2) { --room-menu-item-index: 2; }
+.room-navigation-panel button:nth-of-type(3) { --room-menu-item-index: 3; }
+.room-navigation-panel button:nth-of-type(4) { --room-menu-item-index: 4; }
+.room-navigation-panel button:nth-of-type(5) { --room-menu-item-index: 5; }
+
+/* Personal-side dialogs keep the room dark and softly blurred behind them. */
+.personal-room .overlay-content::backdrop {
+  background: var(--personal-overlay-backdrop);
+  backdrop-filter: blur(var(--space-2));
+}
+
+.overlay-content.pc-overlay {
+  --pc-frame-inset: var(--space-pc-frame);
+  width: 77.604167vw;
+  height: 77.12963svh;
+  max-width: calc(100vw - var(--space-8));
+  max-height: calc(100svh - var(--space-8));
+  padding: var(--pc-frame-inset);
+  border: var(--border-none);
+  border-radius: var(--radius-pc-monitor);
+  overflow: hidden;
+  background: var(--color-charcoal);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  box-shadow: var(--shadow-pc-monitor);
+}
+
+.pc-overlay > .overlay-close { display: none; }
+
+.overlay-content.pc-overlay .pc-accessible-title {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: 0;
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.pc-desktop {
+  --pc-taskbar-height: max(var(--space-12), 7.692%);
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-pc-screen);
+  isolation: isolate;
+}
+
+.pc-wallpaper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.pc-desktop-folders {
+  position: absolute;
+  top: 18.3%;
+  left: 1.93%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.pc-desktop-folder {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1);
+  border: var(--border-none);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+}
+
+.pc-desktop-folders img {
+  width: var(--space-8);
+  height: var(--space-8);
+  object-fit: contain;
+}
+
+
+
+.pc-explorer {
+  position: absolute;
+  top: 9%;
+  left: 12%;
+  width: 76%;
+  height: 79%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--radius-pc-window);
+  background: var(--color-pc-window);
+  backdrop-filter: blur(var(--space-3));
+  box-shadow: var(--shadow-pc-window);
+  font-size: var(--font-size-pc-ui);
+}
+
+.pc-explorer.is-maximized {
+  inset: 0 0 7.692%;
+  width: auto;
+  height: auto;
+}
+
+.pc-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pc-icon img,
+.pc-folder-icon img {
+  max-width: none;
+}
+
+.pc-icon-computer img { transform: scale(.6923); }
+
+.pc-window-titlebar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  height: var(--space-pc-titlebar);
+  flex-shrink: 0;
+  padding: var(--space-1) var(--space-2);
+}
+
+.pc-window-tab {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  width: calc(var(--space-pc-sidebar) - var(--space-6));
+  padding: 0 var(--space-1);
+  background: var(--color-pc-selection);
+  border-radius: var(--radius-sm);
+}
+
+.pc-window-tab > span:nth-child(2) { flex: 1; }
+
+.pc-window-controls { display: flex; margin-left: auto; gap: var(--space-1); }
+
+.pc-overlay button { font-family: var(--font-body); color: inherit; }
+
+.pc-window-titlebar button,
+.pc-history-controls button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: var(--border-none);
+  background: transparent;
+}
+
+.pc-window-controls button { min-height: var(--space-4); }
+.pc-window-controls button:last-child:hover { background: var(--color-pc-close); }
+.pc-overlay button:focus-visible { outline-color: var(--color-pc-accent); }
+
+.pc-maximize-icon {
+  width: var(--space-2);
+  height: var(--space-2);
+  margin: 0 var(--space-1);
+  border: var(--border-pc-icon);
+  border-radius: var(--radius-sm);
+}
+
+.pc-navigation-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0 var(--space-2);
+  height: var(--space-pc-navigation);
+  flex-shrink: 0;
+}
+
+.pc-history-controls { display: flex; gap: var(--space-1); }
+.pc-history-controls button:disabled { opacity: .4; cursor: default; }
+
+.pc-search {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+  height: var(--space-6);
+  padding: 0 var(--space-1);
+  border-bottom: var(--border-pc-search);
+  border-radius: var(--radius-sm);
+  background: var(--color-pc-selection);
+}
+
+.pc-search input {
+  width: 100%;
+  min-width: 0;
+  border: var(--border-none);
+  background: transparent;
+  color: var(--color-white);
+  font: inherit;
+  outline: none;
+}
+
+.pc-search input::placeholder { color: var(--color-pc-muted); }
+.pc-search:focus-within { box-shadow: 0 var(--space-1) var(--space-2) var(--color-navy); }
+
+.pc-folder-tools {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-1);
+  height: var(--space-pc-tools);
+  padding: 0 var(--space-2);
+  flex-shrink: 0;
+}
+
+.pc-folder-tools > span {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 0 var(--space-1);
+  border-radius: var(--radius-sm);
+  background: var(--color-pc-selection);
+}
+
+.pc-view-icon { display: grid; grid-template-columns: repeat(2, var(--space-1)); gap: calc(var(--space-1) / 2); padding: calc(var(--space-1) / 2); }
+.pc-view-icon i { width: var(--space-1); height: var(--space-1); border: var(--border-pc-icon); border-radius: var(--radius-sm); }
+.pc-view-icon i:last-child { border-color: var(--color-pc-accent); }
+
+.pc-explorer-body { display: flex; flex: 1; min-height: 0; }
+
+.pc-sidebar {
+  display: flex;
+  flex-direction: column;
+  width: var(--space-pc-sidebar);
+  flex-shrink: 0;
+  overflow-y: auto;
+  padding: var(--space-1);
+  gap: var(--space-6);
+}
+
+.pc-sidebar-group { display: flex; flex-direction: column; gap: var(--space-1); }
+.pc-sidebar-bottom { margin-top: auto; }
+
+.pc-sidebar button,
+.pc-sidebar-heading {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: 100%;
+  min-height: var(--space-6);
+  padding: 0 var(--space-2);
+  border: var(--border-none);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  font-size: inherit;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.pc-sidebar-heading { font-weight: var(--font-weight-semibold); }
+.pc-sidebar button:hover,
+.pc-sidebar button[aria-current="page"] { background: var(--color-pc-selection); }
+.pc-sidebar button[aria-current="page"]::before {
+  content: "";
+  position: absolute;
+  top: var(--space-1);
+  bottom: var(--space-1);
+  left: 0;
+  width: var(--space-1);
+  border-radius: var(--radius-full);
+  background: var(--color-pc-accent);
+}
+
+.pc-folder-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--space-4);
+  height: var(--space-4);
+  flex-shrink: 0;
+}
+
+.pc-folder-icon .pc-folder-detail { position: absolute; }
+.pc-icon-explorer > img { transform: scale(.6923); }
+.pc-small-arrow,
+.pc-pin,
+.pc-footer-arrow { margin-left: auto; width: var(--space-2); height: var(--space-2); }
+.pc-pin img { transform: scale(.5); }
+.pc-footer-arrow img { transform: scale(.2333); }
+
+.pc-folder-content {
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
+  padding: var(--space-6) var(--space-12);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-body);
+  font-weight: var(--font-weight-regular);
+}
+
+.pc-welcome-copy { width: 100%; max-width: var(--space-pc-copy); text-wrap: pretty; }
+.overlay-content.pc-overlay .pc-folder-content p { margin: 0 0 var(--space-4); font-size: inherit; }
+.pc-folder-content h3 { margin-bottom: var(--space-4); font-size: var(--font-size-xl); }
+.pc-search-result { display: block; margin-bottom: var(--space-2); border: var(--border-none); background: var(--color-pc-selection); padding: var(--space-2); }
+
+.pc-taskbar {
+  position: absolute;
+  inset: auto 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--pc-taskbar-height);
+  min-height: var(--space-12);
+  background: var(--color-pc-taskbar);
+  backdrop-filter: blur(var(--space-3));
+}
+
+.pc-taskbar-apps { display: flex; align-items: center; gap: var(--space-4); }
+.pc-taskbar-apps > span,
+.pc-taskbar-apps > button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--space-8);
+  height: var(--space-8);
+  padding: 0;
+  border: var(--border-none);
+  background: transparent;
+}
+
+.pc-taskbar-apps > span > img,
+.pc-taskbar-apps > button > img { width: var(--space-8); height: var(--space-8); object-fit: contain; }
+.pc-taskbar-apps button[aria-pressed="true"] { border-radius: var(--radius-sm); background: var(--color-pc-selection); }
+.pc-discord img { position: absolute; }
+.pc-discord .pc-discord-circle { width: auto; height: auto; }
+.pc-taskbar time { position: absolute; right: var(--space-6); display: grid; text-align: right; font-size: var(--font-size-pc-clock); line-height: var(--line-height-tight); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .pc-overlay[open] { animation: room-controls-enter var(--motion-room-controls-duration) ease-out both; }
+}
+
+@media (max-width: 1100px) {
+  .overlay-content.pc-overlay { --pc-frame-inset: var(--space-3); width: 92vw; }
+  .pc-explorer { left: 8%; top: 7%; width: 84%; height: 81%; }
+  .pc-sidebar { width: calc(var(--space-pc-sidebar) - var(--space-6)); }
+  .pc-folder-content { padding: var(--space-6); }
+}
+
+@media (max-width: 600px) {
+  .overlay-content.pc-overlay { width: calc(100vw - var(--space-4)); height: 85svh; max-width: none; --pc-frame-inset: var(--space-2); }
+  .pc-explorer { left: 0; top: 0; width: 100%; height: calc(100% - var(--space-12)); }
+  .pc-sidebar { width: calc(var(--space-pc-sidebar) - var(--space-12)); gap: var(--space-4); }
+  .pc-folder-content { padding: var(--space-4); font-size: var(--font-size-sm); }
+  .pc-taskbar time { display: none; }
+  .pc-new-tab { display: none; }
+}
+
+/* Keep the desktop icons compact and the four folder destinations prominent. */
+.pc-icon img { scale: .7; }
+.pc-folder-icon { scale: .8; }
+.pc-taskbar-apps { gap: var(--space-3); }
+.pc-taskbar-apps > span { width: var(--space-6); height: var(--space-6); }
+.pc-taskbar-apps > span > img { width: var(--font-size-xl); height: var(--font-size-xl); }
+.pc-taskbar-apps .pc-discord-circle { scale: .7; }
+.pc-window-controls > span { display: inline-flex; align-items: center; justify-content: center; }
+.pc-search { justify-content: space-between; color: var(--color-pc-muted); }
+.room-back-button img { scale: .8; }
+
+.pc-taskbar-apps .pc-taskbar-active {
+  border-radius: var(--radius-sm);
+  background: var(--color-pc-selection);
+}
+
+.pc-taskbar-active::after {
+  content: "";
+  position: absolute;
+  bottom: calc(-1 * var(--space-1) / 2);
+  width: var(--space-3);
+  height: var(--space-1);
+  border-radius: var(--radius-full);
+  background: var(--color-pc-accent);
+}
+
+.pc-sidebar .pc-sidebar-group { gap: var(--space-2); }
+.pc-sidebar button,
+.pc-sidebar-heading { min-height: var(--space-8); }
+
+/* Make the four sidebar destinations readable within the larger Explorer. */
+.pc-sidebar {
+  font-size: var(--font-size-sm);
+}
+
+.pc-folder-icon {
+  scale: 1;
+  width: var(--space-6);
+  height: var(--space-6);
+}
+
+.pc-sidebar .pc-icon img {
+  scale: 1;
+}
+
+.pc-taskbar-apps .pc-taskbar-active {
+  width: var(--space-8);
+  height: var(--space-8);
+  background: var(--color-room-button);
+  border: var(--border-pc-search);
+  box-shadow: var(--shadow-button);
+}
+
+.pc-taskbar-active::after {
+  width: var(--space-6);
+  background: var(--color-room-glow);
+}
+
+/* Active taskbar app: a subtle tile and a short cyan indicator. */
+.pc-taskbar-apps .pc-taskbar-active {
+  width: var(--space-8);
+  height: var(--space-8);
+  border: var(--border-none);
+  border-radius: var(--radius-sm);
+  background: var(--color-pc-selection);
+  box-shadow: none;
+}
+
+.pc-taskbar-active::after {
+  bottom: 0;
+  width: var(--space-3);
+  height: calc(var(--space-1) / 2);
+  border-radius: var(--radius-full);
+  background: var(--color-pc-accent);
+}
+
+.pc-sidebar .pc-folder-icon {
+  scale: 1.2;
+}
+
+/* On larger desktops, distribute space between navigation and readable copy. */
+@media (min-width: 1101px) {
+  .pc-explorer {
+    top: 9%;
+    left: 12%;
+    width: 76%;
+    height: 79%;
+    font-size: var(--font-size-xs);
+  }
+
+  .pc-sidebar {
+    width: var(--space-pc-sidebar-wide);
+    padding: var(--space-2);
+    font-size: var(--font-size-base);
+  }
+
+  .pc-sidebar button,
+  .pc-sidebar-heading {
+    min-height: var(--space-8);
+  }
+
+  .pc-folder-content {
+    padding: var(--space-8) var(--space-12);
+    font-size: var(--font-size-pc-copy-wide);
+  }
+
+  .pc-window-tab {
+    width: calc(var(--space-pc-sidebar-wide) - var(--space-6));
+  }
+}
+
+@media (min-width: 1440px) {
+  .pc-explorer {
+    top: 11%;
+    left: 50%;
+    translate: -50% 0;
+    width: 68%;
+    height: 70%;
+    max-width: var(--space-pc-window-max-width);
+    max-height: var(--space-pc-window-max-height);
   }
 }

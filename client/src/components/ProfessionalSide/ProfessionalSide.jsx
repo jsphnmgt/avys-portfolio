@@ -55,7 +55,7 @@ export default function ProfessionalSide() {
   return <>
       <nav ref={navbarRef} className="navbar" aria-label="Main navigation">
         <div className="nav-links">{["Home", "Projects", "Experience", "Education", "Contact"].map(label => <a key={label} href={`#${label.toLowerCase()}`} aria-current={activeSection === label.toLowerCase() ? "location" : undefined}>{label}</a>)}</div>
-        <button className="explore-room-btn" onClick={() => setActiveItem({title: "Explore my room", description: "My personal room is coming soon. For now, explore my projects and get to know my professional side."})}>Explore my room <img src={assets["room-arrow.svg"]} alt="" /></button>
+        <button className="explore-room-btn" onClick={() => { window.location.hash = "room"; }}>Explore my room <img src={assets["room-arrow.svg"]} alt="" /></button>
       </nav>
     <div className="blue-sky opening">
       <div><Hero /><Projects onCardClick={setActiveItem} /></div>
