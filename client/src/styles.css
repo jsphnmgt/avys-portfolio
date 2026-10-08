@@ -170,6 +170,14 @@
   --size-watchlist-close: var(--space-8);
   --size-watchlist-header: calc(var(--space-6) * 2 + var(--font-size-3xl) * var(--line-height-tight));
 
+  /* Reading List cover frames and metadata */
+  --size-reading-card-max-width: 10.875rem;
+  --ratio-reading-cover: 174 / 250;
+  --space-reading-cover-inset: .3125rem;
+  --border-reading-cover: 2px solid var(--color-navy);
+  --color-reading-rating-placeholder: color-mix(in srgb, var(--color-cobalt) 35%, transparent);
+  --color-reading-author: color-mix(in srgb, var(--color-navy) 75%, transparent);
+
   /* Generic role variables */
   --color-pure-white: var(--color-white);
   --color-LightText-Overlay-Cards: var(--color-cream);
@@ -2795,6 +2803,13 @@ section {
 
 .watchlist-icon { width: var(--size-watchlist-icon); height: var(--size-watchlist-icon); flex-shrink: 0; }
 .watchlist-header .watchlist-icon { width: 1cap; height: 1cap; }
+/* Align collection icons with their heading’s letter baseline. */
+.overlay-content.watchlist-overlay .watchlist-header h2 { display: block; text-align: center; }
+.watchlist-header .watchlist-icon {
+  display: inline-block;
+  vertical-align: baseline;
+  margin-right: var(--space-3);
+}
 .watchlist-scroll {
   flex: 1;
   min-height: 0;
@@ -2888,3 +2903,44 @@ section {
   .watchlist-section h3 { font-size: var(--font-size-xl); }
   .watchlist-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4); }
 }
+
+/* Reading List uses the Watchlist shell with the Figma cover-frame cards. */
+.reading-list-card { width: 100%; max-width: var(--size-reading-card-max-width); }
+.reading-list-cover-frame {
+  display: flex;
+  aspect-ratio: var(--ratio-reading-cover);
+  padding: var(--space-reading-cover-inset);
+  border: var(--border-reading-cover);
+  background: var(--color-steel);
+}
+.reading-list-cover {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  border: var(--border-reading-cover);
+  background: var(--color-watchlist-placeholder);
+  color: var(--color-watchlist-placeholder-icon);
+}
+.reading-list-cover .watchlist-icon {
+  width: var(--size-watchlist-poster-icon);
+  height: var(--size-watchlist-poster-icon);
+}
+.reading-list-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-1);
+  padding: var(--space-3) var(--space-2) 0;
+  font-family: var(--font-body);
+  line-height: var(--line-height-tight);
+}
+.reading-list-card-title { font-size: var(--font-size-base); color: var(--color-navy); }
+.reading-list-card-author { font-size: var(--font-size-xs); color: var(--color-reading-author); }
+.reading-list-rating {
+  display: flex;
+  /* Account for the star artwork’s inset inside its SVG box. */
+  margin-left: calc(-1 * var(--font-size-lg) / 12);
+  color: var(--color-reading-rating-placeholder);
+}
+.reading-list-rating .watchlist-icon { width: var(--font-size-lg); height: var(--font-size-lg); }
