@@ -1,24 +1,43 @@
-# Mockup
+# Avys Portfolio – Mockup
 
-Your prelim wireframes are finished and are not being redone. The mockup is what
-the app will actually look like: the wireframes painted in, with your real
-colours, type, spacing and content.
+The following images show the visual mockups for Avys Portfolio.
 
-**This is submitted as images or a PDF.** A written description of a picture
-scores in the lowest band, because the thing being asked for is the picture.
+## Professional Page
 
-Put the exported images in `assets/` and link them here, so the repository
-carries them too.
+![Avys Portfolio mockup – page 1](../client/src/assets/mockup/mockup-page1.png)
 
-## What it should show
+## Personal Side Page
 
-- Every screen in your revised proposal, and no screens that are not in it
-- Real content, not "Lorem ipsum" and not "Title here"
-- The empty state of at least one screen, because that is the one people forget
-- What it looks like on a phone
+![Avys Portfolio mockup – page 2](../client/src/assets/mockup/mockup-page2.png)
 
-## Honest note
+## Personal Side - Personal Computer (Welcome)
 
-Anything in the mockup that is not in the built app by the end needs a sentence
-in your journal explaining what happened. That is a normal part of building
-something, and saying so reads far better than quietly shipping less.
+![Avys Portfolio mockup – page 3](../client/src/assets/mockup/mockup-page3.png)
+
+## Personal Side - Personal Computer (About Me)
+
+![Avys Portfolio mockup – page 4](../client/src/assets/mockup/mockup-page4.png)
+
+## Personal Side - Watchlist
+
+![Avys Portfolio mockup – page 5](../client/src/assets/mockup/mockup-page5.png)
+
+## Personal Side - Reading List
+
+![Avys Portfolio mockup – page 6](../client/src/assets/mockup/mockup-page6.png)
+
+## Personal Side - Game Shelf (Favorites)
+
+![Avys Portfolio mockup – page 7](../client/src/assets/mockup/mockup-page7.png)
+
+## Personal Side - Game Shelf (Currently Playing)
+
+![Avys Portfolio mockup – page 8](../client/src/assets/mockup/mockup-page8.png)
+
+## Personal Side - Game Shelf (Game Collection)
+
+![Avys Portfolio mockup – page 9](../client/src/assets/mockup/mockup-page9.png)
+
+## Personal Side - Music Corner
+
+![Avys Portfolio mockup – page 10](../client/src/assets/mockup/mockup-page10.png)
