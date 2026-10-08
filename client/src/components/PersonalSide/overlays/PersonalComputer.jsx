@@ -1,6 +1,25 @@
 import { useEffect, useState } from "react";
 import Overlay from "../../ProfessionalSide/Overlay";
 import { assets } from "../../../assets";
+import watchlist from "./watchlistData.json";
+import readingList from "./readingListData.json";
+import { favorites as favoriteGames, playing, collection } from "./GameShelf";
+import { songs } from "./Music";
+
+const gameByTitle = title => collection.find(game => game.title.replace(/:/g, "") === title.replace(/:/g, ""));
+const summaries = {
+  Favorites: [
+    { id: "watchlist", label: "Watchlist", items: watchlist.favorites.map(id => watchlist.catalog[id]) },
+    { id: "reading-list", label: "Reading List", items: readingList.favorites.map(id => readingList.catalog[id]) },
+    { id: "game-shelf", label: "Game Shelf", items: favoriteGames.map(gameByTitle).filter(Boolean) },
+    { id: "music", label: "Music Corner", items: songs },
+  ],
+  Currents: [
+    { id: "watchlist", label: "Currently Watching", items: watchlist.watching.map(id => watchlist.catalog[id]) },
+    { id: "reading-list", label: "Currently Reading", items: readingList.reading.map(id => readingList.catalog[id]) },
+    { id: "game-shelf", label: "Currently Playing", items: playing },
+  ],
+};
 
 function Icon({ name, className = "" }) {
   return <span className={`pc-icon ${className}`} aria-hidden="true"><img src={assets[`pc-${name}.svg`]} alt="" /></span>;
@@ -13,7 +32,7 @@ const folders = [
   { name: "Currents", icon: "group6" },
 ];
 
-export default function PersonalComputer({ isOpen = false, onClose }) {
+export default function PersonalComputer({ isOpen = false, onClose, onOpenCollection }) {
   const [currentFolder, setCurrentFolder] = useState("Welcome");
   const [now, setNow] = useState(() => new Date());
 
@@ -63,7 +82,16 @@ export default function PersonalComputer({ isOpen = false, onClose }) {
               <p>Hi! I’m Josie, a Computer Science student who enjoys building digital experiences and exploring different corners of tech. I like turning half-formed ideas into something real, one small piece at a time.</p>
               <p>Outside of coding, I spend my time drawing, watching movies and series, reading novels and stories, playing games, and listening to my favorite songs on repeat.</p>
               <p>I’m always curious about something new, whether it’s tech or a hobby. This room brings those interests together—feel free to look around and get to know the person behind the code.</p>
-            </div> : <div><h3>{currentFolder}</h3><p>This folder is waiting to be filled.</p></div>}
+            </div> : <div className="pc-collection-summary">
+              <h3>{currentFolder}</h3>
+              <ul className="pc-summary-list">{summaries[currentFolder].map(group => <li key={group.id}>
+                <button className="pc-summary-link" onClick={() => onOpenCollection?.(group.id)} aria-label={`Open ${group.label} collection`}>
+                  {group.items[0]?.image && <img src={assets[group.items[0].image]} alt="" />}
+                  <span className="pc-summary-copy"><span className="pc-summary-label">{group.label}</span><span className="pc-summary-titles">{group.items.slice(0, 2).map(item => item.title).join(" · ") || "Nothing here yet"}{group.items.length > 2 && <span className="pc-summary-more"> +{group.items.length - 2} more</span>}</span></span>
+                  <span className="pc-summary-arrow" aria-hidden="true">›</span>
+                </button>
+              </li>)}</ul>
+            </div>}
           </div>
         </div>
       </div>

@@ -4,6 +4,8 @@ import CollectionIcon from "./CollectionIcon";
 import { assets } from "../../../assets";
 import useCollectionPeek from "./useCollectionPeek";
 
+export { songs, playlists };
+
 const tabs = [
   { id: "songs", label: "Songs", heading: "Favorite Songs" },
   { id: "playlists", label: "Playlists", heading: "Favorite Playlists" },

@@ -107,6 +107,9 @@ export default function Room() {
       </div>
       <p className="room-explore-hint">Explore my room—click the glowing objects or use explore room to discover more.</p>
     </>}
-    {ActiveOverlay && <ActiveOverlay isOpen onClose={() => setActiveObject(null)} />}
+    {ActiveOverlay && <ActiveOverlay isOpen onClose={() => setActiveObject(null)} onOpenCollection={id => {
+      const object = roomObjects.find(item => item.id === id);
+      if (object) setActiveObject(object);
+    }} />}
   </section>;
 }

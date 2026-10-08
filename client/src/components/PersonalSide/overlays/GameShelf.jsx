@@ -5,6 +5,8 @@ import CollectionIcon from "./CollectionIcon";
 import useCollectionPeek from "./useCollectionPeek";
 import gameDetails from "./gameShelfData.json";
 
+export { favorites, playing, collection };
+
 const favorites = ["Stardew Valley", "Honkai Star Rail", "Wuthering Waves", "Split Fiction", "Peak", "Roblox"];
 const playing = [
   { title: "Peak", image: "game-cover-peak.jpg" },
