@@ -35,10 +35,14 @@ const artists = [
 
 export default function Music({ isOpen = false, onClose }) {
   const [activeTab, setActiveTab] = useState("songs");
+  const [recordSpin, setRecordSpin] = useState(0);
+  const [isCardSpin, setIsCardSpin] = useState(false);
   const { selectedId, isPeekVisible, peekHeadingRef, openPeek, closePeek, resetPeek, onPeekKeyDown, onPeekTransitionEnd } = useCollectionPeek();
   const selected = [...songs, ...playlists].find(item => item.url === selectedId);
   const [cardOrigin, setCardOrigin] = useState({});
   const showPlayer = (item, trigger) => {
+    setIsCardSpin(true);
+    setRecordSpin(spin => spin + 1);
     const card = trigger.getBoundingClientRect();
     const list = trigger.closest("ul").getBoundingClientRect();
     setCardOrigin({
@@ -54,6 +58,7 @@ export default function Music({ isOpen = false, onClose }) {
     if (id === activeTab) return;
     resetPeek();
     setCardOrigin({});
+    setIsCardSpin(false);
     setActiveTab(id);
   };
   const tabRefs = useRef([]);
@@ -83,7 +88,7 @@ export default function Music({ isOpen = false, onClose }) {
     <div className="watchlist-scroll music-scroll" role="region" aria-label="Music Corner content" tabIndex={0} onKeyDown={onPeekKeyDown}>
       <div className={`music-layout${selected ? " has-player" : ""}`} style={{ "--music-card-count": activeTab === "genres" ? genres.length : 4 }}>
         <div className="music-record-stage">
-          <div className="music-record" aria-hidden="true"><img key={activeTab} src={assets["music-vinyl.png"]} alt="" /></div>
+          <div className={`music-record${isCardSpin ? " music-record-card-spin" : ""}`} aria-hidden="true"><img key={`${activeTab}-${recordSpin}`} src={assets["music-vinyl.png"]} alt="" /></div>
         </div>
         <section key={activeTab} className="music-panel" id="music-panel" role="tabpanel" aria-labelledby={`music-tab-${activeTab}`} tabIndex={0}>
           <h3>{current.heading}</h3>

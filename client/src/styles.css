@@ -164,6 +164,7 @@
   --space-pc-sidebar-wide: var(--space-pc-sidebar);
   --size-pc-explorer-desktop-width: 78%;
   --font-size-pc-copy-wide: var(--font-size-sm);
+  --motion-pc-folder-duration: .4s;
   --border-pc-search: 1px solid var(--color-pc-accent);
   --border-pc-icon: 1px solid var(--color-white);
   --shadow-pc-monitor: 0 0 var(--space-16) var(--color-cobalt), 0 0 var(--space-8) var(--color-cobalt), 0 0 var(--space-3) var(--color-cobalt);
@@ -260,7 +261,8 @@
   --motion-music-card-stagger: .12s;
   --motion-music-reveal-duration: calc(var(--motion-music-switch-duration) + var(--motion-music-card-stagger) * 4);
   --motion-music-switch-ease: var(--motion-room-menu-ease);
-  --rotation-music-record: -45deg;
+  --rotation-music-record-tab: -45deg;
+  --rotation-music-record: var(--rotation-music-record-tab);
   --color-music-card: linear-gradient(to bottom, var(--color-lavender) 30.556%, var(--color-periwinkle) 122.91%);
   --color-music-artist: color-mix(in srgb, var(--color-navy) 85%, transparent);
   --color-music-placeholder: color-mix(in srgb, var(--color-cream) 45%, var(--color-lavender));
@@ -2942,6 +2944,8 @@ section {
 }
 
 .pc-sidebar-group {
+  position: relative;
+  isolation: isolate;
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
@@ -2954,6 +2958,7 @@ section {
 .pc-sidebar button,
 .pc-sidebar-heading {
   position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   gap: var(--space-2);
@@ -2972,12 +2977,27 @@ section {
   font-weight: var(--font-weight-semibold);
 }
 
-.pc-sidebar button:hover,
-.pc-sidebar button[aria-current="page"] {
+.pc-sidebar button:not([aria-current="page"]):hover {
   background: var(--color-pc-selection);
 }
 
-.pc-sidebar button[aria-current="page"]::before {
+.pc-sidebar-selection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-radius: var(--radius-sm);
+  background: var(--color-pc-selection);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pc-sidebar-selection {
+    transition: transform var(--motion-pc-folder-duration) var(--motion-room-menu-ease), height var(--motion-pc-folder-duration) var(--motion-room-menu-ease);
+  }
+}
+
+.pc-sidebar-selection::before {
   content: "";
   position: absolute;
   top: var(--space-1);
@@ -3030,6 +3050,27 @@ section {
   width: 100%;
   max-width: var(--space-pc-copy);
   text-wrap: pretty;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pc-folder-view {
+    animation: pc-folder-enter var(--motion-pc-folder-duration) var(--motion-room-menu-ease) both;
+  }
+
+  .pc-sidebar button {
+    transition: background var(--motion-card-duration) var(--motion-card-ease);
+  }
+}
+
+@keyframes pc-folder-enter {
+  from {
+    opacity: 0;
+    transform: translateX(var(--space-2));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .overlay-content.pc-overlay .pc-folder-content p {
@@ -3583,10 +3624,16 @@ section {
 /* Reading List uses the Watchlist shell with the Figma cover-frame cards. */
 .reading-list-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  grid-template-areas: "collections";
+  grid-template-columns: minmax(0, 1fr) 0;
+  grid-template-areas: "collections peek";
   flex: 1;
   min-height: 0;
+}
+
+@media (min-width: 761px) and (prefers-reduced-motion: no-preference) {
+  .reading-list-layout {
+    transition: grid-template-columns var(--motion-reading-peek-duration) var(--motion-reading-peek-ease);
+  }
 }
 
 .reading-list-layout.has-peek {
@@ -4741,6 +4788,10 @@ button.music-song-card {
   height: 100%;
   object-fit: contain;
   mix-blend-mode: multiply;
+}
+
+.music-record-card-spin {
+  --rotation-music-record: calc(-1 * var(--rotation-music-record-tab));
 }
 
 .music-panel {

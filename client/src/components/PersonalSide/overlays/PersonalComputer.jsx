@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Overlay from "../../ProfessionalSide/Overlay";
 import { assets } from "../../../assets";
 import watchlist from "./watchlistData.json";
@@ -35,6 +35,20 @@ const folders = [
 export default function PersonalComputer({ isOpen = false, onClose, onOpenCollection }) {
   const [currentFolder, setCurrentFolder] = useState("Welcome");
   const [now, setNow] = useState(() => new Date());
+  const sidebarRef = useRef(null);
+  const [selection, setSelection] = useState(null);
+
+  useLayoutEffect(() => {
+    const sidebar = sidebarRef.current;
+    const update = () => {
+      const button = sidebar?.querySelector('[aria-current="page"]');
+      if (button?.offsetHeight) setSelection({ top: button.offsetTop, height: button.offsetHeight });
+    };
+    update();
+    const observer = new ResizeObserver(update);
+    if (sidebar) observer.observe(sidebar);
+    return () => observer.disconnect();
+  }, [currentFolder, isOpen]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -72,12 +86,14 @@ export default function PersonalComputer({ isOpen = false, onClose, onOpenCollec
         </div>
         <div className="pc-explorer-body">
           <nav className="pc-sidebar" aria-label="Computer folders">
-            <div className="pc-sidebar-group">
+            <div className="pc-sidebar-group" ref={sidebarRef}>
+              {selection && <span className="pc-sidebar-selection" aria-hidden="true" style={{ transform: `translateY(${selection.top}px)`, height: `${selection.height}px` }} />}
               <div className="pc-sidebar-heading">{iconFolder({ icon: "group19" })}<span>This PC</span><Icon name="interface-arrow" className="pc-small-arrow" /></div>
               {folders.map(folder => <button key={folder.name} aria-current={currentFolder === folder.name ? "page" : undefined} onClick={() => setCurrentFolder(folder.name)}>{iconFolder(folder, folder.name === "Favorites" ? "pc-icon-explorer" : "")}<span>{folder.name}</span><Icon name="interface-arrow1" className="pc-small-arrow" /></button>)}
             </div>
           </nav>
           <div className="pc-folder-content" aria-live="polite">
+            <div key={currentFolder} className="pc-folder-view">
             {currentFolder === "Welcome" ? <div className="pc-welcome-copy"><p>Hi, welcome to my room!</p><p>I wanted a little space here for the things I enjoy outside of work—what I’m reading, the games I play, the shows I watch, and the music I keep coming back to.</p><p>Feel free to look around. You can click the objects in the room or use Explore Room to find a collection. If you’d like to get to know me a little better, start with About Me here on the computer.</p></div> : currentFolder === "About Me" ? <div className="pc-welcome-copy">
               <p>Hi! I’m Josie, a Computer Science student who enjoys building digital experiences and exploring different corners of tech. I like turning half-formed ideas into something real, one small piece at a time.</p>
               <p>Outside of coding, I spend my time drawing, watching movies and series, reading novels and stories, playing games, and listening to my favorite songs on repeat.</p>
@@ -92,6 +108,7 @@ export default function PersonalComputer({ isOpen = false, onClose, onOpenCollec
                 </button>
               </li>)}</ul>
             </div>}
+            </div>
           </div>
         </div>
       </div>
