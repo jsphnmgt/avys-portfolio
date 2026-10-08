@@ -10,7 +10,7 @@ const folders = [
   { name: "Welcome", icon: "group4", detail: "group15" },
   { name: "About Me", icon: "group5", detail: "group11" },
   { name: "Favorites", icon: "group1" },
-  { name: "Currently", icon: "group6" },
+  { name: "Currents", icon: "group6" },
 ];
 
 export default function PersonalComputer({ isOpen = false, onClose }) {
@@ -23,7 +23,7 @@ export default function PersonalComputer({ isOpen = false, onClose }) {
     return () => window.clearInterval(timer);
   }, [isOpen]);
 
-  const iconFolder = (folder, className = "") => <span className={`pc-folder-icon ${className}`} aria-hidden="true"><img src={assets[`pc-${folder.icon}.svg`]} alt="" />{folder.detail && <img className="pc-folder-detail" src={assets[`pc-${folder.detail}.svg`]} alt="" />}</span>;
+  const iconFolder = (folder, className = "") => <span className={`pc-folder-icon ${className}`} aria-hidden="true"><img src={assets[`pc-${folder.icon}.svg`]} alt="" />{folder.detail && <img className={`pc-folder-detail${folder.detail === "group11" ? " pc-folder-detail-person" : ""}`} src={assets[`pc-${folder.detail}.svg`]} alt="" />}</span>;
 
   return <Overlay className="pc-overlay" isOpen={isOpen} onClose={onClose}>
     <h2 id="detail-title" className="pc-accessible-title">Personal Computer</h2>
@@ -59,7 +59,11 @@ export default function PersonalComputer({ isOpen = false, onClose }) {
             </div>
           </nav>
           <div className="pc-folder-content" aria-live="polite">
-            {currentFolder === "Welcome" ? <div className="pc-welcome-copy"><p>Hi, welcome to my room!</p><p>I wanted a little space here for the things I enjoy outside of work—what I’m reading, the games I play, the shows I watch, and the music I keep coming back to.</p><p>Feel free to look around. You can click the objects in the room or use Explore Room to find a collection. If you’d like to get to know me a little better, start with About Me here on the computer.</p></div> : <div><h3>{currentFolder}</h3><p>This folder is waiting to be filled.</p></div>}
+            {currentFolder === "Welcome" ? <div className="pc-welcome-copy"><p>Hi, welcome to my room!</p><p>I wanted a little space here for the things I enjoy outside of work—what I’m reading, the games I play, the shows I watch, and the music I keep coming back to.</p><p>Feel free to look around. You can click the objects in the room or use Explore Room to find a collection. If you’d like to get to know me a little better, start with About Me here on the computer.</p></div> : currentFolder === "About Me" ? <div className="pc-welcome-copy">
+              <p>Hi! I’m Josie, a Computer Science student who enjoys building digital experiences and exploring different corners of tech. I like turning half-formed ideas into something real, one small piece at a time.</p>
+              <p>Outside of coding, I spend my time drawing, watching movies and series, reading novels and stories, playing games, and listening to my favorite songs on repeat.</p>
+              <p>I’m always curious about something new, whether it’s tech or a hobby. This room brings those interests together—feel free to look around and get to know the person behind the code.</p>
+            </div> : <div><h3>{currentFolder}</h3><p>This folder is waiting to be filled.</p></div>}
           </div>
         </div>
       </div>

@@ -130,16 +130,24 @@
   --radius-pc-monitor: 1.875rem;
   --radius-pc-screen: calc(var(--radius-pc-monitor) - var(--pc-frame-inset));
   --radius-pc-window: .4375rem;
+  --size-pc-icon-ui: 1rem;
+  --size-pc-icon-folder: 1.125rem;
+  --size-pc-icon-taskbar: 1.25rem;
+  --size-pc-icon-desktop: 2rem;
+  --size-pc-icon-chevron: .5rem;
   --space-pc-frame: 1.25rem;
   --space-pc-titlebar: 1.875rem;
   --space-pc-navigation: 1.875rem;
   --space-pc-tools: 2.8125rem;
   --space-pc-sidebar: 9.375rem;
   --space-pc-copy: 64ch;
-  --space-pc-window-max-width: 72rem;
-  --space-pc-window-max-height: 40rem;
-  --space-pc-sidebar-wide: clamp(var(--space-pc-sidebar), 11vw, 13rem);
-  --font-size-pc-copy-wide: clamp(var(--font-size-base), 1vw, var(--font-size-lg));
+  --space-pc-window-max-width: 44rem;
+  --space-pc-window-max-height: 26rem;
+  --size-pc-monitor-max-width: 70rem;
+  --ratio-pc-monitor: 1.777777778;
+  --space-pc-sidebar-wide: var(--space-pc-sidebar);
+  --size-pc-explorer-desktop-width: 78%;
+  --font-size-pc-copy-wide: var(--font-size-sm);
   --border-pc-search: 1px solid var(--color-pc-accent);
   --border-pc-icon: 1px solid var(--color-white);
   --shadow-pc-monitor: 0 0 var(--space-16) var(--color-cobalt), 0 0 var(--space-8) var(--color-cobalt), 0 0 var(--space-3) var(--color-cobalt);
@@ -2296,8 +2304,9 @@ section {
 
 .overlay-content.pc-overlay {
   --pc-frame-inset: var(--space-pc-frame);
-  width: 77.604167vw;
-  height: 77.12963svh;
+  --pc-monitor-width: min(90vw, var(--size-pc-monitor-max-width), calc((100svh - var(--space-8)) * var(--ratio-pc-monitor)));
+  width: var(--pc-monitor-width);
+  height: calc(var(--pc-monitor-width) / var(--ratio-pc-monitor));
   max-width: calc(100vw - var(--space-8));
   max-height: calc(100svh - var(--space-8));
   padding: var(--pc-frame-inset);
@@ -2364,12 +2373,10 @@ section {
 }
 
 .pc-desktop-folders img {
-  width: var(--space-8);
-  height: var(--space-8);
+  width: var(--size-pc-icon-desktop);
+  height: var(--size-pc-icon-desktop);
   object-fit: contain;
 }
-
-
 
 .pc-explorer {
   position: absolute;
@@ -2398,14 +2405,16 @@ section {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  width: var(--size-pc-icon-ui);
+  height: var(--size-pc-icon-ui);
 }
 
 .pc-icon img,
 .pc-folder-icon img {
-  max-width: none;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
-
-.pc-icon-computer img { transform: scale(.6923); }
 
 .pc-window-titlebar {
   display: flex;
@@ -2510,7 +2519,7 @@ section {
   background: var(--color-pc-selection);
 }
 
-.pc-view-icon { display: grid; grid-template-columns: repeat(2, var(--space-1)); gap: calc(var(--space-1) / 2); padding: calc(var(--space-1) / 2); }
+.pc-view-icon { display: grid; place-content: center; flex-shrink: 0; width: var(--size-pc-icon-ui); height: var(--size-pc-icon-ui); grid-template-columns: repeat(2, var(--space-1)); gap: calc(var(--space-1) / 2); }
 .pc-view-icon i { width: var(--space-1); height: var(--space-1); border: var(--border-pc-icon); border-radius: var(--radius-sm); }
 .pc-view-icon i:last-child { border-color: var(--color-pc-accent); }
 
@@ -2565,18 +2574,28 @@ section {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: var(--space-4);
-  height: var(--space-4);
+  width: var(--size-pc-icon-folder);
+  height: var(--size-pc-icon-folder);
   flex-shrink: 0;
 }
 
-.pc-folder-icon .pc-folder-detail { position: absolute; }
-.pc-icon-explorer > img { transform: scale(.6923); }
-.pc-small-arrow,
-.pc-pin,
-.pc-footer-arrow { margin-left: auto; width: var(--space-2); height: var(--space-2); }
-.pc-pin img { transform: scale(.5); }
-.pc-footer-arrow img { transform: scale(.2333); }
+.pc-folder-icon .pc-folder-detail {
+  position: absolute;
+  bottom: 10%;
+  height: 52.5%;
+}
+
+.pc-folder-icon .pc-folder-detail-person {
+  width: 50%;
+  height: 37.2%;
+  bottom: 20%;
+}
+
+.pc-small-arrow {
+  margin-left: auto;
+  width: var(--size-pc-icon-chevron);
+  height: var(--size-pc-icon-chevron);
+}
 
 .pc-folder-content {
   flex: 1;
@@ -2620,10 +2639,11 @@ section {
 }
 
 .pc-taskbar-apps > span > img,
-.pc-taskbar-apps > button > img { width: var(--space-8); height: var(--space-8); object-fit: contain; }
+.pc-taskbar-apps > button > img { width: var(--size-pc-icon-taskbar); height: var(--size-pc-icon-taskbar); object-fit: contain; }
+.pc-taskbar-apps .pc-icon { width: var(--size-pc-icon-taskbar); height: var(--size-pc-icon-taskbar); }
 .pc-taskbar-apps button[aria-pressed="true"] { border-radius: var(--radius-sm); background: var(--color-pc-selection); }
 .pc-discord img { position: absolute; }
-.pc-discord .pc-discord-circle { width: auto; height: auto; }
+.pc-discord .pc-discord-circle { width: var(--size-pc-icon-taskbar); height: var(--size-pc-icon-taskbar); }
 .pc-taskbar time { position: absolute; right: var(--space-6); display: grid; text-align: right; font-size: var(--font-size-pc-clock); line-height: var(--line-height-tight); }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -2631,7 +2651,7 @@ section {
 }
 
 @media (max-width: 1100px) {
-  .overlay-content.pc-overlay { --pc-frame-inset: var(--space-3); width: 92vw; }
+  .overlay-content.pc-overlay { --pc-frame-inset: var(--space-3); }
   .pc-explorer { left: 8%; top: 7%; width: 84%; height: 81%; }
   .pc-sidebar { width: calc(var(--space-pc-sidebar) - var(--space-6)); }
   .pc-folder-content { padding: var(--space-6); }
@@ -2646,65 +2666,18 @@ section {
   .pc-new-tab { display: none; }
 }
 
-/* Keep the desktop icons compact and the four folder destinations prominent. */
-.pc-icon img { scale: .7; }
-.pc-folder-icon { scale: .8; }
+/* Shared icon sizes stay consistent across desktop breakpoints. */
 .pc-taskbar-apps { gap: var(--space-3); }
 .pc-taskbar-apps > span { width: var(--space-6); height: var(--space-6); }
-.pc-taskbar-apps > span > img { width: var(--font-size-xl); height: var(--font-size-xl); }
-.pc-taskbar-apps .pc-discord-circle { scale: .7; }
 .pc-window-controls > span { display: inline-flex; align-items: center; justify-content: center; }
 .pc-search { justify-content: space-between; color: var(--color-pc-muted); }
 .room-back-button img { scale: .8; }
 
-.pc-taskbar-apps .pc-taskbar-active {
-  border-radius: var(--radius-sm);
-  background: var(--color-pc-selection);
-}
-
-.pc-taskbar-active::after {
-  content: "";
-  position: absolute;
-  bottom: calc(-1 * var(--space-1) / 2);
-  width: var(--space-3);
-  height: var(--space-1);
-  border-radius: var(--radius-full);
-  background: var(--color-pc-accent);
-}
-
+.pc-sidebar { font-size: var(--font-size-sm); }
 .pc-sidebar .pc-sidebar-group { gap: var(--space-2); }
 .pc-sidebar button,
 .pc-sidebar-heading { min-height: var(--space-8); }
 
-/* Make the four sidebar destinations readable within the larger Explorer. */
-.pc-sidebar {
-  font-size: var(--font-size-sm);
-}
-
-.pc-folder-icon {
-  scale: 1;
-  width: var(--space-6);
-  height: var(--space-6);
-}
-
-.pc-sidebar .pc-icon img {
-  scale: 1;
-}
-
-.pc-taskbar-apps .pc-taskbar-active {
-  width: var(--space-8);
-  height: var(--space-8);
-  background: var(--color-room-button);
-  border: var(--border-pc-search);
-  box-shadow: var(--shadow-button);
-}
-
-.pc-taskbar-active::after {
-  width: var(--space-6);
-  background: var(--color-room-glow);
-}
-
-/* Active taskbar app: a subtle tile and a short cyan indicator. */
 .pc-taskbar-apps .pc-taskbar-active {
   width: var(--space-8);
   height: var(--space-8);
@@ -2715,6 +2688,8 @@ section {
 }
 
 .pc-taskbar-active::after {
+  content: "";
+  position: absolute;
   bottom: 0;
   width: var(--space-3);
   height: calc(var(--space-1) / 2);
@@ -2722,24 +2697,24 @@ section {
   background: var(--color-pc-accent);
 }
 
-.pc-sidebar .pc-folder-icon {
-  scale: 1.2;
-}
-
-/* On larger desktops, distribute space between navigation and readable copy. */
+/* Preserve the monitor and Explorer proportions across desktop sizes. */
 @media (min-width: 1101px) {
   .pc-explorer {
-    top: 9%;
-    left: 12%;
-    width: 76%;
-    height: 79%;
-    font-size: var(--font-size-xs);
+    --pc-explorer-height: min(var(--space-pc-window-max-height), calc(100% - var(--pc-taskbar-height) - var(--space-6)));
+    top: calc((100% - var(--pc-taskbar-height) - var(--pc-explorer-height)) / 2);
+    bottom: auto;
+    left: 50%;
+    translate: -50% 0;
+    width: var(--size-pc-explorer-desktop-width);
+    max-width: var(--space-pc-window-max-width);
+    height: var(--pc-explorer-height);
+    font-size: var(--font-size-pc-ui);
   }
 
   .pc-sidebar {
     width: var(--space-pc-sidebar-wide);
     padding: var(--space-2);
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-sm);
   }
 
   .pc-sidebar button,
@@ -2748,7 +2723,7 @@ section {
   }
 
   .pc-folder-content {
-    padding: var(--space-8) var(--space-12);
+    padding: var(--space-4) var(--space-8);
     font-size: var(--font-size-pc-copy-wide);
   }
 
@@ -2757,14 +2732,3 @@ section {
   }
 }
 
-@media (min-width: 1440px) {
-  .pc-explorer {
-    top: 11%;
-    left: 50%;
-    translate: -50% 0;
-    width: 68%;
-    height: 70%;
-    max-width: var(--space-pc-window-max-width);
-    max-height: var(--space-pc-window-max-height);
-  }
-}
