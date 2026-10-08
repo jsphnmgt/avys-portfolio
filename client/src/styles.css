@@ -112,6 +112,7 @@
   --color-room-outline: #EADDCC;
   --border-room-button: 2px solid var(--color-room-outline);
   --font-size-room-button: 1.375rem;
+  --room-button-label-offset: .07;
   --space-room-button-height: 2.125rem;
   --space-room-button-width: 16.8125rem;
   --space-room-top: clamp(var(--space-4), 1.770833vw, var(--space-room-button-height));
@@ -2195,6 +2196,22 @@ section {
 }
 
 
+
+/* Center the visible uppercase letters, accounting for the font’s descender space. */
+.room-back-button > span,
+.room-navigation-toggle > span {
+  display: block;
+  translate: 0 calc(1em * var(--room-button-label-offset));
+}
+
+@supports (text-box-trim: trim-both) {
+  .room-back-button > span,
+  .room-navigation-toggle > span {
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+    translate: none;
+  }
+}
 
 .room-navigation-panel {
   position: absolute;
