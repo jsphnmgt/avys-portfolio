@@ -49,6 +49,10 @@ export default function Room() {
   }, [isMenuOpen]);
 
   const openObject = (object, trigger, fromMenu = false) => {
+    const bounds = trigger.getBoundingClientRect();
+    const room = trigger.closest(".personal-room");
+    room.style.setProperty("--room-overlay-origin-x", `${bounds.left + bounds.width / 2}px`);
+    room.style.setProperty("--room-overlay-origin-y", `${bounds.top + bounds.height / 2}px`);
     returnFocusRef.current = fromMenu ? menuRef.current.querySelector(".room-navigation-toggle") : trigger;
     if (fromMenu) setIsMenuOpen(false);
     setActiveObject(object);
@@ -75,11 +79,11 @@ export default function Room() {
         </div>
       </div>)}
     </div>}
+    {hasEntered && <>
     <a className="room-back-button" href="#home">
       <img src={assets["room-back-arrow.svg"]} alt="" />
       <span>Back to portfolio</span>
     </a>
-    {hasEntered && <>
       <div className={`room-navigation${isMenuOpen ? " is-open" : ""}`} ref={menuRef} onKeyDown={event => {
         if (event.key === "Escape") {
           setIsMenuOpen(false);
