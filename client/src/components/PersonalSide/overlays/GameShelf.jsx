@@ -98,7 +98,13 @@ export default function GameShelf({ isOpen = false, onClose }) {
       </div>
       <section className="watchlist-section game-collection" ref={collectionRef} aria-labelledby="game-collection-title">
         <h3 id="game-collection-title">Game Collection</h3>
-        <ul className="game-cartridges">{collection.map(game => <li key={game.title} className="game-cartridge" title={game.title}><img className="game-cartridge-shell" src={assets["game-cartridge.png"]} alt="" /><img className="game-cartridge-label" src={assets[`game-label-${game.label}.png`]} alt={`${game.title} cover`} /></li>)}</ul>
+        <ul className="game-cartridges">{collection.map(game => <li key={game.title} className="game-cartridge">
+          <div className="game-cartridge-art" aria-hidden="true">
+            <img className="game-cartridge-shell" src={assets["game-cartridge.png"]} alt="" />
+            <img className="game-cartridge-label" src={assets[`game-label-${game.label}.png`]} alt="" />
+          </div>
+          <span className="game-cartridge-title">{game.title}</span>
+        </li>)}</ul>
       </section>
     </div>
   </Overlay>;

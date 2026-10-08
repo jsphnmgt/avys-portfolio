@@ -3083,7 +3083,18 @@ section {
 .game-collection { margin-top: var(--space-12); padding-top: var(--space-6); }
 .game-collection h3 { display: block; text-align: center; margin-bottom: var(--space-8); font-family: var(--font-display); font-size: var(--font-size-3xl); }
 .game-cartridges { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--space-6); list-style: none; padding: 0; margin: 0; }
-.game-cartridge { position: relative; width: 100%; max-width: var(--size-game-cartridge); aspect-ratio: var(--ratio-game-cartridge); }
+.game-cartridge { width: 100%; max-width: var(--size-game-cartridge); }
+.game-cartridge-art { position: relative; aspect-ratio: var(--ratio-game-cartridge); }
+.game-cartridge-title {
+  display: block;
+  margin-top: var(--space-2);
+  color: var(--color-navy);
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-body);
+  text-align: center;
+  text-wrap: balance;
+}
 .game-cartridge-shell { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
 .game-cartridge-label { position: absolute; left: 12.464%; top: 22.052%; width: 75.332%; height: 53.634%; object-fit: fill; }
 @media (max-width: 1000px) { .game-cartridges { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
