@@ -4,23 +4,54 @@ import { assets } from "../../../assets";
 
 const favorites = ["Stardew Valley", "Honkai Star Rail", "Wuthering Waves", "Split Fiction", "Peak", "Roblox"];
 const playing = [
-  { title: "Peak", image: "game-peak.png" },
-  { title: "Roblox", image: "game-roblox.png" },
-  { title: "Stardew Valley", image: "game-stardew.png" },
+  { title: "Peak", image: "game-cover-peak.jpg" },
+  { title: "Roblox", image: "game-cover-roblox.webp" },
+  { title: "Stardew Valley", image: "game-cover-stardew-valley.png" },
+  { title: "Celeste", image: "game-cover-celeste.jpg" },
+  { title: "A Dance of Fire and Ice", image: "game-cover-a-dance-of-fire-and-ice.webp" },
+  { title: "Dark Deception", image: "game-cover-dark-deception.jpg" },
 ];
 const collection = [
-  { title: "A Dance of Fire and Ice", label: 6 },
-  { title: "Call of Duty", label: 8 },
-  { title: "Celeste", label: 7 },
-  { title: "Dark Deception", label: 12 },
-  { title: "Honkai: Star Rail", label: 2 },
-  { title: "It Takes Two", label: 5 },
-  { title: "Minecraft", label: 10 },
-  { title: "Peak", label: 11 },
-  { title: "Roblox", label: 9 },
-  { title: "Split Fiction", label: 1 },
-  { title: "Stardew Valley", label: 4 },
-  { title: "Wuthering Waves", label: 3 },
+  { title: "A Dance of Fire and Ice", image: "game-cover-a-dance-of-fire-and-ice.webp" },
+  { title: "Call of Duty", image: "game-cover-call-of-duty.webp" },
+  { title: "Celeste", image: "game-cover-celeste.jpg" },
+  { title: "Dark Deception", image: "game-cover-dark-deception.jpg" },
+  { title: "Honkai: Star Rail", image: "game-cover-honkai-star-rail.webp" },
+  { title: "It Takes Two", image: "game-cover-it-takes-two.webp" },
+  { title: "Minecraft", image: "game-cover-minecraft.webp" },
+  { title: "Peak", image: "game-cover-peak.jpg" },
+  { title: "Roblox", image: "game-cover-roblox.webp" },
+  { title: "Split Fiction", image: "game-cover-split-fiction.jpg" },
+  { title: "Stardew Valley", image: "game-cover-stardew-valley.png", imagePosition: "top" },
+  { title: "Wuthering Waves", image: "game-cover-wuthering-waves.jpg" },
+  { title: "Farlight 84", image: "game-cover-farlight-84.webp" },
+  { title: "Subway Surfers", image: "game-cover-subway-surfers.jpg" },
+  { title: "Among Us", image: "game-cover-among-us.png" },
+  { title: "In Sink", image: "game-cover-in-sink.webp" },
+  { title: "Plants vs. Zombies", image: "game-cover-plants-vs-zombies.webp" },
+  { title: "Temple Run 2", image: "game-cover-temple-run-2.webp" },
+  { title: "Temple Run", image: "game-cover-temple-run.jpg" },
+  { title: "Penguin Diner 2", image: "game-cover-penguin-diner-2.png" },
+  { title: "Tsuki’s Odyssey", image: "game-cover-tsukis-odyssey.png" },
+  { title: "Toilet Time", image: "game-cover-toilet-time.webp" },
+  { title: "Soul Knight", image: "game-cover-soul-knight.png" },
+  { title: "Dumb Ways to Die", image: "game-cover-dumb-ways-to-die.webp" },
+  { title: "Tomb of the Mask", image: "game-cover-tomb-of-the-mask.webp" },
+  { title: "Good Pizza, Great Pizza", image: "game-cover-good-pizza-great-pizza.webp" },
+  { title: "Rhythm Hive", image: "game-cover-rhythm-hive.png" },
+  { title: "Smash Hit", image: "game-cover-smash-hit.jpg" },
+  { title: "Penguin Diner", image: "game-cover-penguin-diner.webp" },
+  { title: "Virtual Villagers: A New Home", image: "game-cover-virtual-villagers-a-new-home.png" },
+  { title: "Super Mecha Champions", image: "game-cover-super-mecha-champions.webp" },
+  { title: "Tower of Fantasy", image: "game-cover-tower-of-fantasy.webp" },
+  { title: "Virtual Villagers Origins 2", image: "game-cover-virtual-villagers-origins-2.webp" },
+  { title: "Arknights: Endfield", image: "game-cover-arknights-endfield.png" },
+  { title: "Adorable Home", image: "game-cover-adorable-home.webp" },
+  { title: "Daddy Long Legs", image: "game-cover-daddy-long-legs.avif" },
+  { title: "Harvest Moon: Friends of Mineral Town", image: "game-cover-harvest-moon-friends-of-mineral-town.jpg" },
+  { title: "Harvest Moon: More Friends of Mineral Town", image: "game-cover-harvest-moon-more-friends-of-mineral-town.jpg" },
+  { title: "Neighbours from Hell", image: "game-cover-neighbours-from-hell.jpg" },
+  { title: "Dumb Ways to Die 2: The Games", image: "game-cover-dumb-ways-to-die-2.png" },
 ].sort((a, b) => a.title.localeCompare(b.title));
 
 export default function GameShelf({ isOpen = false, onClose }) {
@@ -101,7 +132,7 @@ export default function GameShelf({ isOpen = false, onClose }) {
         <ul className="game-cartridges">{collection.map(game => <li key={game.title} className="game-cartridge">
           <div className="game-cartridge-art" aria-hidden="true">
             <img className="game-cartridge-shell" src={assets["game-cartridge.png"]} alt="" />
-            <img className="game-cartridge-label" src={assets[`game-label-${game.label}.png`]} alt="" />
+            <img className="game-cartridge-label" src={assets[game.image]} style={{ objectPosition: game.imagePosition }} alt="" />
           </div>
           <span className="game-cartridge-title">{game.title}</span>
         </li>)}</ul>
