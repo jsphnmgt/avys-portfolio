@@ -26,6 +26,11 @@ export default function useCollectionPeek() {
     if (!isPeekVisible || window.matchMedia("(prefers-reduced-motion: reduce)").matches) finishClosingPeek();
     else setIsPeekVisible(false);
   };
+  const resetPeek = () => {
+    triggerRef.current = null;
+    setSelectedId(null);
+    setIsPeekVisible(false);
+  };
   const openPeek = (id, trigger) => {
     triggerRef.current = trigger;
     if (selectedId) setIsPeekVisible(true);
@@ -41,5 +46,5 @@ export default function useCollectionPeek() {
   const onPeekTransitionEnd = event => {
     if (event.target === event.currentTarget && event.propertyName === "transform" && !isPeekVisible) finishClosingPeek();
   };
-  return { selectedId, isPeekVisible, peekHeadingRef, openPeek, closePeek, onPeekKeyDown, onPeekTransitionEnd };
+  return { selectedId, isPeekVisible, peekHeadingRef, openPeek, closePeek, resetPeek, onPeekKeyDown, onPeekTransitionEnd };
 }
