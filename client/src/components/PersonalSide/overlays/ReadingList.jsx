@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import useCollectionPeek from "./useCollectionPeek";
 import Overlay from "../../ProfessionalSide/Overlay";
 import CollectionIcon from "./CollectionIcon";
 import { assets } from "../../../assets";
@@ -11,44 +11,14 @@ const sections = [
 ];
 
 export default function ReadingList({ isOpen = false, onClose }) {
-  const [selectedId, setSelectedId] = useState(null);
-  const [isPeekVisible, setIsPeekVisible] = useState(false);
-  const triggerRef = useRef(null);
-  const peekHeadingRef = useRef(null);
+  const { selectedId, isPeekVisible, peekHeadingRef, openPeek, closePeek, onPeekKeyDown, onPeekTransitionEnd } = useCollectionPeek();
   const selected = selectedId ? readingList.catalog[selectedId] : null;
-  useEffect(() => {
-    if (!selectedId) return;
-    peekHeadingRef.current?.focus({ preventScroll: true });
-    let secondFrame;
-    const firstFrame = requestAnimationFrame(() => {
-      secondFrame = requestAnimationFrame(() => setIsPeekVisible(true));
-    });
-    return () => {
-      cancelAnimationFrame(firstFrame);
-      cancelAnimationFrame(secondFrame);
-    };
-  }, [selectedId]);
-  const finishClosingPeek = () => {
-    setSelectedId(null);
-    setIsPeekVisible(false);
-    requestAnimationFrame(() => triggerRef.current?.focus({ preventScroll: true }));
-  };
-  const closePeek = () => {
-    if (!isPeekVisible || window.matchMedia("(prefers-reduced-motion: reduce)").matches) finishClosingPeek();
-    else setIsPeekVisible(false);
-  };
   const statuses = selectedId ? sections.filter(section => readingList[section.id].includes(selectedId)) : [];
   return <Overlay className="watchlist-overlay reading-list-overlay" isOpen={isOpen} onClose={onClose}>
     <header className="watchlist-header">
       <h2 id="detail-title"><CollectionIcon name="book" viewBox="2 2 20 20" />Reading List</h2>
     </header>
-    <div className={`reading-list-layout${selected ? " has-peek" : ""}`} onKeyDown={event => {
-      if (event.key === "Escape" && selected) {
-        event.preventDefault();
-        event.stopPropagation();
-        closePeek();
-      }
-    }}>
+    <div className={`reading-list-layout${selected ? " has-peek" : ""}`} onKeyDown={onPeekKeyDown}>
     <div className="watchlist-scroll reading-list-collections" role="region" aria-label="Reading List collections" tabIndex={0}>
       {sections.map(section => <section className="watchlist-section" key={section.id} aria-labelledby={`reading-list-${section.id}`}>
         <h3 id={`reading-list-${section.id}`}><CollectionIcon name={section.icon} />{section.title}</h3>
@@ -56,10 +26,7 @@ export default function ReadingList({ isOpen = false, onClose }) {
           {[...readingList[section.id]].sort((a, b) => readingList.catalog[a].title.localeCompare(readingList.catalog[b].title, "en", { numeric: true, sensitivity: "base" })).map(id => {
             const item = readingList.catalog[id];
             return <li className="reading-list-card" key={id}>
-              <button className="reading-list-card-button" aria-label={`View details for ${item.title}`} aria-expanded={selectedId === id} aria-controls="reading-list-peek" onClick={event => {
-                triggerRef.current = event.currentTarget;
-                setSelectedId(id);
-              }}>
+              <button className="reading-list-card-button" aria-label={`View details for ${item.title}`} aria-expanded={selectedId === id} aria-controls="reading-list-peek" onClick={event => openPeek(id, event.currentTarget)}>
               <span className="reading-list-cover-frame" aria-hidden="true">
                 <span className="reading-list-cover"><img src={assets[item.image]} alt="" loading="lazy" /></span>
               </span>
@@ -76,9 +43,7 @@ export default function ReadingList({ isOpen = false, onClose }) {
         </ul>
       </section>)}
     </div>
-    {selected && <aside className={`reading-list-peek${isPeekVisible ? " is-visible" : ""}`} id="reading-list-peek" aria-labelledby="reading-peek-title" onTransitionEnd={event => {
-      if (event.target === event.currentTarget && event.propertyName === "transform" && !isPeekVisible) finishClosingPeek();
-    }}>
+    {selected && <aside className={`reading-list-peek${isPeekVisible ? " is-visible" : ""}`} id="reading-list-peek" aria-labelledby="reading-peek-title" onTransitionEnd={onPeekTransitionEnd}>
       <div className="reading-list-peek-toolbar"><span>Book details</span><button className="reading-list-peek-close" onClick={closePeek} aria-label="Close book details"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m6.7 5.3 5.3 5.3 5.3-5.3 1.4 1.4-5.3 5.3 5.3 5.3-1.4 1.4-5.3-5.3-5.3 5.3-1.4-1.4 5.3-5.3-5.3-5.3z" /></svg></button></div>
       <div className="reading-list-peek-scroll watchlist-scroll" key={selectedId}>
         <div className="reading-list-peek-summary">

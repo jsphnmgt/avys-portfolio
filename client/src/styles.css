@@ -3549,6 +3549,11 @@ section {
   outline-offset: var(--space-1);
 }
 
+.watchlist-card-button { color: var(--color-cream); }
+.watchlist-card:focus-within { outline: var(--border-action); outline-offset: var(--space-1); }
+.watchlist-card:has(.watchlist-card-button[aria-expanded="true"]) { border-color: var(--color-cobalt); }
+.watchlist-card-button:hover .watchlist-card-caption { background: var(--color-navy); }
+
 .reading-list-card-button[aria-expanded="true"] .reading-list-cover-frame,
 .reading-list-card-button:hover .reading-list-cover-frame {
   background: var(--color-periwinkle);
@@ -4255,8 +4260,38 @@ section {
 }
 
 .game-cartridge-art {
+  display: block;
   position: relative;
   aspect-ratio: var(--ratio-game-cartridge);
+}
+
+.has-peek .game-cartridges {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.game-cartridge-button {
+  border-radius: var(--radius-md);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .game-cartridge-button {
+    transition: translate var(--motion-card-duration) var(--motion-card-ease);
+  }
+
+  .game-cartridge-button:focus-visible {
+    translate: 0 calc(-1 * var(--space-2));
+  }
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .game-cartridge-button:hover {
+    translate: 0 calc(-1 * var(--space-2));
+  }
+}
+
+.game-cartridge-button:hover .game-cartridge-title,
+.game-cartridge-button[aria-expanded="true"] .game-cartridge-title {
+  border-color: var(--color-game-ink);
 }
 
 .game-cartridge-title {
@@ -4295,6 +4330,9 @@ section {
 }
 
 @media (max-width: 1000px) {
+  .has-peek .game-cartridges {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .game-cartridges {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }

@@ -5,364 +5,839 @@
       "type": "Anime series",
       "image": "watchlist-akame.jpg",
       "source": "https://myanimelist.net/anime/22199",
-      "sourceTitle": "Akame ga Kill!"
+      "sourceTitle": "Akame ga Kill!",
+      "year": "2014",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ],
+      "episodes": 24,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "Tatsumi leaves his village hoping to support its people and becomes involved with a group fighting a corrupt empire. His new allies force him to confront the dangers and moral costs of rebellion."
     },
     "assassination-2": {
       "title": "Assassination Classroom 2nd Season",
       "type": "Anime series",
       "image": "watchlist-assassination-2.jpg",
       "source": "https://myanimelist.net/anime/30654",
-      "sourceTitle": "Ansatsu Kyoushitsu 2nd Season"
+      "sourceTitle": "Ansatsu Kyoushitsu 2nd Season",
+      "year": "2016",
+      "genres": [
+        "Action",
+        "Comedy"
+      ],
+      "episodes": 25,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "Class 3-E returns to school with its unusual mission still unfinished: assassinate the teacher who is helping its students succeed. New rivals and personal challenges test the class as its deadline approaches."
     },
     "danganronpa": {
       "title": "Danganronpa: The Animation",
       "type": "Anime series",
       "image": "watchlist-danganronpa.jpg",
       "source": "https://myanimelist.net/anime/16592",
-      "sourceTitle": "Danganronpa: Kibou no Gakuen to Zetsubou no Koukousei The Animation"
+      "sourceTitle": "Danganronpa: Kibou no Gakuen to Zetsubou no Koukousei The Animation",
+      "year": "2013",
+      "genres": [
+        "Horror",
+        "Mystery",
+        "Suspense"
+      ],
+      "episodes": 13,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "Makoto enters an elite academy only to discover that its students are trapped in a deadly game. Escaping requires a murder, and uncovering the culprit becomes a matter of survival."
     },
     "demon-slayer": {
       "title": "Demon Slayer: Kimetsu no Yaiba",
       "type": "Anime series",
       "image": "watchlist-demon-slayer.jpg",
       "source": "https://myanimelist.net/anime/38000",
-      "sourceTitle": "Kimetsu no Yaiba"
+      "sourceTitle": "Kimetsu no Yaiba",
+      "year": "2019",
+      "genres": [
+        "Action",
+        "Supernatural"
+      ],
+      "episodes": 26,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "After demons attack his family, Tanjiro joins the Demon Slayer Corps. He searches for a way to restore his sister Nezuko's humanity while facing increasingly dangerous opponents."
     },
     "haikyuu-3": {
       "title": "Haikyuu!! 3rd Season",
       "type": "Anime series",
       "image": "watchlist-haikyuu-3.jpg",
       "source": "https://myanimelist.net/anime/32935",
-      "sourceTitle": "Haikyuu!! Karasuno Koukou vs. Shiratorizawa Gakuen Koukou"
+      "sourceTitle": "Haikyuu!! Karasuno Koukou vs. Shiratorizawa Gakuen Koukou",
+      "year": "2016",
+      "genres": [
+        "Sports"
+      ],
+      "episodes": 10,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "Karasuno faces powerhouse Shiratorizawa in the match that will decide its place at nationals. Hinata and his teammates must bring together everything they have learned against an imposing opponent."
     },
     "hunter": {
       "title": "Hunter x Hunter",
       "type": "Anime series",
       "image": "watchlist-hunter.jpg",
       "source": "https://myanimelist.net/anime/11061",
-      "sourceTitle": "Hunter x Hunter (2011)"
+      "sourceTitle": "Hunter x Hunter (2011)",
+      "year": "2011",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "episodes": 148,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "Gon takes the dangerous Hunter Examination in the hope of following his father's path. The friends he makes along the way draw him into a world of challenging adventures and extraordinary abilities."
     },
     "promised-neverland": {
       "title": "The Promised Neverland",
       "type": "Anime series",
       "image": "watchlist-promised-neverland.jpg",
       "source": "https://myanimelist.net/anime/37779",
-      "sourceTitle": "Yakusoku no Neverland"
+      "sourceTitle": "Yakusoku no Neverland",
+      "year": "2019",
+      "genres": [
+        "Mystery",
+        "Suspense"
+      ],
+      "episodes": 12,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "Life at Grace Field House seems peaceful for its young residents. When its oldest children uncover a disturbing secret, they must question everything they believed about their home."
     },
     "tokyo-ghoul": {
       "title": "Tokyo Ghoul",
       "type": "Anime series",
       "image": "watchlist-tokyo-ghoul.jpg",
       "source": "https://myanimelist.net/anime/22319",
-      "sourceTitle": "Tokyo Ghoul"
+      "sourceTitle": "Tokyo Ghoul",
+      "year": "2014",
+      "genres": [
+        "Action",
+        "Fantasy",
+        "Horror",
+        "Suspense"
+      ],
+      "episodes": 12,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "A disastrous encounter changes student Ken Kaneki into a human-ghoul hybrid. He struggles to preserve his identity while learning to survive between two hostile worlds."
     },
     "arrietty": {
       "title": "The Secret World of Arrietty",
       "type": "Anime movie",
       "image": "watchlist-arrietty.jpg",
       "source": "https://myanimelist.net/anime/7711",
-      "sourceTitle": "Karigurashi no Arrietty"
+      "sourceTitle": "Karigurashi no Arrietty",
+      "year": "2010",
+      "genres": [
+        "Supernatural"
+      ],
+      "episodes": 1,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "Tiny Arrietty lives beneath a house, borrowing small necessities from its human occupants. Her friendship with a visiting boy puts her family's carefully hidden way of life at risk."
     },
     "weathering": {
       "title": "Weathering With You",
       "type": "Anime movie",
       "image": "watchlist-weathering.jpg",
       "source": "https://myanimelist.net/anime/38826",
-      "sourceTitle": "Tenki no Ko"
+      "sourceTitle": "Tenki no Ko",
+      "year": "2019",
+      "genres": [
+        "Drama",
+        "Romance",
+        "Supernatural"
+      ],
+      "episodes": 1,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "Runaway Hodaka arrives in a rain-soaked Tokyo and meets Hina, a girl who can bring sunshine. Their attempt to make a living with her gift reveals that changing the weather has consequences."
     },
     "spirited-away": {
       "title": "Spirited Away",
       "type": "Anime movie",
       "image": "watchlist-spirited-away.jpg",
       "source": "https://myanimelist.net/anime/199",
-      "sourceTitle": "Sen to Chihiro no Kamikakushi"
+      "sourceTitle": "Sen to Chihiro no Kamikakushi",
+      "year": "2001",
+      "genres": [
+        "Adventure",
+        "Fantasy"
+      ],
+      "episodes": 1,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "Chihiro wanders into a mysterious spirit world and must work in a bathhouse to survive. With unexpected allies, she searches for a way to rescue her parents and return home."
     },
     "one-piece": {
       "title": "One Piece",
       "type": "Anime series",
       "image": "watchlist-one-piece.jpg",
       "source": "https://myanimelist.net/anime/21",
-      "sourceTitle": "One Piece"
+      "sourceTitle": "One Piece",
+      "year": "1999",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "episodes": null,
+      "rating": null,
+      "thoughts": null,
+      "synopsis": "Monkey D. Luffy sets sail in pursuit of the legendary One Piece treasure. He gathers an unusual crew and faces dangerous seas, powerful rivals, and new adventures on the way to becoming Pirate King."
     },
     "charlotte": {
       "title": "Charlotte",
       "type": "Anime series",
       "image": "watchlist-charlotte.jpg",
       "source": "https://myanimelist.net/anime/28999",
-      "sourceTitle": "Charlotte"
+      "sourceTitle": "Charlotte",
+      "year": "2015",
+      "genres": [
+        "Drama"
+      ],
+      "episodes": 13,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "Yuu uses a brief possession ability to get ahead at school until another student exposes him. Joining a school for young ability users brings responsibilities and mysteries he never expected."
     },
     "hello-world": {
       "title": "Hello World",
       "type": "Anime movie",
       "image": "watchlist-hello-world.jpg",
       "source": "https://myanimelist.net/anime/38816",
-      "sourceTitle": "Hello World"
+      "sourceTitle": "Hello World",
+      "year": "2019",
+      "genres": [
+        "Drama",
+        "Romance",
+        "Sci-Fi"
+      ],
+      "episodes": 1,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "A reserved student in futuristic Kyoto meets a man claiming to be his older self. The stranger urges him to change a tragedy involving a classmate, setting a complicated plan in motion."
     },
     "your-name": {
       "title": "Your Name",
       "type": "Anime movie",
       "image": "watchlist-your-name.jpg",
       "source": "https://myanimelist.net/anime/32281",
-      "sourceTitle": "Kimi no Na wa."
+      "sourceTitle": "Kimi no Na wa.",
+      "year": "2016",
+      "genres": [
+        "Drama"
+      ],
+      "episodes": 1,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "A countryside girl and a Tokyo boy begin waking up in each other's bodies. Their attempts to understand the experience draw their lives together across distance and unexpected circumstances."
     },
     "angels-of-death": {
       "title": "Angels of Death",
       "type": "Anime series",
       "image": "watchlist-angels-of-death.jpg",
       "source": "https://myanimelist.net/anime/35994",
-      "sourceTitle": "Satsuriku no Tenshi"
+      "sourceTitle": "Satsuriku no Tenshi",
+      "year": "2018",
+      "genres": [
+        "Adventure",
+        "Horror",
+        "Suspense"
+      ],
+      "episodes": 16,
+      "rating": 4,
+      "thoughts": null,
+      "synopsis": "Rachel awakens inside a strange building with no memory of how she arrived. An uneasy alliance with a dangerous man becomes her only way through its threatening floors."
     },
     "classroom-elite": {
       "title": "Classroom of the Elite",
       "type": "Anime series",
       "image": "watchlist-classroom-elite.jpg",
       "source": "https://myanimelist.net/anime/35507",
-      "sourceTitle": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e"
+      "sourceTitle": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e",
+      "year": "2017",
+      "genres": [
+        "Drama",
+        "Suspense"
+      ],
+      "episodes": 12,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "A prestigious school divides students into classes with unequal privileges. Ayanokoji and his classmates must navigate its ruthless competition to improve their standing."
     },
     "kiki": {
       "title": "Kiki's Delivery Service",
       "type": "Anime movie",
       "image": "watchlist-kiki.jpg",
       "source": "https://myanimelist.net/anime/512",
-      "sourceTitle": "Majo no Takkyuubin"
+      "sourceTitle": "Majo no Takkyuubin",
+      "year": "1989",
+      "genres": [
+        "Adventure",
+        "Comedy",
+        "Drama",
+        "Fantasy"
+      ],
+      "episodes": 1,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "Young witch Kiki leaves home for a year of independent living with her cat Jiji. Starting a broomstick delivery service helps her discover responsibility, friendship, and her place in a new town."
     },
     "totoro": {
       "title": "My Neighbor Totoro",
       "type": "Anime movie",
       "image": "watchlist-totoro.jpg",
       "source": "https://myanimelist.net/anime/523",
-      "sourceTitle": "Tonari no Totoro"
+      "sourceTitle": "Tonari no Totoro",
+      "year": "1988",
+      "genres": [
+        "Adventure",
+        "Supernatural"
+      ],
+      "episodes": 1,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "Two sisters move to the countryside while their mother receives hospital treatment. Discovering a gentle forest spirit brings wonder and comfort into their new daily lives."
     },
     "noragami": {
       "title": "Noragami",
       "type": "Anime series",
       "image": "watchlist-noragami.jpg",
       "source": "https://myanimelist.net/anime/20507",
-      "sourceTitle": "Noragami"
+      "sourceTitle": "Noragami",
+      "year": "2014",
+      "genres": [
+        "Action",
+        "Supernatural"
+      ],
+      "episodes": 12,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "Minor god Yato takes odd jobs while dreaming of a devoted following. An accident connects him with Hiyori, whose unusual condition draws her into his supernatural world."
     },
     "another": {
       "title": "Another",
       "type": "Anime series",
       "image": "watchlist-another.jpg",
       "source": "https://myanimelist.net/anime/11111",
-      "sourceTitle": "Another"
+      "sourceTitle": "Another",
+      "year": "2012",
+      "genres": [
+        "Horror",
+        "Mystery"
+      ],
+      "episodes": 12,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "A transfer student finds his classmates behaving strangely toward a quiet girl with an eyepatch. A series of unsettling events leads him to investigate the secret surrounding their class."
     },
     "death-parade": {
       "title": "Death Parade",
       "type": "Anime series",
       "image": "watchlist-death-parade.jpg",
       "source": "https://myanimelist.net/anime/28223",
-      "sourceTitle": "Death Parade"
+      "sourceTitle": "Death Parade",
+      "year": "2015",
+      "genres": [
+        "Drama",
+        "Fantasy",
+        "Suspense"
+      ],
+      "episodes": 12,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "A mysterious bar receives people after death and tests them through revealing games. Its arbiter begins to question his judgments when an unfamiliar visitor changes his perspective."
     },
     "mugen-train": {
       "title": "Demon Slayer: The Movie — Mugen Train",
       "type": "Anime movie",
       "image": "watchlist-mugen-train.jpg",
       "source": "https://myanimelist.net/anime/40456",
-      "sourceTitle": "Kimetsu no Yaiba Movie: Mugen Ressha-hen"
+      "sourceTitle": "Kimetsu no Yaiba Movie: Mugen Ressha-hen",
+      "year": "2020",
+      "genres": [
+        "Action",
+        "Supernatural"
+      ],
+      "episodes": 1,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "Tanjiro and his companions join Flame Hashira Rengoku to investigate disappearances aboard a train. A hidden demonic threat puts the passengers and their rescuers in danger."
     },
     "erased": {
       "title": "Erased",
       "type": "Anime series",
       "image": "watchlist-erased.jpg",
       "source": "https://myanimelist.net/anime/31043",
-      "sourceTitle": "Boku dake ga Inai Machi"
+      "sourceTitle": "Boku dake ga Inai Machi",
+      "year": "2016",
+      "genres": [
+        "Mystery",
+        "Suspense"
+      ],
+      "episodes": 12,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "Satoru's ability to revisit moments before disaster sends him back to his childhood. He tries to prevent a classmate's disappearance while unraveling a mystery connected to the present."
     },
     "haikyuu": {
       "title": "Haikyuu!!",
       "type": "Anime series",
       "image": "watchlist-haikyuu.jpg",
       "source": "https://myanimelist.net/anime/20583",
-      "sourceTitle": "Haikyuu!!"
+      "sourceTitle": "Haikyuu!!",
+      "year": "2014",
+      "genres": [
+        "Sports"
+      ],
+      "episodes": 25,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "Determined volleyball player Hinata joins Karasuno and discovers that his former rival Kageyama is now his teammate. Learning to work together becomes essential to rebuilding their team's reputation."
     },
     "haikyuu-2": {
       "title": "Haikyuu!! 2nd Season",
       "type": "Anime series",
       "image": "watchlist-haikyuu-2.jpg",
       "source": "https://myanimelist.net/anime/28891",
-      "sourceTitle": "Haikyuu!! Second Season"
+      "sourceTitle": "Haikyuu!! Second Season",
+      "year": "2015",
+      "genres": [
+        "Sports"
+      ],
+      "episodes": 25,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "Karasuno prepares for the next tournament by training alongside formidable rival teams. Hinata, Kageyama, and their teammates work to strengthen their skills and develop new approaches."
     },
     "haikyuu-top": {
       "title": "Haikyuu!! To the Top",
       "type": "Anime series",
       "image": "watchlist-haikyuu-top.jpg",
       "source": "https://myanimelist.net/anime/38883",
-      "sourceTitle": "Haikyuu!! To the Top"
+      "sourceTitle": "Haikyuu!! To the Top",
+      "year": "2020",
+      "genres": [
+        "Sports"
+      ],
+      "episodes": 13,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "With nationals ahead, Karasuno's players face new training opportunities and personal challenges. Hinata looks for his own way to improve while his teammates refine their abilities."
     },
     "haikyuu-top-2": {
       "title": "Haikyuu!! To the Top 2nd Season",
       "type": "Anime series",
       "image": "watchlist-haikyuu-top-2.jpg",
       "source": "https://myanimelist.net/anime/40776",
-      "sourceTitle": "Haikyuu!! To the Top Part 2"
+      "sourceTitle": "Haikyuu!! To the Top Part 2",
+      "year": "2020",
+      "genres": [
+        "Sports"
+      ],
+      "episodes": 12,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "Karasuno's national tournament journey continues against increasingly demanding opponents. The team must adapt under pressure to keep its ambitions alive."
     },
     "jujutsu-kaisen": {
       "title": "Jujutsu Kaisen",
       "type": "Anime series",
       "image": "watchlist-jujutsu-kaisen.jpg",
       "source": "https://myanimelist.net/anime/40748",
-      "sourceTitle": "Jujutsu Kaisen"
+      "sourceTitle": "Jujutsu Kaisen",
+      "year": "2020",
+      "genres": [
+        "Action",
+        "Supernatural"
+      ],
+      "episodes": 24,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "Yuji Itadori is drawn into a hidden world of curses and sorcerers. Training alongside other students, he faces supernatural threats while carrying a dangerous power within him."
     },
     "iruma": {
       "title": "Welcome to Demon School! Iruma-kun",
       "type": "Anime series",
       "image": "watchlist-iruma.jpg",
       "source": "https://myanimelist.net/anime/39196",
-      "sourceTitle": "Mairimashita! Iruma-kun"
+      "sourceTitle": "Mairimashita! Iruma-kun",
+      "year": "2019",
+      "genres": [
+        "Comedy",
+        "Fantasy"
+      ],
+      "episodes": 23,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "Iruma is sold to a demon who unexpectedly adopts him as a grandson. Attending a demon school means navigating strange traditions while hiding the fact that he is human."
     },
     "iruma-2": {
       "title": "Welcome to Demon School! Iruma-kun 2nd Season",
       "type": "Anime series",
       "image": "watchlist-iruma-2.jpg",
       "source": "https://myanimelist.net/anime/41402",
-      "sourceTitle": "Mairimashita! Iruma-kun 2nd Season"
+      "sourceTitle": "Mairimashita! Iruma-kun 2nd Season",
+      "year": "2021",
+      "genres": [
+        "Comedy",
+        "Fantasy"
+      ],
+      "episodes": 21,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "Iruma grows more comfortable at demon school and begins pursuing a higher rank. New responsibilities in the student council bring unusual challenges and unexpected trouble."
     },
     "assassination": {
       "title": "Assassination Classroom",
       "type": "Anime series",
       "image": "watchlist-assassination.jpg",
       "source": "https://myanimelist.net/anime/24833",
-      "sourceTitle": "Ansatsu Kyoushitsu"
+      "sourceTitle": "Ansatsu Kyoushitsu",
+      "year": "2015",
+      "genres": [
+        "Action",
+        "Comedy"
+      ],
+      "episodes": 22,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "An overlooked class receives an extraordinary assignment: kill its nearly unstoppable new teacher before he destroys Earth. His dedication to teaching complicates the students' unusual mission."
     },
     "entertainment-district": {
       "title": "Demon Slayer: Entertainment District Arc",
       "type": "Anime series",
       "image": "watchlist-entertainment-district.jpg",
       "source": "https://myanimelist.net/anime/47778",
-      "sourceTitle": "Kimetsu no Yaiba: Yuukaku-hen"
+      "sourceTitle": "Kimetsu no Yaiba: Yuukaku-hen",
+      "year": "2021",
+      "genres": [
+        "Action",
+        "Supernatural"
+      ],
+      "episodes": 11,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "Tanjiro's group accompanies Sound Hashira Tengen Uzui into the entertainment district. A search for missing allies leads them toward a dangerous demon hiding among its bustling streets."
     },
     "iruma-3": {
       "title": "Welcome to Demon School! Iruma-kun 3rd Season",
       "type": "Anime series",
       "image": "watchlist-iruma-3.jpg",
       "source": "https://myanimelist.net/anime/49784",
-      "sourceTitle": "Mairimashita! Iruma-kun 3rd Season"
+      "sourceTitle": "Mairimashita! Iruma-kun 3rd Season",
+      "year": "2022",
+      "genres": [
+        "Comedy",
+        "Fantasy"
+      ],
+      "episodes": 21,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "Iruma and his classmates must improve their ranks to keep their special classroom. New tutors and demanding school festivals give them a chance to prove their progress."
     },
     "tangerines": {
       "title": "When Life Gives You Tangerines",
       "type": "K-drama series",
       "image": "watchlist-tangerines.jpg",
       "source": "https://www.tvmaze.com/shows/74399/when-life-gives-you-tangerines",
-      "sourceTitle": "When Life Gives You Tangerines"
+      "sourceTitle": "When Life Gives You Tangerines",
+      "year": "2025",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "episodes": null,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "On Jeju Island, a spirited young woman and a dependable young man build a life together. Their story follows love, family, and perseverance across the challenges of passing years."
     },
     "while-sleeping": {
       "title": "While You Were Sleeping",
       "type": "K-drama series",
       "image": "watchlist-while-sleeping.jpg",
       "source": "https://www.tvmaze.com/shows/23936/while-you-were-sleeping",
-      "sourceTitle": "While You Were Sleeping"
+      "sourceTitle": "While You Were Sleeping",
+      "year": "2017",
+      "genres": [
+        "Fantasy",
+        "Romance",
+        "Legal"
+      ],
+      "episodes": null,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "A woman dreams of future accidents, and a prosecutor becomes involved in trying to prevent them. Their shared efforts raise questions about whether tragedy can truly be changed."
     },
     "graceful-family": {
       "title": "Graceful Family",
       "type": "K-drama series",
       "image": "watchlist-graceful-family.jpg",
       "source": "https://www.tvmaze.com/shows/42895/graceful-family",
-      "sourceTitle": "Graceful Family"
+      "sourceTitle": "Graceful Family",
+      "year": "2019",
+      "genres": [
+        "Drama",
+        "Mystery"
+      ],
+      "episodes": null,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "An heiress and a lawyer investigate the truth behind her mother's death. Their work brings them into conflict with the secrets protecting a powerful family."
     },
     "attorney-woo": {
       "title": "Extraordinary Attorney Woo",
       "type": "K-drama series",
       "image": "watchlist-attorney-woo.jpg",
       "source": "https://www.tvmaze.com/shows/62357/extraordinary-attorney-woo",
-      "sourceTitle": "Extraordinary Attorney Woo"
+      "sourceTitle": "Extraordinary Attorney Woo",
+      "year": "2022",
+      "genres": [
+        "Drama",
+        "Legal"
+      ],
+      "episodes": null,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "Young attorney Woo Young-woo brings exceptional legal insight to her first professional cases. Alongside courtroom challenges, she navigates relationships and the expectations of her workplace."
     },
     "mr-queen": {
       "title": "Mr. Queen",
       "type": "K-drama series",
       "image": "watchlist-mr-queen.jpg",
       "source": "https://www.tvmaze.com/shows/51568/mr-queen",
-      "sourceTitle": "Mr. Queen"
+      "sourceTitle": "Mr. Queen",
+      "year": "2020",
+      "genres": [
+        "Drama",
+        "Fantasy",
+        "History"
+      ],
+      "episodes": null,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "A modern man's soul unexpectedly becomes trapped in the body of a Joseon-era queen. Adjusting to palace life means facing unfamiliar customs, royal intrigue, and an unusual identity crisis."
     },
     "dear-x": {
       "title": "Dear X",
       "type": "K-drama series",
       "image": "watchlist-dear-x.jpg",
       "source": "https://www.tvmaze.com/shows/86342/dear-x",
-      "sourceTitle": "Dear X"
+      "sourceTitle": "Dear X",
+      "year": "2025",
+      "genres": [
+        "Drama",
+        "Thriller"
+      ],
+      "episodes": null,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "Successful actress Baek Ah-jin hides a manipulative personality behind her polished public image. The relationships and sacrifices behind her rise reveal a darker side of fame."
     },
     "alice-borderland": {
       "title": "Alice in Borderland",
       "type": "Japanese series",
       "image": "watchlist-alice-borderland.jpg",
       "source": "https://www.tvmaze.com/shows/50036/alice-in-borderland",
-      "sourceTitle": "Alice in Borderland"
+      "sourceTitle": "Alice in Borderland",
+      "year": "2020",
+      "genres": [
+        "Science-Fiction",
+        "Thriller",
+        "Mystery"
+      ],
+      "episodes": null,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "A gamer and his friends find themselves in a deserted version of Tokyo. Surviving its dangerous games forces them to use their wits and question the rules of their new reality."
     },
     "unwritten-seoul": {
       "title": "Our Unwritten Seoul",
       "type": "K-drama series",
       "image": "watchlist-unwritten-seoul.jpg",
       "source": "https://www.tvmaze.com/shows/84106/our-unwritten-seoul",
-      "sourceTitle": "Our Unwritten Seoul"
+      "sourceTitle": "Our Unwritten Seoul",
+      "year": "2025",
+      "genres": [
+        "Drama",
+        "Family",
+        "Romance"
+      ],
+      "episodes": null,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "Twin sisters with very different lives exchange identities after an unexpected turn of events. Each must face unfamiliar responsibilities while discovering what she truly wants."
     },
     "perfect-crown": {
       "title": "Perfect Crown",
       "type": "K-drama series",
       "image": "watchlist-perfect-crown.jpg",
       "source": "https://www.tvmaze.com/shows/81369/perfect-crown",
-      "sourceTitle": "Perfect Crown"
+      "sourceTitle": "Perfect Crown",
+      "year": "2026",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "episodes": null,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "A wealthy heiress lacks the status that society values, while a prince has status without freedom. A contract marriage offers both a way to challenge the expectations shaping their lives."
     },
     "hells-kitchen-vegas": {
       "title": "Hell's Kitchen: Las Vegas",
       "type": "American series",
       "image": "watchlist-hells-kitchen-vegas.jpg",
       "source": "https://www.tvmaze.com/shows/253/hells-kitchen",
-      "sourceTitle": "Hell's Kitchen"
+      "sourceTitle": "Hell's Kitchen",
+      "year": "2021",
+      "genres": [
+        "Food"
+      ],
+      "episodes": 16,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "Aspiring chefs compete in a demanding Las Vegas kitchen for a major career opportunity. Team challenges and intense dinner services test their skill, discipline, and ability to handle pressure."
     },
     "hells-kitchen-ages": {
       "title": "Hell's Kitchen: Battle of the Ages",
       "type": "American series",
       "image": "watchlist-hells-kitchen-ages.jpg",
       "source": "https://www.tvmaze.com/shows/253/hells-kitchen",
-      "sourceTitle": "Hell's Kitchen"
+      "sourceTitle": "Hell's Kitchen",
+      "year": "2022",
+      "genres": [
+        "Food"
+      ],
+      "episodes": 16,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "Chefs from different age groups compete through culinary challenges and high-pressure dinner services. Their contrasting experience and approaches become part of the battle for a life-changing prize."
     },
     "enola-holmes": {
       "title": "Enola Holmes",
       "type": "American movie",
       "image": "watchlist-enola-holmes.jpg",
       "source": "https://en.wikipedia.org/wiki/Enola_Holmes_(film)",
-      "sourceTitle": "Enola Holmes (film)"
+      "sourceTitle": "Enola Holmes (film)",
+      "year": "2020",
+      "genres": [
+        "Mystery",
+        "Adventure"
+      ],
+      "episodes": null,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "Sherlock Holmes's younger sister sets out to find her missing mother. Her journey to London intersects with a runaway young nobleman and a mystery larger than she expected."
     },
     "enola-holmes-2": {
       "title": "Enola Holmes 2",
       "type": "American movie",
       "image": "watchlist-enola-holmes-2.jpg",
       "source": "https://en.wikipedia.org/wiki/Enola_Holmes_2",
-      "sourceTitle": "Enola Holmes 2"
+      "sourceTitle": "Enola Holmes 2",
+      "year": "2022",
+      "genres": [
+        "Mystery",
+        "Adventure"
+      ],
+      "episodes": null,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "Enola returns for another detective adventure alongside her famous brother. Seeking to establish herself independently, she becomes involved in a new mystery."
     },
     "witch": {
       "title": "The Witch: Part 1. The Subversion",
       "type": "Korean movie",
       "image": "watchlist-witch.jpg",
       "source": "https://en.wikipedia.org/wiki/The_Witch%3A_Part_1._The_Subversion",
-      "sourceTitle": "The Witch: Part 1. The Subversion"
+      "sourceTitle": "The Witch: Part 1. The Subversion",
+      "year": "2018",
+      "genres": [
+        "Sci-Fi",
+        "Action",
+        "Horror"
+      ],
+      "episodes": null,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "A young woman with an unusual past becomes entangled in the consequences of experiments on human abilities. Her connection to a dangerous organization threatens the life she has built."
     },
     "ready-or-not": {
       "title": "Ready or Not",
       "type": "American movie",
       "image": "watchlist-ready-or-not.jpg",
       "source": "https://en.wikipedia.org/wiki/Ready_or_Not_(2019_film)",
-      "sourceTitle": "Ready or Not (2019 film)"
+      "sourceTitle": "Ready or Not (2019 film)",
+      "year": "2019",
+      "genres": [
+        "Horror",
+        "Comedy"
+      ],
+      "episodes": null,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "A bride's wedding-night introduction to her husband's wealthy family becomes a deadly ritual. She must survive their twisted tradition before the night is over."
     },
     "infinity-castle": {
       "title": "Demon Slayer: Infinity Castle",
       "type": "Anime movie",
       "image": "watchlist-infinity-castle.jpg",
       "source": "https://en.wikipedia.org/wiki/Demon_Slayer%3A_Kimetsu_no_Yaiba_%E2%80%93_The_Movie%3A_Infinity_Castle",
-      "sourceTitle": "Demon Slayer: Kimetsu no Yaiba – The Movie: Infinity Castle"
+      "sourceTitle": "Demon Slayer: Kimetsu no Yaiba – The Movie: Infinity Castle",
+      "year": "2025",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ],
+      "episodes": null,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "The Demon Slayer Corps enters Muzan's shifting fortress for a confrontation with its most dangerous enemies. The battle brings its members face to face with the remaining Upper Rank demons."
     },
     "weightlifting": {
       "title": "Weightlifting Fairy Kim Bok-joo",
       "type": "K-drama series",
       "image": "watchlist-weightlifting.jpg",
       "source": "https://www.tvmaze.com/shows/18860/weightlifting-fairy-kim-bok-joo",
-      "sourceTitle": "Weightlifting Fairy Kim Bok Joo"
+      "sourceTitle": "Weightlifting Fairy Kim Bok Joo",
+      "year": "2016",
+      "genres": [
+        "Drama",
+        "Romance",
+        "Sports"
+      ],
+      "episodes": null,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "A young weightlifter navigates training, friendship, and first love alongside fellow student athletes. Their ambitions and everyday struggles shape a warm coming-of-age story."
     },
     "ready-or-not-2": {
       "title": "Ready or Not 2: Here I Come",
       "type": "American movie",
       "image": "watchlist-ready-or-not-2.jpg",
       "source": "https://en.wikipedia.org/wiki/Ready_or_Not_2%3A_Here_I_Come",
-      "sourceTitle": "Ready or Not 2: Here I Come"
+      "sourceTitle": "Ready or Not 2: Here I Come",
+      "year": "2026",
+      "genres": [
+        "Horror",
+        "Comedy"
+      ],
+      "episodes": null,
+      "rating": 5,
+      "thoughts": null,
+      "synopsis": "Grace is pulled into another deadly ritual immediately after her first ordeal. This time, protecting her estranged sister means surviving the pursuit of several powerful families."
     }
   },
   "favorites": [
