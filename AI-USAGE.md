@@ -101,6 +101,14 @@
 - **Commit:** [8759747](https://github.com/jsphnmgt/avys-portfolio/commit/87597472835b118e893dbfb36a7544de310cef01)
 - **What it does and why it is built this way:** I organized the website’s color palette into reusable CSS variables and assigned them to roles such as text, backgrounds, and outlines. This keeps the design consistent and lets me update colors in one place.
 
+- **File:** client/src/components/PersonalSide/overlays/PersonalComputer.jsx — Favorites and Currents summaries
+- **Commit:** [b9ea4a8](https://github.com/jsphnmgt/avys-portfolio/commit/b9ea4a8fb39362f2a31594ab8b3beecba6bafa70#diff-d7096eac69a82612920ea614053b86f75bba021daef813513469f039e4116fc0)
+- **What it does and why it is built this way:** I added the Favorites and Currents summaries to give visitors a quick overview of my favorite things and current interests. Keeping them in the PC overlay lets visitors learn more about me before exploring the individual collections.
+
+- **File:** client/src/styles.css - Fix vertical text alignment in room navigation buttons
+- **Commit:** [214816f](https://github.com/jsphnmgt/avys-portfolio/commit/214816ff6ffb87e3d5f012e3e4dca9d928924725)
+- **What it does and why it is built this way:** I adjusted the CSS to vertically center the text inside the room navigation buttons. This makes the labels align consistently and gives the menu a cleaner appearance.
+
 ### The AI-written part I understand best
 
 - **File:** client/src/components/PersonalSide/overlays/Music.jsx
