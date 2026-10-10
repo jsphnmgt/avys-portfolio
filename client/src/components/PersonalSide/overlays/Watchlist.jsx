@@ -22,7 +22,7 @@ export default function Watchlist({ isOpen = false, onClose }) {
     <div className={`reading-list-layout${selected ? " has-peek" : ""}`} onKeyDown={onPeekKeyDown}>
     <div className="watchlist-scroll reading-list-collections" role="region" aria-label="Watchlist collections" tabIndex={0}>
       {sections.map(section => <section className="watchlist-section" key={section.id} aria-labelledby={`watchlist-${section.id}`}>
-        <h3 id={`watchlist-${section.id}`}><CollectionIcon name={section.icon} />{section.title}</h3>
+        <h3 id={`watchlist-${section.id}`}><CollectionIcon name={section.icon} />{section.title}<span className="collection-count">{watchlist[section.id].length}</span></h3>
         <ul className="watchlist-cards" aria-label={section.title}>
           {[...watchlist[section.id]].sort((a, b) => watchlist.catalog[a].title.localeCompare(watchlist.catalog[b].title, "en", { numeric: true, sensitivity: "base" })).map(id => {
             const item = watchlist.catalog[id];
