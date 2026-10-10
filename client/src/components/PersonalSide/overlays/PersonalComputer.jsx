@@ -34,9 +34,23 @@ const folders = [
 
 export default function PersonalComputer({ isOpen = false, onClose, onOpenCollection }) {
   const [currentFolder, setCurrentFolder] = useState("Welcome");
+  const [hasChangedFolder, setHasChangedFolder] = useState(false);
   const [now, setNow] = useState(() => new Date());
+  const [imagesReady, setImagesReady] = useState(false);
+  const desktopRef = useRef(null);
   const sidebarRef = useRef(null);
   const [selection, setSelection] = useState(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    let cancelled = false;
+    // Decode the wallpaper and icons before the monitor starts expanding.
+    const images = [...desktopRef.current.querySelectorAll("img")];
+    Promise.all(images.map(image => image.decode().catch(() => {}))).then(() => {
+      if (!cancelled) setImagesReady(true);
+    });
+    return () => { cancelled = true; };
+  }, [isOpen]);
 
   useLayoutEffect(() => {
     const sidebar = sidebarRef.current;
@@ -48,7 +62,7 @@ export default function PersonalComputer({ isOpen = false, onClose, onOpenCollec
     const observer = new ResizeObserver(update);
     if (sidebar) observer.observe(sidebar);
     return () => observer.disconnect();
-  }, [currentFolder, isOpen]);
+  }, [currentFolder, isOpen, imagesReady]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -58,9 +72,9 @@ export default function PersonalComputer({ isOpen = false, onClose, onOpenCollec
 
   const iconFolder = (folder, className = "") => <span className={`pc-folder-icon ${className}`} aria-hidden="true"><img src={assets[`pc-${folder.icon}.svg`]} alt="" />{folder.detail && <img className={`pc-folder-detail${folder.detail === "group11" ? " pc-folder-detail-person" : ""}`} src={assets[`pc-${folder.detail}.svg`]} alt="" />}</span>;
 
-  return <Overlay className="pc-overlay" isOpen={isOpen} onClose={onClose}>
+  return <Overlay className="pc-overlay" isOpen={isOpen && imagesReady} onClose={onClose}>
     <h2 id="detail-title" className="pc-accessible-title">Personal Computer</h2>
-    <div className="pc-desktop">
+    <div className="pc-desktop" ref={desktopRef}>
       <img className="pc-wallpaper" src={assets["pc-rectangle49.png"]} alt="" />
       <div className="pc-desktop-folders" aria-label="Desktop folders">
         {["HAU", "avys", "APSI"].map(name => <div className="pc-desktop-folder" key={name}><img src={assets["pc-image41.png"]} alt="" /><span>{name}</span></div>)}
@@ -89,11 +103,15 @@ export default function PersonalComputer({ isOpen = false, onClose, onOpenCollec
             <div className="pc-sidebar-group" ref={sidebarRef}>
               {selection && <span className="pc-sidebar-selection" aria-hidden="true" style={{ transform: `translateY(${selection.top}px)`, height: `${selection.height}px` }} />}
               <div className="pc-sidebar-heading">{iconFolder({ icon: "group19" })}<span>This PC</span><Icon name="interface-arrow" className="pc-small-arrow" /></div>
-              {folders.map(folder => <button key={folder.name} aria-current={currentFolder === folder.name ? "page" : undefined} onClick={() => setCurrentFolder(folder.name)}>{iconFolder(folder, folder.name === "Favorites" ? "pc-icon-explorer" : "")}<span>{folder.name}</span><Icon name="interface-arrow1" className="pc-small-arrow" /></button>)}
+              {folders.map(folder => <button key={folder.name} aria-current={currentFolder === folder.name ? "page" : undefined} onClick={() => {
+                if (folder.name === currentFolder) return;
+                setHasChangedFolder(true);
+                setCurrentFolder(folder.name);
+              }}>{iconFolder(folder, folder.name === "Favorites" ? "pc-icon-explorer" : "")}<span>{folder.name}</span><Icon name="interface-arrow1" className="pc-small-arrow" /></button>)}
             </div>
           </nav>
           <div className="pc-folder-content" aria-live="polite">
-            <div key={currentFolder} className="pc-folder-view">
+            <div key={currentFolder} className="pc-folder-view" data-animate={hasChangedFolder ? "" : undefined}>
             {currentFolder === "Welcome" ? <div className="pc-welcome-copy"><p>Hi, welcome to my room!</p><p>I wanted a little space here for the things I enjoy outside of work—what I’m reading, the games I play, the shows I watch, and the music I keep coming back to.</p><p>Feel free to look around. You can click the objects in the room or use Explore Room to find a collection. If you’d like to get to know me a little better, start with About Me here on the computer.</p></div> : currentFolder === "About Me" ? <div className="pc-welcome-copy">
               <p>Hi! I’m Josie, a Computer Science student who enjoys building digital experiences and exploring different corners of tech. I like turning half-formed ideas into something real, one small piece at a time.</p>
               <p>Outside of coding, I spend my time drawing, watching movies and series, reading novels and stories, playing games, and listening to my favorite songs on repeat.</p>

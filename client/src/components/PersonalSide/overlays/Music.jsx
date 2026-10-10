@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import Overlay from "../../ProfessionalSide/Overlay";
 import CollectionIcon from "./CollectionIcon";
 import { assets } from "../../../assets";
@@ -40,10 +40,26 @@ export default function Music({ isOpen = false, onClose }) {
   const { selectedId, isPeekVisible, peekHeadingRef, openPeek, closePeek, resetPeek, onPeekKeyDown, onPeekTransitionEnd } = useCollectionPeek();
   const selected = [...songs, ...playlists].find(item => item.url === selectedId);
   const [cardOrigin, setCardOrigin] = useState({});
+  const cardAreaRef = useRef(null);
+  const cardBoundsRef = useRef(null);
+
+  useLayoutEffect(() => {
+    if (!selectedId || !cardBoundsRef.current) return;
+    const area = cardAreaRef.current.getBoundingClientRect();
+    const card = cardBoundsRef.current;
+    // Preserve the clicked card's starting position when the player group recenters.
+    setCardOrigin(origin => ({
+      ...origin,
+      "--music-card-origin-x": `${card.left - area.left}px`,
+      "--music-card-origin-y": `${card.top - area.top}px`,
+    }));
+  }, [selectedId]);
+
   const showPlayer = (item, trigger) => {
     setIsCardSpin(true);
     setRecordSpin(spin => spin + 1);
     const card = trigger.getBoundingClientRect();
+    cardBoundsRef.current = card;
     const list = trigger.closest("ul").getBoundingClientRect();
     setCardOrigin({
       "--music-card-origin-x": `${card.left - list.left}px`,
@@ -92,7 +108,7 @@ export default function Music({ isOpen = false, onClose }) {
         </div>
         <section key={activeTab} className="music-panel" id="music-panel" role="tabpanel" aria-labelledby={`music-tab-${activeTab}`} tabIndex={0}>
           <h3>{current.heading}</h3>
-          <div className={`music-card-area${selected ? " is-playing" : ""}`} style={cardOrigin}>
+          <div ref={cardAreaRef} className={`music-card-area${selected ? " is-playing" : ""}`} style={cardOrigin}>
           {activeTab === "songs" ? <ul className="music-song-list" inert={selected ? "" : undefined}>
             {songs.map(song => <li key={song.title}><button className="music-song-card" onClick={event => showPlayer(song, event.currentTarget)} aria-expanded={selectedId === song.url} aria-controls="music-spotify-peek" aria-label={`Listen to ${song.title} by ${song.artist}`}>
               <img src={assets[song.image]} alt="" />

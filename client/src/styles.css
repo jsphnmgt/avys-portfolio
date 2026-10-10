@@ -55,7 +55,6 @@
   --border-none: 0;
   --border-thin: 1px solid var(--color-steel);
   --border-divider: 1px solid color-mix(in srgb, var(--color-steel) 30%, transparent);
-  --border-card: 2px solid var(--color-steel);
   --border-tag: 2px solid var(--color-MiddleCard);
   --border-action: 1px solid var(--color-navy);
   --color-tag-background: color-mix(in srgb, var(--color-LightText-Overlay-Cards) 85%, var(--color-MiddleCard));
@@ -79,7 +78,6 @@
   --line-height-body: 1.35;
   --shadow-overlay: 0 var(--space-6) var(--space-24) color-mix(in srgb, var(--color-navy) 35%, transparent);
   --overlay-backdrop: color-mix(in srgb, var(--color-navy) 65%, transparent);
-  --overlay-scroll-track: color-mix(in srgb, var(--color-navy) 60%, transparent);
 
   --shadow-room-hint: 0 var(--space-1) var(--space-2) var(--color-black);
 
@@ -159,7 +157,7 @@
   --space-pc-copy: 64ch;
   --space-pc-window-max-width: 44rem;
   --space-pc-window-max-height: 26rem;
-  --size-pc-monitor-max-width: 70rem;
+  --size-pc-monitor-max-width: 64rem;
   --ratio-pc-monitor: 1.777777778;
   --space-pc-sidebar-wide: var(--space-pc-sidebar);
   --size-pc-explorer-desktop-width: 78%;
@@ -171,7 +169,7 @@
   --shadow-pc-window: 0 var(--space-1) var(--space-6) color-mix(in srgb, var(--color-black) 25%, transparent), 0 var(--space-3) var(--space-16) color-mix(in srgb, var(--color-black) 25%, transparent);
 
   /* Watchlist collections */
-  --size-watchlist-width: min(90vw, 78rem);
+  --size-watchlist-width: min(90vw, 72rem);
   --size-watchlist-height: min(80svh, 52rem);
   --size-watchlist-icon: var(--font-size-2xl);
   --size-watchlist-poster-icon: var(--font-size-3xl);
@@ -265,7 +263,6 @@
   --rotation-music-record: var(--rotation-music-record-tab);
   --color-music-card: linear-gradient(to bottom, var(--color-lavender) 30.556%, var(--color-periwinkle) 122.91%);
   --color-music-artist: color-mix(in srgb, var(--color-navy) 85%, transparent);
-  --color-music-placeholder: color-mix(in srgb, var(--color-cream) 45%, var(--color-lavender));
   --shadow-music-overlay: 0 0 var(--space-16) color-mix(in srgb, var(--color-room-button) 65%, transparent), var(--shadow-overlay);
   --border-music-tab: 2px solid var(--color-navy);
 
@@ -292,6 +289,56 @@ html {
   scroll-behavior: smooth;
 }
 
+html:has(.portfolio-scrollbar) {
+  scrollbar-width: none;
+}
+
+html:has(.portfolio-scrollbar)::-webkit-scrollbar {
+  display: none;
+}
+
+.portfolio-scrollbar {
+  position: fixed;
+  inset: var(--space-3) 0 var(--space-3) auto;
+  z-index: 100;
+  width: 16px;
+  background: transparent;
+  touch-action: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.portfolio-scrollbar-thumb {
+  position: absolute;
+  top: 0;
+  right: 4px;
+  width: 6px;
+  border-radius: var(--radius-full);
+  background: color-mix(in srgb, var(--color-navy) 35%, transparent);
+  cursor: grab;
+  transition: background var(--motion-card-duration);
+}
+
+.portfolio-scrollbar:hover .portfolio-scrollbar-thumb,
+.portfolio-scrollbar:focus-visible .portfolio-scrollbar-thumb,
+.portfolio-scrollbar.is-dragging .portfolio-scrollbar-thumb {
+  background: color-mix(in srgb, var(--color-navy) 60%, transparent);
+}
+
+.portfolio-scrollbar.is-dragging .portfolio-scrollbar-thumb {
+  cursor: grabbing;
+}
+
+html:has(dialog[open]) .portfolio-scrollbar {
+  visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-scrollbar-thumb {
+    transition: none;
+  }
+}
+
 body {
   margin: 0;
   background: var(--color-BlueGradientLight);
@@ -302,19 +349,12 @@ body {
 button,
 a {
   -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 button {
   font: inherit;
   color: inherit;
-}
-
-button,
-a {
-  touch-action: manipulation;
-}
-
-button {
   cursor: pointer;
 }
 
@@ -2673,6 +2713,7 @@ section {
   color: var(--color-white);
   font-family: var(--font-body);
   box-shadow: var(--shadow-pc-monitor);
+  will-change: transform;
 }
 
 .pc-overlay>.overlay-close {
@@ -2705,11 +2746,14 @@ section {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
+  /* Keep the wallpaper on a stable layer beneath the blurred windows. */
+  z-index: 0;
+  transform: translateZ(0);
 }
 
 .pc-desktop-folders {
   position: absolute;
+  z-index: 1;
   top: 18.3%;
   left: 1.93%;
   display: flex;
@@ -2738,6 +2782,7 @@ section {
 
 .pc-explorer {
   position: absolute;
+  z-index: 2;
   top: 9%;
   left: 12%;
   width: 76%;
@@ -2750,12 +2795,6 @@ section {
   backdrop-filter: blur(var(--space-3));
   box-shadow: var(--shadow-pc-window);
   font-size: var(--font-size-pc-ui);
-}
-
-.pc-explorer.is-maximized {
-  inset: 0 0 7.692%;
-  width: auto;
-  height: auto;
 }
 
 .pc-icon {
@@ -2951,10 +2990,6 @@ section {
   gap: var(--space-1);
 }
 
-.pc-sidebar-bottom {
-  margin-top: auto;
-}
-
 .pc-sidebar button,
 .pc-sidebar-heading {
   position: relative;
@@ -3053,7 +3088,7 @@ section {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .pc-folder-view {
+  .pc-folder-view[data-animate] {
     animation: pc-folder-enter var(--motion-pc-folder-duration) var(--motion-room-menu-ease) both;
   }
 
@@ -3159,16 +3194,9 @@ section {
   font-size: var(--font-size-xl);
 }
 
-.pc-search-result {
-  display: block;
-  margin-bottom: var(--space-2);
-  border: var(--border-none);
-  background: var(--color-pc-selection);
-  padding: var(--space-2);
-}
-
 .pc-taskbar {
   position: absolute;
+  z-index: 3;
   inset: auto 0 0;
   display: flex;
   align-items: center;
@@ -3382,7 +3410,7 @@ section {
 }
 
 
-/* Watchlist: a cream collection panel with poster-shaped placeholders. */
+/* Shared collection panel and poster cards. */
 .overlay-content.watchlist-overlay {
   width: var(--size-watchlist-width);
   height: var(--size-watchlist-height);
@@ -3910,6 +3938,12 @@ section {
 }
 
 
+@media (min-width: 761px) and (max-width: 1200px) {
+  .reading-list-layout {
+    --size-reading-peek-width: clamp(20rem, 34vw, 27rem);
+  }
+}
+
 @media (max-width: 1000px) {
   .has-peek .reading-list-collections .watchlist-cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -4015,6 +4049,12 @@ section {
   width: min(100%, var(--size-game-console-width));
   aspect-ratio: var(--ratio-game-console);
   margin: 0 auto;
+}
+
+@media (min-width: 1200px) {
+  .game-console-stage {
+    width: min(90%, calc(var(--size-game-console-width) * .9));
+  }
 }
 
 .game-console-art {
@@ -4486,7 +4526,7 @@ section {
   }
 }
 
-/* Vinyl and staggered song cards follow the Music Corner Figma composition. */
+/* Music Corner: vinyl, collection cards, and Spotify players. */
 .overlay-content.music-overlay {
   box-shadow: var(--shadow-music-overlay);
 }
@@ -4527,7 +4567,9 @@ section {
 }
 
 .music-card-area:has(.music-card-player) {
-  max-height: none;
+  --music-player-height: calc(var(--music-selected-card-height) + var(--space-3) + var(--size-music-embed-height));
+  flex: 0 1 var(--music-player-height);
+  max-height: var(--music-player-height);
 }
 
 .music-card-area:has(.music-card-player) > .music-song-list {
@@ -4830,9 +4872,6 @@ button.music-song-card {
   max-height: calc((var(--size-music-cover) + var(--space-music-card-padding) * 2) * var(--music-card-count, 4) + var(--space-music-card-gap) * (var(--music-card-count, 4) - 1));
   margin: 0;
   padding: 0;
-}
-
-.music-song-list {
   clip-path: inset(0 calc(-1 * var(--space-4)) calc(-1 * var(--space-4)));
 }
 
@@ -4859,10 +4898,6 @@ button.music-song-card {
   padding-inline: var(--space-6);
 }
 
-.music-song-card {
-  border-left: var(--border-music-tab);
-}
-
 .music-genre-list .music-song-title {
   font-family: var(--font-display);
 }
@@ -4876,6 +4911,7 @@ button.music-song-card {
 }
 
 .music-song-card {
+  border-left: var(--border-music-tab);
   display: flex;
   align-items: center;
   height: 100%;
@@ -4890,8 +4926,7 @@ button.music-song-card {
 }
 
 .music-song-card>img,
-.music-selected-toggle>img,
-.music-placeholder-art {
+.music-selected-toggle>img {
   width: var(--size-music-cover);
   height: var(--size-music-cover);
   max-height: 100%;
@@ -4926,13 +4961,6 @@ button.music-song-card:hover {
   box-shadow: var(--shadow-button);
 }
 
-.music-placeholder-art {
-  display: grid;
-  place-items: center;
-  background: var(--color-music-placeholder);
-  color: var(--color-watchlist-placeholder-icon);
-}
-
 @media (max-width: 1000px) {
   .music-header {
     height: auto;
@@ -4951,10 +4979,6 @@ button.music-song-card:hover {
   }
 
   .music-song-list li:nth-child(n) {
-    margin: 0;
-  }
-
-  .music-genre-list li:nth-child(4) {
     margin: 0;
   }
 

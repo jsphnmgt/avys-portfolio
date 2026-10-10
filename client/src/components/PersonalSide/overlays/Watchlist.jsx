@@ -37,7 +37,7 @@ export default function Watchlist({ isOpen = false, onClose }) {
       </section>)}
     </div>
     {selected && <aside className={`reading-list-peek${isPeekVisible ? " is-visible" : ""}`} id="watchlist-peek" aria-labelledby="watchlist-peek-title" onTransitionEnd={onPeekTransitionEnd}>
-      <div className="reading-list-peek-toolbar"><span>Title details</span><button className="reading-list-peek-close" onClick={closePeek} aria-label="Close title details"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m6.7 5.3 5.3 5.3 5.3-5.3 1.4 1.4-5.3 5.3 5.3 5.3-1.4 1.4-5.3-5.3-5.3 5.3-1.4-1.4 5.3-5.3-5.3-5.3z" /></svg></button></div>
+      <div className="reading-list-peek-toolbar"><span>Show details</span><button className="reading-list-peek-close" onClick={closePeek} aria-label="Close show details"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m6.7 5.3 5.3 5.3 5.3-5.3 1.4 1.4-5.3 5.3 5.3 5.3-1.4 1.4-5.3-5.3-5.3 5.3-1.4-1.4 5.3-5.3-5.3-5.3z" /></svg></button></div>
       <div className="reading-list-peek-scroll watchlist-scroll" key={selectedId}>
         <div className="reading-list-peek-summary">
           <img className="reading-list-peek-cover" src={assets[selected.image]} alt="" />
