@@ -109,6 +109,10 @@
 - **Commit:** [214816f](https://github.com/jsphnmgt/avys-portfolio/commit/214816ff6ffb87e3d5f012e3e4dca9d928924725)
 - **What it does and why it is built this way:** I adjusted the CSS to vertically center the text inside the room navigation buttons. This makes the labels align consistently and gives the menu a cleaner appearance.
 
+- **File:** ReadingList.jsx, Watchlist.jsx, and GameShelf.jsx
+- **Commit:** [c869798](https://github.com/jsphnmgt/avys-portfolio/commit/c869798edd0347031c76c5c7b6031e7b4f7a5947)
+- **What it does and why it is built this way:** I added counts beside the collection headings using each section’s array .length. The counts update automatically when titles are added or removed, so they don’t need to be maintained manually.
+
 ### The AI-written part I understand best
 
 - **File:** client/src/components/PersonalSide/overlays/Music.jsx
