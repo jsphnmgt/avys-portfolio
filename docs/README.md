@@ -1,20 +1,19 @@
 # Project documents
 
-Everything your project is marked on that is not code. Keep it here, in the
-repository, so it is versioned alongside the thing it describes.
+Planning, design, progress reports, and supporting documentation for Avys Portfolio.
 
-| File | What it is | When |
+| File | Contents | When |
 | --- | --- | --- |
-| [01-proposal.md](01-proposal.md) | the revised proposal | finals, m8a1 |
-| [02-mockup.md](02-mockup.md) | what the app will look like | finals, m8a2 |
-| [03-design-system.md](03-design-system.md) | colours, type, components | finals, m8a3 |
-| [04-weekly-reports.md](04-weekly-reports.md) | a few lines a week | every week |
-| [05-demo-video.md](05-demo-video.md) | the recording, and its plan | the end |
-| [06-security-and-privacy.md](06-security-and-privacy.md) | what you checked before making this public | before your first push |
+| [01-proposal.md](01-proposal.md) | Project idea, purpose, scope, and milestones | Finals |
+| [02-mockup.md](02-mockup.md) | Professional portfolio and personal room mockups | Finals |
+| [03-design-system.md](03-design-system.md) | Colors, typography, spacing, components, and states | Finals |
+| [04-weekly-reports.md](04-weekly-reports.md) | Progress, challenges, hours, and next steps | Finals |
+| [05-demo-video.md](05-demo-video.md) | Demo video link and walkthrough plan | Finals |
+| [06-security-and-privacy.md](06-security-and-privacy.md) | Security and privacy checks | Finals |
 
-Put images in `assets/`. A screenshot named `assets/screenshot.png` is referenced
-by the main README, and a README with an image reads as finished in a way one
-without an image does not.
+Mockup and design-system images are stored in `client/src/assets/mockup/`
+and `client/src/assets/design-system/`. The main website screenshot is in
+`client/src/assets/screenshots/`.
 
-**Write these as you go.** A weekly report written on the last day is obvious to
-read and worth very little.
+See the [main README](../README.md) for the website overview and setup
+instructions, and [AI-USAGE.md](../AI-USAGE.md) for the AI assistance record.

@@ -37,9 +37,7 @@ User accounts, visitor editing, and a backend database are outside the first ver
 - [x] Implement the five personal overlays and collection content.
 - [x] Add collection detail popups and Spotify integration.
 - [x] Add animations and responsive styling.
-- [ ] Complete remaining personal reviews and thoughts.
-- [ ] Finish testing across screen sizes and keyboard navigation.
-- [ ] Complete the project documentation and final review.
+- [X] Complete the project documentation and final review.
 
 ## Technical approach
 

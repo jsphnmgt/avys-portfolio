@@ -21,7 +21,7 @@ async function request(url, json = true) {
   }
 }
 let catalog = {};
-try { catalog = JSON.parse(await fs.readFile(output, "utf8")).catalog; } catch {}
+try { catalog = JSON.parse(await fs.readFile(output, "utf8")).catalog; } catch { }
 async function save(key, title, type, url, source, sourceTitle) {
   let image = null;
   if (url) {

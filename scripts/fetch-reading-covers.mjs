@@ -43,7 +43,7 @@ async function request(url) {
   }
 }
 let catalog = {};
-try { catalog = JSON.parse(await fs.readFile(output, "utf8")).catalog; } catch {}
+try { catalog = JSON.parse(await fs.readFile(output, "utf8")).catalog; } catch { }
 for (const [key, title, slug, id, rating] of titles) {
   if (catalog[key]?.image) continue;
   try {

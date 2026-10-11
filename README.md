@@ -35,6 +35,8 @@ The personal room is an illustrated space filled with objects you can explore. C
 
 Click a Watchlist, Reading List, or Game Shelf card to open its details. In the Game Shelf, use the DS buttons to switch between the games I’m currently playing.
 
+Collection headings show counts that update automatically when items are added or removed.
+
 In the Music Corner, clicking a song or playlist moves its card to the top and reveals a Spotify player underneath. Click the card again or its **X** button to close the player. Artist cards open their Spotify profiles.
 
 Use **Back to portfolio** whenever you want to return to my work.
@@ -90,10 +92,18 @@ client/
     main.jsx                      React entry point
     styles.css                    Stylesheet entry point
     styles/                       Shared, portfolio, room, and overlay styles
-    assets/                       Images, covers, and SVG assets
-    data/                         Collection JSON files
-    hooks/                        Shared React hooks
-    utilities/                    Preview color utilities
+    assets/                       Images and icons grouped by purpose
+      index.js                    Asset registry for filename-based lookups
+    data/
+      gameData.json               Game collections and detail information
+      musicData.json              Songs, playlists, genres, and artists
+      readingListData.json        Reading collections and details
+      watchlistData.json          Shows, movies, collections, and details
+    hooks/
+      useCollectionPeek.js        Collection selection and peek transitions
+      usePortfolioMotion.js       Portfolio scroll animations
+    utilities/
+      previewColor.js             Project preview background colors
     components/
       ProfessionalSide/           Portfolio sections and detail overlays
       PersonalSide/
@@ -106,11 +116,11 @@ docs/                             Planning and project documentation
 AI-USAGE.md                       Detailed AI assistance record
 ```
 
-Watchlist, reading, game, and music collections are maintained in the JSON files under `client/src/data/`. The PC summaries draw from those collections. See [docs/README.md](docs/README.md) for the project documents.
+Watchlist, reading, game, and music collections are maintained in the JSON files under `client/src/data/`. The PC summaries draw from those collections. Assets are grouped into folders for backgrounds, portfolio content, certificates, room objects, personal collections, icons, profile images, screenshots, mockups, and design-system images. `styles.css` imports the files in `src/styles/` in a fixed order to preserve responsive rules and animation behavior. See [docs/README.md](docs/README.md) for the project documents.
 
 ## Architecture
 
-Avys Portfolio is a static React application hosted on GitHub Pages. The URL hash switches between the professional portfolio and the personal room, while React state controls folders, overlays, and music tabs. Collection content is stored in local JSON files and component data; Spotify players load from Spotify when selected. There is no separate application server or database.
+Avys Portfolio is a static React application hosted on GitHub Pages. The URL hash switches between the professional portfolio and the personal room, while React state controls folders, overlays, and music tabs. Personal collection content is stored in local JSON files, while professional section content stays with its components. Shared hooks manage collection peeks and portfolio motion; CSS controls presentation and animation. Spotify players load from Spotify when selected. There is no separate application server or database.
 
 ## What I would do next
 
