@@ -4,7 +4,7 @@ Avys Portfolio is an interactive website that brings together professional work 
 
 **Live site:** [Visit Avys Portfolio](https://jsphnmgt.github.io/avys-portfolio/)
 
-**Demo video:** [Watch the demo](https://drive.google.com/drive/folders/1B3oj6ORSq4x1khLnwtaZtEFo4iStCV-e?usp=sharing)
+**Demo video:** [Watch the demo](https://drive.google.com/drive/folders/1B3oj6ORSq4x1khLnwtaZtEFo4iStCV-e)
 
 ![Avys Portfolio main screen](client/src/assets/screenshots/main-screen.png)
 
