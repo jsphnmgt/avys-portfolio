@@ -3,7 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const output = path.join(root, "client/src/components/PersonalSide/overlays/readingListData.json");
+const output = path.join(root, "client/src/data/readingListData.json");
 const titles = [
   ["soul-cartel", "Soul Cartel", "fantasy/soul-cartel", 72, 5],
   ["freaking-romance", "Freaking Romance", "romance/freaking-romance", 1467, 5],
@@ -51,7 +51,7 @@ for (const [key, title, slug, id, rating] of titles) {
     if (key === "nightmare-factory") {
       const image = "reading-nightmare-factory.webp";
       const cover = "https://static.wikia.nocookie.net/webtoon/images/7/7b/Nightmare_Factory.jpg";
-      await fs.writeFile(path.join(root, "client/src/assets", image), Buffer.from(await (await request(cover)).arrayBuffer()));
+      await fs.writeFile(path.join(root, "client/src/assets/reading-list", image), Buffer.from(await (await request(cover)).arrayBuffer()));
       catalog[key] = { title, author: "Snailords", rating, image, source: "https://webtoon.fandom.com/wiki/Nightmare_Factory", sourceTitle: title };
       console.log(`${key}: original cover | OK`);
       continue;
@@ -66,7 +66,7 @@ for (const [key, title, slug, id, rating] of titles) {
     const author = plain(authorArea.replace(/<button[\s\S]*?<\/button>/g, ""));
     if (!imageUrl || !author) throw new Error("Cover or author metadata missing");
     const image = `reading-${key}.jpg`;
-    const destination = path.join(root, "client/src/assets", image);
+    const destination = path.join(root, "client/src/assets/reading-list", image);
     try { await fs.access(destination); } catch { await fs.writeFile(destination, Buffer.from(await (await request(imageUrl)).arrayBuffer())); }
     catalog[key] = { title, author, rating, image, source, sourceTitle };
     await fs.writeFile(output, JSON.stringify({ catalog, favorites, reading, finished }, null, 2) + "\n");

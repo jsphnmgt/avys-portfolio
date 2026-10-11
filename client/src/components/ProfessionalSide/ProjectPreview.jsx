@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { selectPreviewColor } from "./previewColor";
+import { selectPreviewColor } from "../../utilities/previewColor";
 
 const paletteTokens = ["--color-mint", "--color-sage", "--color-lavender", "--color-periwinkle"];
 
@@ -23,7 +23,6 @@ export default function ProjectPreview({ image, title }) {
       });
       setBackground(selectPreviewColor(pixels, palette));
     } catch {
-      // Keep the root-palette fallback if an image cannot be sampled.
       setBackground("--color-sage");
     }
   };

@@ -8,9 +8,23 @@ import GameShelf from "../overlays/GameShelf";
 import Music from "../overlays/Music";
 
 const roomObjects = [
-  { id: "computer", label: "Personal Computer", image: "room-computer.png", component: PersonalComputer },
-  { id: "watchlist", label: "Watchlist", image: "room-watchlist.png", component: Watchlist },
-  { id: "reading-list", label: "Reading List", image: "room-reading-list.png", component: ReadingList },
+  {
+    id: "computer",
+    label: "Personal Computer",
+    image: "room-computer.png",
+    component: PersonalComputer
+  },
+  {
+    id: "watchlist",
+    label: "Watchlist",
+    image: "room-watchlist.png",
+    component: Watchlist
+  },
+  {
+    id: "reading-list",
+    label: "Reading List",
+    image: "room-reading-list.png", component: ReadingList
+  },
   { id: "game-shelf", label: "Game Shelf", image: "room-game-shelf.png", component: GameShelf },
   { id: "music", label: "Music Corner", image: "room-music.png", component: Music },
 ];
@@ -80,10 +94,10 @@ export default function Room() {
       </div>)}
     </div>}
     {hasEntered && <>
-    <a className="room-back-button" href="#home">
-      <img src={assets["room-back-arrow.svg"]} alt="" />
-      <span>Back to portfolio</span>
-    </a>
+      <a className="room-back-button" href="#home">
+        <img src={assets["room-back-arrow.svg"]} alt="" />
+        <span>Back to portfolio</span>
+      </a>
       <div className={`room-navigation${isMenuOpen ? " is-open" : ""}`} ref={menuRef} onKeyDown={event => {
         if (event.key === "Escape") {
           setIsMenuOpen(false);
@@ -96,11 +110,11 @@ export default function Room() {
         <div className="room-navigation-panel" inert={!isMenuOpen ? "" : undefined} aria-hidden={!isMenuOpen}>
           <div className="room-navigation-reveal">
             <nav className="room-navigation-card" id="room-explore-links" aria-label="Explore the room">
-          <p className="room-navigation-heading">Inside my room</p>
-          {roomObjects.map((object, index) => <button key={object.id} aria-haspopup="dialog" onClick={event => openObject(object, event.currentTarget, true)}>
-            <span className="room-navigation-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
-            <span>{object.label}</span>
-          </button>)}
+              <p className="room-navigation-heading">Inside my room</p>
+              {roomObjects.map((object, index) => <button key={object.id} aria-haspopup="dialog" onClick={event => openObject(object, event.currentTarget, true)}>
+                <span className="room-navigation-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                <span>{object.label}</span>
+              </button>)}
             </nav>
           </div>
         </div>

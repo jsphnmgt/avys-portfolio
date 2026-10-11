@@ -1,0 +1,79 @@
+{
+  "songs": [
+    {
+      "title": "Soho",
+      "artist": "Eirra",
+      "image": "music-soho.png",
+      "url": "https://open.spotify.com/track/6jp1yanUreiJO6hHP4c6Ph"
+    },
+    {
+      "title": "Setsuna Hanabi",
+      "artist": "TOMORROW X TOGETHER",
+      "image": "music-setsuna-hanabi.png",
+      "url": "https://open.spotify.com/track/2Hq8l2e9BkRVaQtJni4Ss9"
+    },
+    {
+      "title": "Your Guardian Angel",
+      "artist": "The Red Jumpsuit Apparatus",
+      "image": "music-guardian-angel.png",
+      "url": "https://open.spotify.com/track/2Guz1b911CbpG8L92cnglI"
+    },
+    {
+      "title": "Tears in Your Eyes",
+      "artist": "MICO",
+      "image": "music-tears-in-your-eyes.png",
+      "url": "https://open.spotify.com/track/21L7bgwJcZk1E7dxq1m1FI"
+    }
+  ],
+  "playlists": [
+    {
+      "title": "story of a warrior",
+      "image": "music-playlist-story-of-a-warrior.jpg",
+      "url": "https://open.spotify.com/playlist/6hCoLfgfq3AIt7sXHZzB9S?si=8d66589a0787405f"
+    },
+    {
+      "title": "inner kogane",
+      "image": "music-playlist-inner-kogane.jpg",
+      "url": "https://open.spotify.com/playlist/0Mr3fPx1bl7SeckBzKDP4s?si=1ed62bd2a64f447e"
+    },
+    {
+      "title": "ethereal𓂃 ࣪˖𐀔",
+      "image": "music-playlist-ethereal.jpg",
+      "url": "https://open.spotify.com/playlist/1lJfOPgJWb47u78InWdEQ1?si=65586f3ca7534ae6"
+    },
+    {
+      "title": "serenity",
+      "image": "music-playlist-serenity.jpg",
+      "url": "https://open.spotify.com/playlist/1JtuMaI0wcEDNUt8mGs2vW?si=d2227eaa01df48be"
+    }
+  ],
+  "genres": [
+    "Anime soundtracks",
+    "OPM",
+    "Pop Funk",
+    "Pop",
+    "J-Rock"
+  ],
+  "artists": [
+    {
+      "title": "Jorge Rivera-Herrans",
+      "image": "favorite-artist-jorge.jpg",
+      "url": "https://open.spotify.com/artist/2kdmTOXncgNHSuYVMhdd5I"
+    },
+    {
+      "title": "Olivia Rodrigo",
+      "image": "favorite-artist-olivia.jpg",
+      "url": "https://open.spotify.com/artist/1McMsnEElThX1knmY4oliG"
+    },
+    {
+      "title": "TOMORROW X TOGETHER",
+      "image": "favorite-artist-txt.jpg",
+      "url": "https://open.spotify.com/artist/0ghlgldX5Dd6720Q3qFyQB"
+    },
+    {
+      "title": "BigRicePiano",
+      "image": "favorite-artist-bigricepiano.jpg",
+      "url": "https://open.spotify.com/artist/6NZehyzoXBTOmvFzJyp6RV"
+    }
+  ]
+}

@@ -1,8 +1,8 @@
-import useCollectionPeek from "./useCollectionPeek";
+import useCollectionPeek from "../../../hooks/useCollectionPeek";
 import Overlay from "../../ProfessionalSide/Overlay";
 import CollectionIcon from "./CollectionIcon";
 import { assets } from "../../../assets";
-import readingList from "./readingListData.json";
+import readingList from "../../../data/readingListData.json";
 
 const sections = [
   { id: "favorites", title: "Favorites", icon: "heart" },

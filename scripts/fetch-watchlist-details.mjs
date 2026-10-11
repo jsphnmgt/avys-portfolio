@@ -1,6 +1,6 @@
 import fs from "node:fs/promises";
 
-const destination = new URL("../client/src/components/PersonalSide/overlays/watchlistData.json", import.meta.url);
+const destination = new URL("../client/src/data/watchlistData.json", import.meta.url);
 const data = JSON.parse(await fs.readFile(destination, "utf8"));
 const plain = text => text.replace(/<[^>]*>/g, " ").replace(/&amp;/g, "&").replace(/&#0*39;|&apos;/g, "'").replace(/&quot;/g, '"').replace(/&nbsp;/g, " ").replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n))).replace(/\s+/g, " ").trim();
 async function fetchSource(url) {

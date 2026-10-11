@@ -1,12 +1,11 @@
 import { useEffect } from "react";
 
-// Keep the document in normal flow so sticky navigation and anchor links work.
 export default function usePortfolioMotion(navbarRef) {
   useEffect(() => {
     const app = navbarRef.current?.closest(".app");
     if (!app) return;
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
-    let stopMotion = () => {};
+    let stopMotion = () => { };
 
     const setup = () => {
       stopMotion();

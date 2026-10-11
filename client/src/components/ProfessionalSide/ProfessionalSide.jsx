@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import Overlay from "./Overlay";
 import ProjectPreview from "./ProjectPreview";
 import PortfolioScrollbar from "./PortfolioScrollbar";
-import usePortfolioMotion from "./usePortfolioMotion";
+import usePortfolioMotion from "../../hooks/usePortfolioMotion";
 import Hero from "./sections/Hero";
 import Projects from "./sections/Projects";
 import Experience from "./sections/Experience";
@@ -55,31 +55,31 @@ export default function ProfessionalSide() {
 
   return <>
     <PortfolioScrollbar />
-      <nav ref={navbarRef} className="navbar" aria-label="Main navigation">
-        <div className="nav-links">{["Home", "Projects", "Experience", "Education", "Contact"].map(label => <a key={label} href={`#${label.toLowerCase()}`} aria-current={activeSection === label.toLowerCase() ? "location" : undefined}>{label}</a>)}</div>
-        <button className="explore-room-btn" onClick={() => { window.location.hash = "room"; }}>Explore my room <img src={assets["room-arrow.svg"]} alt="" /></button>
-      </nav>
+    <nav ref={navbarRef} className="navbar" aria-label="Main navigation">
+      <div className="nav-links">{["Home", "Projects", "Experience", "Education", "Contact"].map(label => <a key={label} href={`#${label.toLowerCase()}`} aria-current={activeSection === label.toLowerCase() ? "location" : undefined}>{label}</a>)}</div>
+      <button className="explore-room-btn" onClick={() => { window.location.hash = "room"; }}>Explore my room <img src={assets["room-arrow.svg"]} alt="" /></button>
+    </nav>
     <div id="portfolio-content">
-    <div className="blue-sky opening">
-      <div><Hero /><Projects onCardClick={setActiveItem} /></div>
-    </div>
-    <div className="green-world"><Experience /><Education /></div>
-    <div className="blue-sky closing"><Certificates onCardClick={setActiveItem} /><Contact /></div>
+      <div className="blue-sky opening">
+        <div><Hero /><Projects onCardClick={setActiveItem} /></div>
+      </div>
+      <div className="green-world"><Experience /><Education /></div>
+      <div className="blue-sky closing"><Certificates onCardClick={setActiveItem} /><Contact /></div>
     </div>
     <Overlay className={activeItem?.techStack ? "project-overlay" : activeItem?.type === "certificate" ? "project-overlay certificate-overlay" : ""} isOpen={!!activeItem} onClose={() => setActiveItem(null)}>{activeItem && (activeItem.techStack ? <div className="project-detail-scroll" tabIndex={0} aria-label="Project details">
       <div className="project-detail-layout">
         <ProjectPreview key={activeItem.image} image={activeItem.image} title={activeItem.title} />
         <div className="project-detail-copy">
           <div className="project-detail-body">
-          <div className="project-detail-summary">
-          <span className="project-detail-label">{activeItem.projectType || "Selected project"}</span>
-          <h2 id="detail-title">{activeItem.title}</h2>
-          <p>{activeItem.description}</p>
-          </div>
-          <div className="project-detail-actions">
-          {activeItem.githubUrl ? <a className="project-code-button" href={activeItem.githubUrl} target="_blank" rel="noreferrer"><img src={assets["github-logo.png"]} alt="" />GitHub Code</a> : <button className="project-code-button" disabled title="Code link unavailable"><img src={assets["github-logo.png"]} alt="" />GitHub Code</button>}
-          </div>
-          <div className="project-detail-technologies"><h3>Built with</h3><div className="tags">{activeItem.techStack.map(tag => <span key={tag}>{tag}</span>)}</div></div>
+            <div className="project-detail-summary">
+              <span className="project-detail-label">{activeItem.projectType || "Selected project"}</span>
+              <h2 id="detail-title">{activeItem.title}</h2>
+              <p>{activeItem.description}</p>
+            </div>
+            <div className="project-detail-actions">
+              {activeItem.githubUrl ? <a className="project-code-button" href={activeItem.githubUrl} target="_blank" rel="noreferrer"><img src={assets["github-logo.png"]} alt="" />GitHub Code</a> : <button className="project-code-button" disabled title="Code link unavailable"><img src={assets["github-logo.png"]} alt="" />GitHub Code</button>}
+            </div>
+            <div className="project-detail-technologies"><h3>Built with</h3><div className="tags">{activeItem.techStack.map(tag => <span key={tag}>{tag}</span>)}</div></div>
           </div>
 
         </div>

@@ -3,8 +3,8 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const output = path.join(root, "client/src/components/PersonalSide/overlays/watchlistData.json");
-const assets = path.join(root, "client/src/assets");
+const output = path.join(root, "client/src/data/watchlistData.json");
+const assets = path.join(root, "client/src/assets/watchlist");
 const manifestPath = path.join(root, "scripts/watchlist-cover-manifest.json");
 const manifest = JSON.parse(await fs.readFile(manifestPath, "utf8"));
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));

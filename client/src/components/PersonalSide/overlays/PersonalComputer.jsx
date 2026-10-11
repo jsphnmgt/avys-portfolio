@@ -1,8 +1,8 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Overlay from "../../ProfessionalSide/Overlay";
 import { assets } from "../../../assets";
-import watchlist from "./watchlistData.json";
-import readingList from "./readingListData.json";
+import watchlist from "../../../data/watchlistData.json";
+import readingList from "../../../data/readingListData.json";
 import { favorites as favoriteGames, playing, collection } from "./GameShelf";
 import { songs } from "./Music";
 
@@ -44,9 +44,8 @@ export default function PersonalComputer({ isOpen = false, onClose, onOpenCollec
   useEffect(() => {
     if (!isOpen) return;
     let cancelled = false;
-    // Decode the wallpaper and icons before the monitor starts expanding.
     const images = [...desktopRef.current.querySelectorAll("img")];
-    Promise.all(images.map(image => image.decode().catch(() => {}))).then(() => {
+    Promise.all(images.map(image => image.decode().catch(() => { }))).then(() => {
       if (!cancelled) setImagesReady(true);
     });
     return () => { cancelled = true; };
@@ -112,20 +111,20 @@ export default function PersonalComputer({ isOpen = false, onClose, onOpenCollec
           </nav>
           <div className="pc-folder-content" aria-live="polite">
             <div key={currentFolder} className="pc-folder-view" data-animate={hasChangedFolder ? "" : undefined}>
-            {currentFolder === "Welcome" ? <div className="pc-welcome-copy"><p>Hi, welcome to my room!</p><p>I wanted a little space here for the things I enjoy outside of work—what I’m reading, the games I play, the shows I watch, and the music I keep coming back to.</p><p>Feel free to look around. You can click the objects in the room or use Explore Room to find a collection. If you’d like to get to know me a little better, start with About Me here on the computer.</p></div> : currentFolder === "About Me" ? <div className="pc-welcome-copy">
-              <p>Hi! I’m Josie, a Computer Science student who enjoys building digital experiences and exploring different corners of tech. I like turning half-formed ideas into something real, one small piece at a time.</p>
-              <p>Outside of coding, I spend my time drawing, watching movies and series, reading novels and stories, playing games, and listening to my favorite songs on repeat.</p>
-              <p>I’m always curious about something new, whether it’s tech or a hobby. This room brings those interests together—feel free to look around and get to know the person behind the code.</p>
-            </div> : <div className="pc-collection-summary">
-              <h3>{currentFolder}</h3>
-              <ul className="pc-summary-list">{summaries[currentFolder].map(group => <li key={group.id}>
-                <button className="pc-summary-link" onClick={() => onOpenCollection?.(group.id)} aria-label={`Open ${group.label} collection`}>
-                  {group.items[0]?.image && <img src={assets[group.items[0].image]} alt="" />}
-                  <span className="pc-summary-copy"><span className="pc-summary-label">{group.label}</span><span className="pc-summary-titles">{group.items.slice(0, 2).map(item => item.title).join(" · ") || "Nothing here yet"}{group.items.length > 2 && <span className="pc-summary-more"> +{group.items.length - 2} more</span>}</span></span>
-                  <span className="pc-summary-arrow" aria-hidden="true">›</span>
-                </button>
-              </li>)}</ul>
-            </div>}
+              {currentFolder === "Welcome" ? <div className="pc-welcome-copy"><p>Hi, welcome to my room!</p><p>I wanted a little space here for the things I enjoy outside of work—what I’m reading, the games I play, the shows I watch, and the music I keep coming back to.</p><p>Feel free to look around. You can click the objects in the room or use Explore Room to find a collection. If you’d like to get to know me a little better, start with About Me here on the computer.</p></div> : currentFolder === "About Me" ? <div className="pc-welcome-copy">
+                <p>Hi! I’m Josie, a Computer Science student who enjoys building digital experiences and exploring different corners of tech. I like turning half-formed ideas into something real, one small piece at a time.</p>
+                <p>Outside of coding, I spend my time drawing, watching movies and series, reading novels and stories, playing games, and listening to my favorite songs on repeat.</p>
+                <p>I’m always curious about something new, whether it’s tech or a hobby. This room brings those interests together—feel free to look around and get to know the person behind the code.</p>
+              </div> : <div className="pc-collection-summary">
+                <h3>{currentFolder}</h3>
+                <ul className="pc-summary-list">{summaries[currentFolder].map(group => <li key={group.id}>
+                  <button className="pc-summary-link" onClick={() => onOpenCollection?.(group.id)} aria-label={`Open ${group.label} collection`}>
+                    {group.items[0]?.image && <img src={assets[group.items[0].image]} alt="" />}
+                    <span className="pc-summary-copy"><span className="pc-summary-label">{group.label}</span><span className="pc-summary-titles">{group.items.slice(0, 2).map(item => item.title).join(" · ") || "Nothing here yet"}{group.items.length > 2 && <span className="pc-summary-more"> +{group.items.length - 2} more</span>}</span></span>
+                    <span className="pc-summary-arrow" aria-hidden="true">›</span>
+                  </button>
+                </li>)}</ul>
+              </div>}
             </div>
           </div>
         </div>

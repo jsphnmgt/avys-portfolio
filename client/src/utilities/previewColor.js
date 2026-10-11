@@ -7,7 +7,6 @@ const hue = (red, green, blue) => {
   return (sector * 60 + 360) % 360;
 };
 
-// Ignore neutral UI surfaces so the screenshot's colored areas drive the choice.
 export function selectPreviewColor(pixels, palette) {
   const buckets = Array(36).fill(0);
   for (let index = 0; index < pixels.length; index += 4) {

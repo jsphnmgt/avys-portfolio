@@ -2,7 +2,9 @@
   "catalog": {
     "soul-cartel": {
       "title": "Soul Cartel",
-      "genres": ["Fantasy"],
+      "genres": [
+        "Fantasy"
+      ],
       "synopsis": "An encounter with Mephisto draws Shihoon into a contract involving the legendary Faust. He and his exorcist sister venture into the underworld, hoping to uncover what happened to their missing parents.",
       "thoughts": null,
       "author": "Haram, Youngji Kim",
@@ -13,7 +15,10 @@
     },
     "freaking-romance": {
       "title": "Freaking Romance",
-      "genres": ["Romance", "Supernatural"],
+      "genres": [
+        "Romance",
+        "Supernatural"
+      ],
       "synopsis": "A fresh start in a new apartment takes an unexpected turn when its tenant discovers a stranger from another dimension. They share a space but cannot interact like ordinary neighbors.",
       "thoughts": null,
       "author": "Snailords",
@@ -24,7 +29,10 @@
     },
     "daytime-star": {
       "title": "Daytime Star",
-      "genres": ["Drama", "Romance"],
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
       "synopsis": "After years of struggling to establish herself, actress Yura Hwang lands a small role in a promising film. Repeated encounters with star Seunghyeon Kang may change both her career and her personal life.",
       "thoughts": null,
       "author": "Chaeun, Godago",
@@ -35,7 +43,9 @@
     },
     "grim-reaper": {
       "title": "I'm the Grim Reaper",
-      "genres": ["Supernatural"],
+      "genres": [
+        "Supernatural"
+      ],
       "synopsis": "Death sends Scarlet to the underworld, but her story does not end there. Assigned the role of a grim reaper, she must return to Earth to collect the souls of its worst sinners.",
       "thoughts": null,
       "author": "GRAVEWEAVER",
@@ -46,7 +56,10 @@
     },
     "morgana-and-oz": {
       "title": "Morgana and Oz",
-      "genres": ["Fantasy", "Romance"],
+      "genres": [
+        "Fantasy",
+        "Romance"
+      ],
       "synopsis": "Morgana is a witch, and Oz belongs to a rival vampire clan. A chance meeting and some troublesome magic force them to cooperate while tensions between their families threaten to erupt.",
       "thoughts": null,
       "author": "Miyuli",
@@ -57,7 +70,9 @@
     },
     "winter-moon": {
       "title": "Winter Moon",
-      "genres": ["Fantasy"],
+      "genres": [
+        "Fantasy"
+      ],
       "synopsis": "An online role-playing game brings a sorcerer and a priestess together. Their unlikely meeting sets the stage for adventures in its virtual world.",
       "thoughts": null,
       "author": "Merryweather, MAYUI",
@@ -68,7 +83,9 @@
     },
     "your-smile": {
       "title": "Your Smile is a Trap",
-      "genres": ["Romance"],
+      "genres": [
+        "Romance"
+      ],
       "synopsis": "Former idol trainee Kiyu wants an ordinary school life, away from the attention his appearance attracts. Hiding behind glasses proves easier than making friends, especially with his intimidating new seatmate.",
       "thoughts": null,
       "author": "AENGO",
@@ -79,7 +96,9 @@
     },
     "death-rescheduled": {
       "title": "Death: Rescheduled",
-      "genres": ["Thriller"],
+      "genres": [
+        "Thriller"
+      ],
       "synopsis": "In a world that permits an annual murder, Kreyul loses a childhood friend while the killer faces no punishment. He sets out with a team to challenge that law across five dangerous districts.",
       "thoughts": null,
       "author": "Snailords",
@@ -90,7 +109,9 @@
     },
     "dear-x": {
       "title": "Dear X",
-      "genres": ["Thriller"],
+      "genres": [
+        "Thriller"
+      ],
       "synopsis": "Acclaimed actress Ajin Baek appears to have an ideal life and an adoring public. A broadcast exposing her hidden past raises questions about the cost of her success.",
       "thoughts": null,
       "author": "VANZIUN",
@@ -101,7 +122,9 @@
     },
     "flow": {
       "title": "Flow",
-      "genres": ["Fantasy"],
+      "genres": [
+        "Fantasy"
+      ],
       "synopsis": "A boy receives a gift from his guardian god. That encounter sets his fate on a new course in a world shaped by divine powers.",
       "thoughts": null,
       "author": "Honey B",
@@ -112,7 +135,10 @@
     },
     "murrz": {
       "title": "Murrz",
-      "genres": ["Slice of Life", "Comedy"],
+      "genres": [
+        "Slice of Life",
+        "Comedy"
+      ],
       "synopsis": "Murrz turns everyday experiences into humorous comic episodes. Cats, school, and the awkward moments of modern life all become part of the story.",
       "thoughts": null,
       "author": "Murrz",
@@ -123,7 +149,9 @@
     },
     "muse-on-fame": {
       "title": "Muse on Fame",
-      "genres": ["Drama"],
+      "genres": [
+        "Drama"
+      ],
       "synopsis": "Myeong supports her struggling acting career by cleaning houses. Finding an exhibition of photographs from her younger years brings a mysterious photographer and a new possibility into her life.",
       "thoughts": null,
       "author": "SOOJIN",
@@ -134,7 +162,9 @@
     },
     "nano-list": {
       "title": "Nano List",
-      "genres": ["Sci-Fi"],
+      "genres": [
+        "Sci-Fi"
+      ],
       "synopsis": "Androids are commonplace in Milo's world, but the two his sister built are far from ordinary. Living alongside a powerful bodyguard raises unsettling questions about why he needs protection.",
       "thoughts": null,
       "author": "MIN SONGA",
@@ -145,7 +175,10 @@
     },
     "no-scope": {
       "title": "No Scope",
-      "genres": ["Sports", "Gaming"],
+      "genres": [
+        "Sports",
+        "Gaming"
+      ],
       "synopsis": "Elite player Suho Kang takes an inexperienced classmate under his wing in the popular game PSI BOND. Doyoon's potential complicates the competition as school life meets the online battlefield.",
       "thoughts": null,
       "author": "ZOYANG",
@@ -156,7 +189,10 @@
     },
     "makeup-remover": {
       "title": "The Makeup Remover",
-      "genres": ["Romance", "Drama"],
+      "genres": [
+        "Romance",
+        "Drama"
+      ],
       "synopsis": "College student Yeseul finds herself navigating new expectations about beauty and makeup. A talented makeup artist draws her into a televised competition that challenges how she sees appearances.",
       "thoughts": null,
       "author": "Lee Yeon",
@@ -167,7 +203,10 @@
     },
     "soap-opera": {
       "title": "Trapped in a Soap Opera",
-      "genres": ["Drama", "Fantasy"],
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ],
       "synopsis": "Jia Han finally achieves her dream of owning a home before her life suddenly ends. She awakens inside her favorite soap opera as its villainess, surrounded by scandal and unpredictable relationships.",
       "thoughts": null,
       "author": "Ganno, Apricot.K",
@@ -178,7 +217,10 @@
     },
     "age-of-arrogance": {
       "title": "The Age of Arrogance",
-      "genres": ["Fantasy", "Romance"],
+      "genres": [
+        "Fantasy",
+        "Romance"
+      ],
       "synopsis": "War hero Asha Pervaz seeks compensation to rebuild her homeland but is offered a marriage instead. Her choice of a former crown prince leads to an unexpected agreement and dangerous royal politics.",
       "thoughts": null,
       "author": "SOY MEDIA, Hansol, Lemon Frog",
@@ -189,7 +231,10 @@
     },
     "untouchable": {
       "title": "unTouchable",
-      "genres": ["Romance", "Supernatural"],
+      "genres": [
+        "Romance",
+        "Supernatural"
+      ],
       "synopsis": "Sia is a vampire who gains energy through physical contact rather than blood. Her fascination with her new neighbor Jiho runs into one major obstacle: his fear of germs.",
       "thoughts": null,
       "author": "massstar",
@@ -200,7 +245,10 @@
     },
     "nightmare-factory": {
       "title": "Nightmare Factory",
-      "genres": ["Thriller", "Fantasy"],
+      "genres": [
+        "Thriller",
+        "Fantasy"
+      ],
       "synopsis": "An insomniac writer begins encountering strangers from the stories she creates. When her family disappears, those tales may hold clues to understanding her increasingly mysterious world.",
       "thoughts": null,
       "author": "Snailords",

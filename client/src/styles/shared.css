@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400&family=Roboto:wght@400;500&display=swap');
+
+:root {
+  /* Color Palette */
+  --color-white: #FFFFFF;
+  --color-cream: #FAF4E9;
+  --color-mint: #D6E0D4;
+  --color-sage: #9BADB1;
+  --color-moss: #526F63;
+  --color-lavender: #C5C0DE;
+  --color-periwinkle: #8C9BC1;
+  --color-cobalt: #5672B2;
+  --color-steel: #667187;
+  --color-navy: #252932;
+  --color-charcoal: #242424;
+  --color-black: #000000;
+  --color-room-glow: #FFED29;
+
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Crimson Text', Georgia, 'Times New Roman', serif;
+
+  /* Font sizes */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 3rem;
+  --font-size-5xl: 4rem;
+
+  /* Spacing for padding, margins, and gaps */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: clamp(1rem, 0.75rem + 1vw, 1.5rem);
+  --space-8: clamp(1.25rem, 1rem + 1vw, 2rem);
+  --space-12: clamp(1.5rem, 1rem + 2vw, 3rem);
+  --space-16: clamp(2rem, 1.5rem + 2vw, 4rem);
+  --space-24: clamp(3rem, 2rem + 4vw, 6rem);
+
+  /* Border radii */
+  --radius-none: 0;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* Shared borders and overlay typography */
+  --border-none: 0;
+  --border-thin: 1px solid var(--color-steel);
+  --border-divider: 1px solid color-mix(in srgb, var(--color-steel) 30%, transparent);
+  --border-tag: 2px solid var(--color-MiddleCard);
+  --border-action: 1px solid var(--color-navy);
+  --color-tag-background: color-mix(in srgb, var(--color-LightText-Overlay-Cards) 85%, var(--color-MiddleCard));
+  --font-size-tag: clamp(var(--font-size-xs), 1.04vw, var(--font-size-xl));
+  --line-height-tag: 1.4;
+  --shadow-button: 0 var(--space-1) var(--space-3) color-mix(in srgb, var(--color-navy) 15%, transparent);
+  --border-project: 4px solid var(--color-GreenGradientLight);
+  --shadow-project-hover: 0 var(--space-3) var(--space-8) color-mix(in srgb, var(--color-navy) 28%, transparent);
+  --motion-card-duration: .3s;
+  --motion-card-ease: cubic-bezier(.22, 1, .36, 1);
+  --motion-detail-open-duration: 1s;
+  --motion-detail-fade-duration: .8s;
+  --motion-detail-stagger: .09s;
+  --motion-detail-open-ease: var(--motion-card-ease);
+  --space-detail-reveal: var(--space-4);
+  --size-detail-max-width: 64rem;
+  --size-detail-max-height: 40rem;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --line-height-tight: 1.2;
+  --line-height-body: 1.35;
+  --shadow-overlay: 0 var(--space-6) var(--space-24) color-mix(in srgb, var(--color-navy) 35%, transparent);
+  --overlay-backdrop: color-mix(in srgb, var(--color-navy) 65%, transparent);
+
+  --shadow-room-hint: 0 var(--space-1) var(--space-2) var(--color-black);
+
+  /* Room object interaction */
+  --motion-room-hover-duration: .05s;
+  --motion-room-discovery-duration: 1.2s;
+  --motion-room-discovery-delay: .6s;
+  --border-room-menu: 1px solid var(--color-room-outline);
+  --motion-room-menu-duration: .85s;
+  --motion-room-menu-item-duration: .45s;
+  --motion-room-menu-stagger: .065s;
+  --motion-room-menu-ease: cubic-bezier(.22, .61, .36, 1);
+  --space-room-navigation-width: 16rem;
+  --space-room-navigation-trigger-width: 12rem;
+  --color-room-navigation: color-mix(in srgb, var(--color-room-door-indigo) 92%, transparent);
+  --shadow-room-object-rest: drop-shadow(0 0 0 transparent) drop-shadow(0 0 0 transparent);
+  --shadow-room-object-glow: drop-shadow(0 0 var(--space-1) var(--color-room-glow)) drop-shadow(0 0 var(--space-4) color-mix(in srgb, var(--color-room-glow) 70%, transparent));
+
+  /* Personal room entrance motion */
+  --motion-room-duration: 2s;
+  --motion-room-fade-duration: 3s;
+  --motion-room-controls-duration: .6s;
+  --motion-personal-overlay-duration: 1s;
+  --motion-personal-backdrop-duration: .6s;
+  --motion-personal-overlay-ease: cubic-bezier(.4, 0, .2, 1);
+  --scale-personal-overlay-start: .35;
+  --rotation-personal-overlay-start: -2deg;
+  --motion-room-ease: cubic-bezier(.45, 0, .2, 1);
+  --motion-room-fade-ease: cubic-bezier(.22, .61, .36, 1);
+  --motion-room-enter-scale: .985;
+  --room-door-perspective: 140vw;
+  --color-room-door-indigo: #202855;
+  --color-room-door-purple: #39295B;
+  --color-room-door-edge: #515A87;
+  --color-room-door: linear-gradient(115deg, var(--color-room-door-indigo) 35%, var(--color-room-door-purple));
+  --border-room-door: 2px solid color-mix(in srgb, var(--color-room-door-edge) 65%, transparent);
+  --room-door-thickness: var(--space-8);
+  --color-room-door-side: linear-gradient(to right, var(--color-room-door-edge), var(--color-room-door-indigo));
+  --shadow-room-door: 0 var(--space-3) var(--space-8) color-mix(in srgb, var(--color-black) 45%, transparent);
+  --shadow-room-panel: inset var(--space-1) var(--space-1) var(--space-3) color-mix(in srgb, var(--color-black) 45%, transparent), inset calc(-1 * var(--space-1)) calc(-1 * var(--space-1)) var(--space-2) color-mix(in srgb, var(--color-room-door-edge) 35%, transparent);
+  --room-entrance-vignette: radial-gradient(ellipse at center, transparent 30%, var(--color-black) 85%);
+
+  /* Personal room navigation */
+  --color-room-button: #42495B;
+  --color-room-outline: #EADDCC;
+  --border-room-button: 2px solid var(--color-room-outline);
+  --font-size-room-button: 1.375rem;
+  --room-button-label-offset: .07;
+  --space-room-button-height: 2.125rem;
+  --space-room-button-width: 16.8125rem;
+  --space-room-top: clamp(var(--space-4), 1.770833vw, var(--space-room-button-height));
+  --space-room-inset: clamp(var(--space-4), 1.875vw, 2.25rem);
+
+  /* Personal computer desktop */
+  --personal-overlay-backdrop: color-mix(in srgb, var(--color-black) 82%, transparent);
+  --color-pc-window: color-mix(in srgb, var(--color-black) 80%, transparent);
+  --color-pc-taskbar: color-mix(in srgb, var(--color-charcoal) 88%, transparent);
+  --color-pc-selection: color-mix(in srgb, var(--color-white) 15%, transparent);
+  --color-pc-muted: #999999;
+  --color-pc-accent: #60CDFF;
+  --color-pc-close: #E84434;
+  --font-size-pc-ui: .625rem;
+  --font-size-pc-clock: var(--font-size-xs);
+  --radius-pc-monitor: 1.875rem;
+  --radius-pc-screen: calc(var(--radius-pc-monitor) - var(--pc-frame-inset));
+  --radius-pc-window: .4375rem;
+  --size-pc-icon-ui: 1rem;
+  --size-pc-icon-folder: 1.125rem;
+  --size-pc-icon-taskbar: 1.25rem;
+  --size-pc-icon-desktop: 2rem;
+  --size-pc-icon-chevron: .5rem;
+  --space-pc-frame: 1.25rem;
+  --space-pc-titlebar: 1.875rem;
+  --space-pc-navigation: 1.875rem;
+  --space-pc-tools: 2.8125rem;
+  --space-pc-sidebar: 9.375rem;
+  --space-pc-copy: 64ch;
+  --space-pc-window-max-width: 44rem;
+  --space-pc-window-max-height: 26rem;
+  --size-pc-monitor-max-width: 64rem;
+  --ratio-pc-monitor: 1.777777778;
+  --space-pc-sidebar-wide: var(--space-pc-sidebar);
+  --size-pc-explorer-desktop-width: 78%;
+  --font-size-pc-copy-wide: var(--font-size-sm);
+  --motion-pc-folder-duration: .4s;
+  --border-pc-search: 1px solid var(--color-pc-accent);
+  --border-pc-icon: 1px solid var(--color-white);
+  --shadow-pc-monitor: 0 0 var(--space-16) var(--color-cobalt), 0 0 var(--space-8) var(--color-cobalt), 0 0 var(--space-3) var(--color-cobalt);
+  --shadow-pc-window: 0 var(--space-1) var(--space-6) color-mix(in srgb, var(--color-black) 25%, transparent), 0 var(--space-3) var(--space-16) color-mix(in srgb, var(--color-black) 25%, transparent);
+
+  /* Watchlist collections */
+  --size-watchlist-width: min(90vw, 72rem);
+  --size-watchlist-height: min(80svh, 52rem);
+  --size-watchlist-icon: var(--font-size-2xl);
+  --size-watchlist-poster-icon: var(--font-size-3xl);
+  --size-watchlist-card-max-width: 10.8125rem;
+  --ratio-watchlist-poster: 173 / 209;
+  --border-watchlist-card: 4px solid var(--color-navy);
+  --color-watchlist-placeholder: color-mix(in srgb, var(--color-room-button) 12%, var(--color-cream));
+  --color-watchlist-type: color-mix(in srgb, var(--color-cream) 70%, transparent);
+  --color-watchlist-placeholder-icon: color-mix(in srgb, var(--color-navy) 40%, transparent);
+  --space-watchlist-inset: var(--space-6);
+  --size-watchlist-scrollbar: var(--space-3);
+  --color-watchlist-scroll-track: color-mix(in srgb, var(--color-navy) 25%, transparent);
+  --size-watchlist-close: var(--space-8);
+  --size-watchlist-header: calc(var(--space-6) * 2 + var(--font-size-3xl) * var(--line-height-tight));
+
+  /* Reading List cover frames and metadata */
+  --size-reading-card-max-width: 10.875rem;
+  --ratio-reading-cover: 174 / 250;
+  --space-reading-cover-inset: .3125rem;
+  --size-reading-cover-border: 2px;
+  --border-reading-cover: var(--size-reading-cover-border) solid var(--color-navy);
+  --color-reading-rating-placeholder: color-mix(in srgb, var(--color-cobalt) 35%, transparent);
+  --color-reading-rating: var(--color-cobalt);
+  --color-reading-author: color-mix(in srgb, var(--color-navy) 75%, transparent);
+  --size-reading-peek-width: clamp(18rem, 32vw, 24rem);
+  --size-reading-peek-cover: 6rem;
+  --color-reading-peek: color-mix(in srgb, var(--color-navy) 80%, var(--color-cobalt));
+  --color-reading-peek-text: var(--color-cream);
+  --color-reading-peek-muted: color-mix(in srgb, var(--color-cream) 75%, transparent);
+  --border-reading-peek-divider: 1px solid color-mix(in srgb, var(--color-cream) 25%, transparent);
+  --color-reading-genre: color-mix(in srgb, var(--color-lavender) 45%, var(--color-cream));
+  --motion-reading-peek-duration: .5s;
+  --motion-reading-peek-exit-duration: .3s;
+  --motion-reading-peek-ease: var(--motion-room-menu-ease);
+
+  /* DS-style Game Shelf */
+  --font-game: 'Pixelify Sans', monospace;
+  --font-game-controls: 'Roboto', sans-serif;
+  --font-size-game-chat: 1.544rem;
+  --font-size-game-button: 1.97rem;
+  --font-size-game-control-label: var(--font-size-xl);
+  --color-game-screen: #C0B9B7;
+  --color-game-chat: #F8F9F4;
+  --color-game-ink: #0E155B;
+  --color-game-hint: color-mix(in srgb, var(--color-game-ink) 65%, transparent);
+  --color-game-tag: #B7BAEF;
+  --color-game-rail: #F9F7FA;
+  --color-game-meter: #C4C4C4;
+  --color-game-meter-active: #69C1F2;
+  --color-game-status: #8C908F;
+  --color-game-carousel: #EDEDED;
+  --size-game-console-native-width: 1032px;
+  --size-game-console-native-height: 1074.009px;
+  --size-game-console-width: 64.5rem;
+  --ratio-game-console: 1032 / 1074.009;
+  --border-game-screen: 2.411px solid var(--color-black);
+  --size-game-chat-border: 2.058px;
+  --size-game-playing-panel: 73%;
+  --size-game-playing-tag: calc(var(--font-size-game-chat) * var(--line-height-tight) + var(--space-2) * 2 + var(--size-game-chat-border) * 2);
+  --border-game-chat: var(--size-game-chat-border) solid var(--color-black);
+  --border-game-tag: 2.058px solid var(--color-game-ink);
+  --radius-game-chat: .64325rem;
+  --size-game-carousel-button: 80px;
+  --space-game-control-label: 43.64px;
+  --scale-game-selected: 1.35;
+  --size-game-face-button: 55.286px;
+  --size-game-small-button: 27.643px;
+  --size-game-dpad: 145.125px;
+  --space-game-shadow-inset: 2px;
+  --size-game-cartridge: 10.5rem;
+  --ratio-game-cartridge: 168 / 177.804;
+
+  /* Music Corner */
+  --space-music-close-align: -0.12em;
+  --size-music-close-stroke: 2px;
+  --size-music-cover: clamp(2.5rem, 12cqh, 4.25rem);
+  --space-music-card-gap: clamp(var(--space-1), 3cqh, var(--space-4));
+  --space-music-card-padding: clamp(var(--space-1), 2.5cqh, var(--space-3));
+  --size-music-record: 42.11rem;
+  --size-music-embed-height: 22rem;
+  --size-music-song-embed-height: var(--size-music-embed-height);
+  --motion-music-player-duration: .5s;
+  --motion-music-player-unfold-duration: .55s;
+  --motion-music-player-unfold-delay: var(--motion-music-player-duration);
+  --motion-music-player-ease: var(--motion-room-ease);
+  --motion-music-switch-duration: .9s;
+  --motion-music-card-stagger: .12s;
+  --motion-music-reveal-duration: calc(var(--motion-music-switch-duration) + var(--motion-music-card-stagger) * 4);
+  --motion-music-switch-ease: var(--motion-room-menu-ease);
+  --rotation-music-record-tab: -45deg;
+  --rotation-music-record: var(--rotation-music-record-tab);
+  --color-music-card: linear-gradient(to bottom, var(--color-lavender) 30.556%, var(--color-periwinkle) 122.91%);
+  --color-music-artist: color-mix(in srgb, var(--color-navy) 85%, transparent);
+  --shadow-music-overlay: 0 0 var(--space-16) color-mix(in srgb, var(--color-room-button) 65%, transparent), var(--shadow-overlay);
+  --border-music-tab: 2px solid var(--color-navy);
+
+  /* Generic role variables */
+  --color-pure-white: var(--color-white);
+  --color-LightText-Overlay-Cards: var(--color-cream);
+  --color-GreenGradientLight: var(--color-mint);
+  --color-GreenGradientMiddle: var(--color-sage);
+  --color-GreenGradientDark: var(--color-moss);
+  --color-MiddleCard: var(--color-lavender);
+  --color-BlueGradientLight: var(--color-periwinkle);
+  --color-BlueGradientDark-LastCard: var(--color-cobalt);
+  --color-Outline-PersonalSideCard: var(--color-steel);
+  --color-DarkText-Shadow: var(--color-navy);
+  --color-neutral-near-black: var(--color-charcoal);
+  --color-pure-black: var(--color-black);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html:has(.portfolio-scrollbar) {
+  scrollbar-width: none;
+}
+
+html:has(.portfolio-scrollbar)::-webkit-scrollbar {
+  display: none;
+}
+
+.portfolio-scrollbar {
+  position: fixed;
+  inset: var(--space-3) 0 var(--space-3) auto;
+  z-index: 100;
+  width: 16px;
+  background: transparent;
+  touch-action: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.portfolio-scrollbar-thumb {
+  position: absolute;
+  top: 0;
+  right: 4px;
+  width: 6px;
+  border-radius: var(--radius-full);
+  background: color-mix(in srgb, var(--color-navy) 35%, transparent);
+  cursor: grab;
+  transition: background var(--motion-card-duration);
+}
+
+.portfolio-scrollbar:hover .portfolio-scrollbar-thumb,
+.portfolio-scrollbar:focus-visible .portfolio-scrollbar-thumb,
+.portfolio-scrollbar.is-dragging .portfolio-scrollbar-thumb {
+  background: color-mix(in srgb, var(--color-navy) 60%, transparent);
+}
+
+.portfolio-scrollbar.is-dragging .portfolio-scrollbar-thumb {
+  cursor: grabbing;
+}
+
+html:has(dialog[open]) .portfolio-scrollbar {
+  visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-scrollbar-thumb {
+    transition: none;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--color-BlueGradientLight);
+  color: var(--color-DarkText-Shadow);
+  font: var(--font-size-base)/1.35 var(--font-body);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-DarkText-Shadow);
+  outline-offset: var(--space-1);
+}
+
+section {
+  position: relative;
+  isolation: isolate;
+  min-height: calc(100svh - var(--navbar-height, 5.73vw));
+  scroll-margin-top: var(--navbar-height, 5.73vw);
+}

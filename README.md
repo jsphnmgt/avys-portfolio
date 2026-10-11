@@ -6,7 +6,7 @@ Avys Portfolio is an interactive website that brings together professional work 
 
 **Demo video:** [Watch the demo](https://drive.google.com/drive/folders/1B3oj6ORSq4x1khLnwtaZtEFo4iStCV-e?usp=sharing)
 
-![Avys Portfolio main screen](client/src/assets/main-screen.png)
+![Avys Portfolio main screen](client/src/assets/screenshots/main-screen.png)
 
 ## What it does
 
@@ -88,8 +88,12 @@ client/
   src/
     App.jsx                       Switches between portfolio and room
     main.jsx                      React entry point
-    styles.css                    Shared design variables and styles
+    styles.css                    Stylesheet entry point
+    styles/                       Shared, portfolio, room, and overlay styles
     assets/                       Images, covers, and SVG assets
+    data/                         Collection JSON files
+    hooks/                        Shared React hooks
+    utilities/                    Preview color utilities
     components/
       ProfessionalSide/           Portfolio sections and detail overlays
       PersonalSide/
@@ -102,7 +106,7 @@ docs/                             Planning and project documentation
 AI-USAGE.md                       Detailed AI assistance record
 ```
 
-Watchlist, reading, and game details are maintained in the JSON files under the personal overlays folder. Game selections and music collections live in their respective components, and the PC summaries draw from those collections. See [docs/README.md](docs/README.md) for the project documents.
+Watchlist, reading, game, and music collections are maintained in the JSON files under `client/src/data/`. The PC summaries draw from those collections. See [docs/README.md](docs/README.md) for the project documents.
 
 ## Architecture
 

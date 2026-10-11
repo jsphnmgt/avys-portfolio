@@ -4,7 +4,9 @@ export default function Hero() {
   return <section id="home" aria-labelledby="hero-title">
     <div className="hero-card-stack">
       <div className="hero-text">
-        <div className="hero-heading"><h1 id="hero-title">Hi, I'm Josephine Magat</h1><span aria-hidden="true" /></div>
+        <div className="hero-heading">
+          <h1 id="hero-title">Hi, I'm Josephine Magat</h1>
+          <span aria-hidden="true" /></div>
         <p className="tagline">Frontend developer, still figuring out the backend</p>
         <p className="blurb">I'm a Computer Science student focused on front-end development, interface design, interaction, and details that make a product feel intuitive rather than functional. I care about where design and code meet, and I enjoy turning messy ideas into something clean, usable, and ready for people. I’m especially interested in how small design choices can make everyday interactions feel smoother. I'm seeking an internship where I can bring that mindset to a team, learn from experienced people, and contribute to work that ships.</p>
       </div>

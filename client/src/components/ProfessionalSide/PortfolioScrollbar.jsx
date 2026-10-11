@@ -34,7 +34,6 @@ export default function PortfolioScrollbar() {
     };
   }, []);
 
-  // Instant movement keeps the thumb attached to the pointer during dragging.
   const scrollToPointer = (clientY, offset) => {
     const track = trackRef.current.getBoundingClientRect();
     const travel = track.height - scroll.height;
