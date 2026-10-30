@@ -1,5 +1,7 @@
 # Avys Portfolio
 
+A two-sided portfolio showcasing work and and personal interests.
+
 Avys Portfolio is an interactive website that brings together professional work and personal interests. It has two sides: a professional portfolio featuring projects, experience, education, and certificates, and an illustrated personal room where visitors can explore collections of shows, stories, games, and music.
 
 **Live site:** [Visit Avys Portfolio](https://jsphnmgt.github.io/avys-portfolio/)
